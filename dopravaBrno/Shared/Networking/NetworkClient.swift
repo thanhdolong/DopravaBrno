@@ -19,7 +19,7 @@ public final class NetworkClient {
         var headers = SessionManager.defaultHTTPHeaders
         headers["Accept"] = "application/json"
         headers["lang"] = NSLocale.current.languageCode
-        headers["platform"] = "IOS"
+        headers["platform"] = "iOS"
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
             headers["client-version"] = version
         }

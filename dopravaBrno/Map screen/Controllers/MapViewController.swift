@@ -7,14 +7,39 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController {
+    var locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        print("hi")
+        checkLocationServices()
     }
+}
 
-
+extension MapViewController {
+    func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            enableLocationServices()
+        } else {
+            showAlert(withTitle: nil, message: "Location services is not available on this device.")
+        }
+    }
+    
+    func enableLocationServices() {
+        switch CLLocationManager.authorizationStatus() {
+        case .notDetermined, .restricted, .denied:
+            print("Not determined status. Show request for using location.")
+            locationManager.requestWhenInUseAuthorization()
+        case .authorizedAlways, .authorizedWhenInUse:
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.delegate = self
+            locationManager.startUpdatingLocation()
+        }
+    }
 }
 

@@ -30,6 +30,8 @@
 		762048EB22427FAD0011B88C /* SandboxAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048EA22427FAD0011B88C /* SandboxAPI.swift */; };
 		762048EE2242802B0011B88C /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048ED2242802B0011B88C /* ReusableView.swift */; };
 		762048F0224280970011B88C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048EF224280970011B88C /* Utilities.swift */; };
+		762048F2224284200011B88C /* Map+CLLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048F1224284200011B88C /* Map+CLLocationManagerDelegate.swift */; };
+		762048F4224285A40011B88C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048F3224285A40011B88C /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		762048EA22427FAD0011B88C /* SandboxAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SandboxAPI.swift; sourceTree = "<group>"; };
 		762048ED2242802B0011B88C /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		762048EF224280970011B88C /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		762048F1224284200011B88C /* Map+CLLocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Map+CLLocationManagerDelegate.swift"; sourceTree = "<group>"; };
+		762048F3224285A40011B88C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,7 @@
 		762048C4224270290011B88C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				762048F1224284200011B88C /* Map+CLLocationManagerDelegate.swift */,
 				7620489F22426DC80011B88C /* MapViewController.swift */,
 			);
 			path = Controllers;
@@ -199,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				762048A122426DC80011B88C /* Map.storyboard */,
+				762048F3224285A40011B88C /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -414,10 +420,12 @@
 				762048EE2242802B0011B88C /* ReusableView.swift in Sources */,
 				762048E322427E410011B88C /* ApiResult.swift in Sources */,
 				762048E522427E410011B88C /* EndPoint.swift in Sources */,
+				762048F4224285A40011B88C /* MapView.swift in Sources */,
 				762048A022426DC80011B88C /* MapViewController.swift in Sources */,
 				7620489E22426DC80011B88C /* AppDelegate.swift in Sources */,
 				762048E122427E410011B88C /* Manager.swift in Sources */,
 				762048E022427E410011B88C /* NetworkEnvironment.swift in Sources */,
+				762048F2224284200011B88C /* Map+CLLocationManagerDelegate.swift in Sources */,
 				762048D322427CFB0011B88C /* DatabaseManager.swift in Sources */,
 				762048E422427E410011B88C /* NetworkError.swift in Sources */,
 			);

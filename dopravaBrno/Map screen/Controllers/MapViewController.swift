@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MapViewController.swift
 //  dopravaBrno
 //
 //  Created by Thành Đỗ Long on 20/03/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

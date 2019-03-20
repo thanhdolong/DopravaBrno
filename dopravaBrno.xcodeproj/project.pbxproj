@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7620489E22426DC80011B88C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7620489D22426DC80011B88C /* AppDelegate.swift */; };
-		762048A022426DC80011B88C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7620489F22426DC80011B88C /* ViewController.swift */; };
-		762048A322426DC80011B88C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 762048A122426DC80011B88C /* Main.storyboard */; };
+		762048A022426DC80011B88C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7620489F22426DC80011B88C /* MapViewController.swift */; };
+		762048A322426DC80011B88C /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 762048A122426DC80011B88C /* Map.storyboard */; };
 		762048A522426DC90011B88C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 762048A422426DC90011B88C /* Assets.xcassets */; };
 		762048A822426DC90011B88C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 762048A622426DC90011B88C /* LaunchScreen.storyboard */; };
 		762048B322426DC90011B88C /* dopravaBrnoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048B222426DC90011B88C /* dopravaBrnoTests.swift */; };
@@ -28,8 +28,8 @@
 /* Begin PBXFileReference section */
 		7620489A22426DC80011B88C /* dopravaBrno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dopravaBrno.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7620489D22426DC80011B88C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7620489F22426DC80011B88C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		762048A222426DC80011B88C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7620489F22426DC80011B88C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		762048A222426DC80011B88C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Map.storyboard; sourceTree = "<group>"; };
 		762048A422426DC90011B88C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		762048A722426DC90011B88C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		762048A922426DC90011B88C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,12 +77,10 @@
 		7620489C22426DC80011B88C /* dopravaBrno */ = {
 			isa = PBXGroup;
 			children = (
-				7620489D22426DC80011B88C /* AppDelegate.swift */,
-				7620489F22426DC80011B88C /* ViewController.swift */,
-				762048A122426DC80011B88C /* Main.storyboard */,
 				762048A422426DC90011B88C /* Assets.xcassets */,
-				762048A622426DC90011B88C /* LaunchScreen.storyboard */,
 				762048A922426DC90011B88C /* Info.plist */,
+				762048C32242700D0011B88C /* Map screen */,
+				762048BE22426EED0011B88C /* Shared */,
 			);
 			path = dopravaBrno;
 			sourceTree = "<group>";
@@ -94,6 +92,80 @@
 				762048B422426DC90011B88C /* Info.plist */,
 			);
 			path = dopravaBrnoTests;
+			sourceTree = "<group>";
+		};
+		762048BE22426EED0011B88C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				762048C222426F830011B88C /* Views */,
+				762048C122426F4E0011B88C /* Supporting Files */,
+				762048C022426F250011B88C /* Controllers */,
+				762048BF22426F0F0011B88C /* App delegate */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		762048BF22426F0F0011B88C /* App delegate */ = {
+			isa = PBXGroup;
+			children = (
+				7620489D22426DC80011B88C /* AppDelegate.swift */,
+			);
+			path = "App delegate";
+			sourceTree = "<group>";
+		};
+		762048C022426F250011B88C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		762048C122426F4E0011B88C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		762048C222426F830011B88C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				762048A622426DC90011B88C /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		762048C32242700D0011B88C /* Map screen */ = {
+			isa = PBXGroup;
+			children = (
+				762048C6224270530011B88C /* Models */,
+				762048C5224270350011B88C /* Views */,
+				762048C4224270290011B88C /* Controllers */,
+			);
+			path = "Map screen";
+			sourceTree = "<group>";
+		};
+		762048C4224270290011B88C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7620489F22426DC80011B88C /* MapViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		762048C5224270350011B88C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				762048A122426DC80011B88C /* Map.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		762048C6224270530011B88C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +251,7 @@
 			files = (
 				762048A822426DC90011B88C /* LaunchScreen.storyboard in Resources */,
 				762048A522426DC90011B88C /* Assets.xcassets in Resources */,
-				762048A322426DC80011B88C /* Main.storyboard in Resources */,
+				762048A322426DC80011B88C /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				762048A022426DC80011B88C /* ViewController.swift in Sources */,
+				762048A022426DC80011B88C /* MapViewController.swift in Sources */,
 				7620489E22426DC80011B88C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,12 +293,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		762048A122426DC80011B88C /* Main.storyboard */ = {
+		762048A122426DC80011B88C /* Map.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				762048A222426DC80011B88C /* Base */,
 			);
-			name = Main.storyboard;
+			name = Map.storyboard;
 			sourceTree = "<group>";
 		};
 		762048A622426DC90011B88C /* LaunchScreen.storyboard */ = {
@@ -361,13 +433,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KW278547Y4;
+				DEVELOPMENT_TEAM = 4D55K7UPFW;
 				INFOPLIST_FILE = dopravaBrno/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = muni.dopravaBrno;
+				PRODUCT_BUNDLE_IDENTIFIER = muni.dopravaBrno.xdolon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -379,13 +451,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KW278547Y4;
+				DEVELOPMENT_TEAM = 4D55K7UPFW;
 				INFOPLIST_FILE = dopravaBrno/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = muni.dopravaBrno;
+				PRODUCT_BUNDLE_IDENTIFIER = muni.dopravaBrno.xdolon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

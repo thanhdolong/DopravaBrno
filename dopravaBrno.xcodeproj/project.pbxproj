@@ -19,6 +19,13 @@
 		762048CF22427B7E0011B88C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762048CB22427B7E0011B88C /* RealmSwift.framework */; };
 		762048D322427CFB0011B88C /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048D222427CFB0011B88C /* DatabaseManager.swift */; };
 		762048D522427D330011B88C /* FetchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048D422427D330011B88C /* FetchRequest.swift */; };
+		762048DF22427E410011B88C /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048D722427E410011B88C /* NetworkClient.swift */; };
+		762048E022427E410011B88C /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048D922427E410011B88C /* NetworkEnvironment.swift */; };
+		762048E122427E410011B88C /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048DA22427E410011B88C /* Manager.swift */; };
+		762048E222427E410011B88C /* Int+HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048DB22427E410011B88C /* Int+HTTPStatusCode.swift */; };
+		762048E322427E410011B88C /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048DC22427E410011B88C /* ApiResult.swift */; };
+		762048E422427E410011B88C /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048DD22427E410011B88C /* NetworkError.swift */; };
+		762048E522427E410011B88C /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048DE22427E410011B88C /* EndPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +55,13 @@
 		762048CB22427B7E0011B88C /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		762048D222427CFB0011B88C /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		762048D422427D330011B88C /* FetchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRequest.swift; sourceTree = "<group>"; };
+		762048D722427E410011B88C /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		762048D922427E410011B88C /* NetworkEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkEnvironment.swift; sourceTree = "<group>"; };
+		762048DA22427E410011B88C /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		762048DB22427E410011B88C /* Int+HTTPStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+HTTPStatusCode.swift"; sourceTree = "<group>"; };
+		762048DC22427E410011B88C /* ApiResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
+		762048DD22427E410011B88C /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		762048DE22427E410011B88C /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +128,7 @@
 		762048BE22426EED0011B88C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				762048D622427DFB0011B88C /* Networking */,
 				762048D122427CE00011B88C /* Database */,
 				762048C222426F830011B88C /* Views */,
 				762048C122426F4E0011B88C /* Supporting Files */,
@@ -204,6 +219,44 @@
 				762048D422427D330011B88C /* FetchRequest.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		762048D622427DFB0011B88C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				762048E722427E910011B88C /* Controllers */,
+				762048E622427E8B0011B88C /* Endpoints */,
+				762048D822427E410011B88C /* Service */,
+				762048D722427E410011B88C /* NetworkClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		762048D822427E410011B88C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				762048D922427E410011B88C /* NetworkEnvironment.swift */,
+				762048DA22427E410011B88C /* Manager.swift */,
+				762048DB22427E410011B88C /* Int+HTTPStatusCode.swift */,
+				762048DC22427E410011B88C /* ApiResult.swift */,
+				762048DD22427E410011B88C /* NetworkError.swift */,
+				762048DE22427E410011B88C /* EndPoint.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		762048E622427E8B0011B88C /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		762048E722427E910011B88C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,10 +385,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				762048E222427E410011B88C /* Int+HTTPStatusCode.swift in Sources */,
 				762048D522427D330011B88C /* FetchRequest.swift in Sources */,
+				762048DF22427E410011B88C /* NetworkClient.swift in Sources */,
+				762048E322427E410011B88C /* ApiResult.swift in Sources */,
+				762048E522427E410011B88C /* EndPoint.swift in Sources */,
 				762048A022426DC80011B88C /* MapViewController.swift in Sources */,
 				7620489E22426DC80011B88C /* AppDelegate.swift in Sources */,
+				762048E122427E410011B88C /* Manager.swift in Sources */,
+				762048E022427E410011B88C /* NetworkEnvironment.swift in Sources */,
 				762048D322427CFB0011B88C /* DatabaseManager.swift in Sources */,
+				762048E422427E410011B88C /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

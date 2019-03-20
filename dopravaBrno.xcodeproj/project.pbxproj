@@ -28,6 +28,7 @@
 		762048E522427E410011B88C /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048DE22427E410011B88C /* EndPoint.swift */; };
 		762048E922427F9A0011B88C /* SandboxEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048E822427F9A0011B88C /* SandboxEndPoint.swift */; };
 		762048EB22427FAD0011B88C /* SandboxAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048EA22427FAD0011B88C /* SandboxAPI.swift */; };
+		762048EE2242802B0011B88C /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048ED2242802B0011B88C /* ReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		762048DE22427E410011B88C /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		762048E822427F9A0011B88C /* SandboxEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SandboxEndPoint.swift; sourceTree = "<group>"; };
 		762048EA22427FAD0011B88C /* SandboxAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SandboxAPI.swift; sourceTree = "<group>"; };
+		762048ED2242802B0011B88C /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		762048BE22426EED0011B88C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				762048EC2242800E0011B88C /* Extensions */,
 				762048D622427DFB0011B88C /* Networking */,
 				762048D122427CE00011B88C /* Database */,
 				762048C222426F830011B88C /* Views */,
@@ -265,6 +268,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		762048EC2242800E0011B88C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				762048ED2242802B0011B88C /* ReusableView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -396,6 +407,7 @@
 				762048EB22427FAD0011B88C /* SandboxAPI.swift in Sources */,
 				762048D522427D330011B88C /* FetchRequest.swift in Sources */,
 				762048DF22427E410011B88C /* NetworkClient.swift in Sources */,
+				762048EE2242802B0011B88C /* ReusableView.swift in Sources */,
 				762048E322427E410011B88C /* ApiResult.swift in Sources */,
 				762048E522427E410011B88C /* EndPoint.swift in Sources */,
 				762048A022426DC80011B88C /* MapViewController.swift in Sources */,

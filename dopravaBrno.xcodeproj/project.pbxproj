@@ -26,6 +26,8 @@
 		762048E322427E410011B88C /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048DC22427E410011B88C /* ApiResult.swift */; };
 		762048E422427E410011B88C /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048DD22427E410011B88C /* NetworkError.swift */; };
 		762048E522427E410011B88C /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048DE22427E410011B88C /* EndPoint.swift */; };
+		762048E922427F9A0011B88C /* SandboxEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048E822427F9A0011B88C /* SandboxEndPoint.swift */; };
+		762048EB22427FAD0011B88C /* SandboxAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048EA22427FAD0011B88C /* SandboxAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		762048DC22427E410011B88C /* ApiResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
 		762048DD22427E410011B88C /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		762048DE22427E410011B88C /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		762048E822427F9A0011B88C /* SandboxEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SandboxEndPoint.swift; sourceTree = "<group>"; };
+		762048EA22427FAD0011B88C /* SandboxAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SandboxAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +252,7 @@
 		762048E622427E8B0011B88C /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
+				762048E822427F9A0011B88C /* SandboxEndPoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 		762048E722427E910011B88C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				762048EA22427FAD0011B88C /* SandboxAPI.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -385,7 +391,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				762048E922427F9A0011B88C /* SandboxEndPoint.swift in Sources */,
 				762048E222427E410011B88C /* Int+HTTPStatusCode.swift in Sources */,
+				762048EB22427FAD0011B88C /* SandboxAPI.swift in Sources */,
 				762048D522427D330011B88C /* FetchRequest.swift in Sources */,
 				762048DF22427E410011B88C /* NetworkClient.swift in Sources */,
 				762048E322427E410011B88C /* ApiResult.swift in Sources */,

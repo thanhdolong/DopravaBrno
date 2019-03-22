@@ -12,12 +12,18 @@ import CoreLocation
 
 class MapViewController: UIViewController {
     var locationManager = CLLocationManager()
+    let myPoint: Location = Location(name: "Semilaso", latitude: 49.227455, longitude: 16.593057)
+    var mapView: MapView! {
+        guard isViewLoaded else { return nil }
+        return (view as! MapView)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         print("hi")
         checkLocationServices()
+        mapView.map.addAnnotation(myPoint)
     }
 }
 

@@ -32,6 +32,8 @@
 		762048F0224280970011B88C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048EF224280970011B88C /* Utilities.swift */; };
 		762048F2224284200011B88C /* Map+CLLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048F1224284200011B88C /* Map+CLLocationManagerDelegate.swift */; };
 		762048F4224285A40011B88C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048F3224285A40011B88C /* MapView.swift */; };
+		762048F62244C5D10011B88C /* DiversionsEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048F52244C5D10011B88C /* DiversionsEndPoint.swift */; };
+		762048F82244C8F50011B88C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048F72244C8F50011B88C /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		762048EF224280970011B88C /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		762048F1224284200011B88C /* Map+CLLocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Map+CLLocationManagerDelegate.swift"; sourceTree = "<group>"; };
 		762048F3224285A40011B88C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		762048F52244C5D10011B88C /* DiversionsEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiversionsEndPoint.swift; sourceTree = "<group>"; };
+		762048F72244C8F50011B88C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +216,7 @@
 		762048C6224270530011B88C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				762048F72244C8F50011B88C /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				762048E822427F9A0011B88C /* SandboxEndPoint.swift */,
+				762048F52244C5D10011B88C /* DiversionsEndPoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -421,9 +427,11 @@
 				762048E322427E410011B88C /* ApiResult.swift in Sources */,
 				762048E522427E410011B88C /* EndPoint.swift in Sources */,
 				762048F4224285A40011B88C /* MapView.swift in Sources */,
+				762048F62244C5D10011B88C /* DiversionsEndPoint.swift in Sources */,
 				762048A022426DC80011B88C /* MapViewController.swift in Sources */,
 				7620489E22426DC80011B88C /* AppDelegate.swift in Sources */,
 				762048E122427E410011B88C /* Manager.swift in Sources */,
+				762048F82244C8F50011B88C /* Location.swift in Sources */,
 				762048E022427E410011B88C /* NetworkEnvironment.swift in Sources */,
 				762048F2224284200011B88C /* Map+CLLocationManagerDelegate.swift in Sources */,
 				762048D322427CFB0011B88C /* DatabaseManager.swift in Sources */,

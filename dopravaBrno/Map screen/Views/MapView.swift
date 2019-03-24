@@ -11,11 +11,11 @@ import MapKit
 
 public final class MapView: UIView {
     
-    @IBOutlet weak var mapView: MKMapView! {
+    @IBOutlet weak var map: MKMapView! {
         didSet {
-            mapView.showsUserLocation = true
-            mapView.mapType = .standard
-            mapView.userTrackingMode = .follow
+            map.showsUserLocation = true
+            map.mapType = .standard
+            map.userTrackingMode = .follow
         }
     }
     

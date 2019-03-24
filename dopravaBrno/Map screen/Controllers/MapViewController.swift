@@ -18,6 +18,17 @@ class MapViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         print("hi")
         checkLocationServices()
+        VendingMachinesAPI().getVendingMachines { (result) in
+            do {
+                let vendingMachines = try result.unwrap()
+                for machine in vendingMachines {
+                    print(machine.latitude)
+                    print(machine.longitude)
+                }
+            } catch {
+                self.showAlert(withTitle: nil, message: "error")
+            }
+        }
     }
 }
 

@@ -32,6 +32,9 @@
 		762048F0224280970011B88C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048EF224280970011B88C /* Utilities.swift */; };
 		762048F2224284200011B88C /* Map+CLLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048F1224284200011B88C /* Map+CLLocationManagerDelegate.swift */; };
 		762048F4224285A40011B88C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048F3224285A40011B88C /* MapView.swift */; };
+		9BD630E82247A99A003F9413 /* VendingMachinesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD630E72247A99A003F9413 /* VendingMachinesEndpoint.swift */; };
+		9BD630EA2247AA10003F9413 /* VendingMachinesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD630E92247AA10003F9413 /* VendingMachinesAPI.swift */; };
+		9BD630EC2247AAE0003F9413 /* VendingMachineObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD630EB2247AAE0003F9413 /* VendingMachineObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,9 @@
 		762048EF224280970011B88C /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		762048F1224284200011B88C /* Map+CLLocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Map+CLLocationManagerDelegate.swift"; sourceTree = "<group>"; };
 		762048F3224285A40011B88C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		9BD630E72247A99A003F9413 /* VendingMachinesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendingMachinesEndpoint.swift; sourceTree = "<group>"; };
+		9BD630E92247AA10003F9413 /* VendingMachinesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendingMachinesAPI.swift; sourceTree = "<group>"; };
+		9BD630EB2247AAE0003F9413 /* VendingMachineObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VendingMachineObject.swift; path = dopravaBrno/Shared/Networking/Controllers/VendingMachineObject.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +218,7 @@
 		762048C6224270530011B88C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9BD630EB2247AAE0003F9413 /* VendingMachineObject.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				762048E822427F9A0011B88C /* SandboxEndPoint.swift */,
+				9BD630E72247A99A003F9413 /* VendingMachinesEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -272,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				762048EA22427FAD0011B88C /* SandboxAPI.swift */,
+				9BD630E92247AA10003F9413 /* VendingMachinesAPI.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -415,8 +424,11 @@
 				762048E222427E410011B88C /* Int+HTTPStatusCode.swift in Sources */,
 				762048EB22427FAD0011B88C /* SandboxAPI.swift in Sources */,
 				762048F0224280970011B88C /* Utilities.swift in Sources */,
+				9BD630EA2247AA10003F9413 /* VendingMachinesAPI.swift in Sources */,
 				762048D522427D330011B88C /* FetchRequest.swift in Sources */,
 				762048DF22427E410011B88C /* NetworkClient.swift in Sources */,
+				9BD630E82247A99A003F9413 /* VendingMachinesEndpoint.swift in Sources */,
+				9BD630EC2247AAE0003F9413 /* VendingMachineObject.swift in Sources */,
 				762048EE2242802B0011B88C /* ReusableView.swift in Sources */,
 				762048E322427E410011B88C /* ApiResult.swift in Sources */,
 				762048E522427E410011B88C /* EndPoint.swift in Sources */,

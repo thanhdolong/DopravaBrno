@@ -12,6 +12,11 @@ import CoreLocation
 
 class MapViewController: UIViewController {
     var locationManager = CLLocationManager()
+    let myPoint: Location = Location(name: "Semilaso", latitude: 49.227455, longitude: 16.593057)
+    var mapView: MapView! {
+        guard isViewLoaded else { return nil }
+        return (view as! MapView)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +34,7 @@ class MapViewController: UIViewController {
                 self.showAlert(withTitle: nil, message: "error")
             }
         }
+        mapView.map.addAnnotation(myPoint)
     }
 }
 

@@ -31,7 +31,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
-                            <outlet property="mapView" destination="weW-Qn-c0l" id="rTL-SQ-oBD"/>
+                            <outlet property="map" destination="weW-Qn-c0l" id="rTL-SQ-oBD"/>
                         </connections>
                     </view>
                 </viewController>

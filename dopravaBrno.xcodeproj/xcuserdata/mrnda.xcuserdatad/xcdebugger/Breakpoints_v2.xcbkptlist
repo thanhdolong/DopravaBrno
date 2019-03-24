@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dopravaBrno/Shared/Networking/Controllers/SandboxAPI.swift"
+            timestampString = "575121320.537034"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "getPosts(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "dopravaBrno.SandboxAPI.getPosts(completion: (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;dopravaBrno.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "dopravaBrno"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mrnda/Development/MUNI/pv239-project/dopravaBrno/Shared/Networking/Controllers/SandboxAPI.swift"
+                  timestampString = "575121407.89272"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "30">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;__C.NSHTTPURLResponse&gt;, Swift.Optional&lt;dopravaBrno.NetworkError&gt;) -&gt; () in dopravaBrno.SandboxAPI.getPosts(completion: (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;dopravaBrno.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "dopravaBrno"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mrnda/Development/MUNI/pv239-project/dopravaBrno/Shared/Networking/Controllers/SandboxAPI.swift"
+                  timestampString = "575121407.895977"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "93">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dopravaBrno/Map screen/Controllers/MapViewController.swift"
+            timestampString = "575124284.712796"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (dopravaBrno.ApiResult&lt;dopravaBrno.VendingMachineObject&gt;) -&gt; () in dopravaBrno.MapViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "dopravaBrno"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mrnda/Development/MUNI/pv239-project/dopravaBrno/Map%20screen/Controllers/MapViewController.swift"
+                  timestampString = "575124284.904318"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "845">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (dopravaBrno.ApiResult&lt;dopravaBrno.VendingMachineObject&gt;) -&gt; () in dopravaBrno.MapViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "dopravaBrno"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mrnda/Development/MUNI/pv239-project/dopravaBrno/Map%20screen/Controllers/MapViewController.swift"
+                  timestampString = "575124284.9090509"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "1004">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dopravaBrno/Shared/Networking/Service/ApiResult.swift"
+            timestampString = "575124284.713274"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "unwrap()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dopravaBrno/Map screen/Controllers/MapViewController.swift"
+            timestampString = "575124284.713344"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dopravaBrno/Map screen/Controllers/MapViewController.swift"
+            timestampString = "575124284.713677"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dopravaBrno/Map screen/Controllers/MapViewController.swift"
+            timestampString = "575124284.7140059"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

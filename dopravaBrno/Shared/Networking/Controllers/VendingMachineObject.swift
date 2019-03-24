@@ -10,11 +10,13 @@ import Foundation
 import Unbox
 
 class VendingMachineObject: Unboxable {
-    public var latitude: Double;
-    public var longitude: Double;
+    public var location: Location;
     
     required init(unboxer: Unboxer) throws {
-        self.latitude = try unboxer.unbox(key: "lat")
-        self.longitude = try unboxer.unbox(key: "lon")
+        let latitude: Double = try unboxer.unbox(key: "lat")
+        let longitude: Double = try unboxer.unbox(key: "lon")
+        self.location = Location(name: "Automat na jizdenky", latitude: latitude, longitude: longitude)
     }
+
+
 }

@@ -23,18 +23,21 @@ class MapViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         print("hi")
         checkLocationServices()
+        loadVendingMachines()
+        mapView.map.addAnnotation(myPoint)
+    }
+
+    private func loadVendingMachines() {
         VendingMachinesAPI().getVendingMachines { (result) in
             do {
                 let vendingMachines = try result.unwrap()
                 for machine in vendingMachines {
-                    print(machine.latitude)
-                    print(machine.longitude)
+                    self.mapView.map.addAnnotation(machine.location)
                 }
             } catch {
-                self.showAlert(withTitle: nil, message: "error")
+                self.showAlert(withTitle: nil, message: "An error occurred when loading vending machines")
             }
         }
-        mapView.map.addAnnotation(myPoint)
     }
 }
 

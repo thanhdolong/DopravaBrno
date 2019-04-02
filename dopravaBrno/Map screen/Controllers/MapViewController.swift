@@ -25,7 +25,7 @@ class MapViewController: UIViewController {
         print("hi")
         checkLocationServices()
         loadVendingMachines()
-//        addVendingMachinesAnnotations()
+        addVendingMachinesToMap()
         mapView.map.addAnnotation(myPoint)
     }
 
@@ -35,7 +35,7 @@ class MapViewController: UIViewController {
                 let vendingMachinesObjects = try result.unwrap()
                 // save vending mahines
                 self.saveVendingMachines(vendingMachinesObjects)
-                self.addVendingMachinesAnnotations()
+                self.addVendingMachinesToMap()
             } catch {
                 self.showAlert(withTitle: nil, message: "An error occurred when loading vending machines")
             }
@@ -51,7 +51,9 @@ class MapViewController: UIViewController {
         }
     }
     
-    private func addVendingMachinesAnnotations() {
+    private func addVendingMachinesToMap() {
+        mapView.map.removeAnnotations(mapView.map.annotations.filter({$0.title == "Vending Machine"}))
+        
         let vendingMachines = Database().fetch(with: VendingMachine.all)
         mapView.map.addAnnotations(vendingMachines)
     }

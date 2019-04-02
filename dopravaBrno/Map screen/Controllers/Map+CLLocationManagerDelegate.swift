@@ -17,6 +17,8 @@ extension MapViewController: CLLocationManagerDelegate {
         case .restricted, .denied:
             showAlert(withTitle:"Warning", message: "Your geotification is saved but will only be activated once you grant ESN Challenge permission to access the device location.")
             locationManager.requestWhenInUseAuthorization()
+        @unknown default:
+            fatalError()
         }
     }
     

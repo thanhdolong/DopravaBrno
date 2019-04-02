@@ -13,10 +13,6 @@
 		762048A522426DC90011B88C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 762048A422426DC90011B88C /* Assets.xcassets */; };
 		762048A822426DC90011B88C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 762048A622426DC90011B88C /* LaunchScreen.storyboard */; };
 		762048B322426DC90011B88C /* dopravaBrnoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048B222426DC90011B88C /* dopravaBrnoTests.swift */; };
-		762048CC22427B7E0011B88C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762048C822427B7E0011B88C /* Realm.framework */; };
-		762048CD22427B7E0011B88C /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762048C922427B7E0011B88C /* Unbox.framework */; };
-		762048CE22427B7E0011B88C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762048CA22427B7E0011B88C /* Alamofire.framework */; };
-		762048CF22427B7E0011B88C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762048CB22427B7E0011B88C /* RealmSwift.framework */; };
 		762048D322427CFB0011B88C /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048D222427CFB0011B88C /* DatabaseManager.swift */; };
 		762048D522427D330011B88C /* FetchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048D422427D330011B88C /* FetchRequest.swift */; };
 		762048DF22427E410011B88C /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048D722427E410011B88C /* NetworkClient.swift */; };
@@ -32,11 +28,12 @@
 		762048F0224280970011B88C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048EF224280970011B88C /* Utilities.swift */; };
 		762048F2224284200011B88C /* Map+CLLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048F1224284200011B88C /* Map+CLLocationManagerDelegate.swift */; };
 		762048F4224285A40011B88C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048F3224285A40011B88C /* MapView.swift */; };
+		762048F62244C5D10011B88C /* SotorisEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048F52244C5D10011B88C /* SotorisEndPoint.swift */; };
+		762048F82244C8F50011B88C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048F72244C8F50011B88C /* Location.swift */; };
+		76FED5E6225264B30098796A /* VendingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FED5E5225264B30098796A /* VendingMachine.swift */; };
 		9BD630E82247A99A003F9413 /* VendingMachinesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD630E72247A99A003F9413 /* VendingMachinesEndpoint.swift */; };
 		9BD630EA2247AA10003F9413 /* VendingMachinesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD630E92247AA10003F9413 /* VendingMachinesAPI.swift */; };
 		9BD630EC2247AAE0003F9413 /* VendingMachineObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD630EB2247AAE0003F9413 /* VendingMachineObject.swift */; };
-		762048F62244C5D10011B88C /* SotorisEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048F52244C5D10011B88C /* SotorisEndPoint.swift */; };
-		762048F82244C8F50011B88C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048F72244C8F50011B88C /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,11 +76,12 @@
 		762048EF224280970011B88C /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		762048F1224284200011B88C /* Map+CLLocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Map+CLLocationManagerDelegate.swift"; sourceTree = "<group>"; };
 		762048F3224285A40011B88C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		762048F52244C5D10011B88C /* SotorisEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SotorisEndPoint.swift; sourceTree = "<group>"; };
+		762048F72244C8F50011B88C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		76FED5E5225264B30098796A /* VendingMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendingMachine.swift; sourceTree = "<group>"; };
 		9BD630E72247A99A003F9413 /* VendingMachinesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendingMachinesEndpoint.swift; sourceTree = "<group>"; };
 		9BD630E92247AA10003F9413 /* VendingMachinesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendingMachinesAPI.swift; sourceTree = "<group>"; };
 		9BD630EB2247AAE0003F9413 /* VendingMachineObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VendingMachineObject.swift; path = dopravaBrno/Shared/Networking/Controllers/VendingMachineObject.swift; sourceTree = SOURCE_ROOT; };
-		762048F52244C5D10011B88C /* SotorisEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SotorisEndPoint.swift; sourceTree = "<group>"; };
-		762048F72244C8F50011B88C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +89,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				762048CC22427B7E0011B88C /* Realm.framework in Frameworks */,
-				762048CD22427B7E0011B88C /* Unbox.framework in Frameworks */,
-				762048CE22427B7E0011B88C /* Alamofire.framework in Frameworks */,
-				762048CF22427B7E0011B88C /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,8 +216,9 @@
 		762048C6224270530011B88C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9BD630EB2247AAE0003F9413 /* VendingMachineObject.swift */,
 				762048F72244C8F50011B88C /* Location.swift */,
+				76FED5E5225264B30098796A /* VendingMachine.swift */,
+				9BD630EB2247AAE0003F9413 /* VendingMachineObject.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -351,6 +346,7 @@
 				TargetAttributes = {
 					7620489922426DC80011B88C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					762048AD22426DC90011B88C = {
 						CreatedOnToolsVersion = 10.1;
@@ -444,6 +440,7 @@
 				7620489E22426DC80011B88C /* AppDelegate.swift in Sources */,
 				762048E122427E410011B88C /* Manager.swift in Sources */,
 				762048F82244C8F50011B88C /* Location.swift in Sources */,
+				76FED5E6225264B30098796A /* VendingMachine.swift in Sources */,
 				762048E022427E410011B88C /* NetworkEnvironment.swift in Sources */,
 				762048F2224284200011B88C /* Map+CLLocationManagerDelegate.swift in Sources */,
 				762048D322427CFB0011B88C /* DatabaseManager.swift in Sources */,
@@ -622,7 +619,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = muni.dopravaBrno.xdolon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -644,7 +641,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = muni.dopravaBrno.xdolon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -16,3 +16,7 @@ struct FetchRequest<Model, RealmObject: Object> {
     let sortDescriptors: [SortDescriptor]
     let transformer: (Results<RealmObject>) -> Model
 }
+
+extension VendingMachine {
+    static let all = FetchRequest<[VendingMachine],VendingMachineObject>(predicate: nil, sortDescriptors: [], transformer: {$0.map(VendingMachine.init)})
+}

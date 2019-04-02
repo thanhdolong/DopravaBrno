@@ -17,8 +17,6 @@ extension VendingMachinesEndpoint : EndPointType {
         switch self {
         case .vendingMachines:
             return "vending-machines.json"
-        default:
-            return ""
         }
     }
     

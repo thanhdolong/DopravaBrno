@@ -13,7 +13,6 @@ import RealmSwift
 
 class MapViewController: UIViewController {
     var locationManager = CLLocationManager()
-    let myPoint: Location = Location(name: "Semilaso", latitude: 49.227455, longitude: 16.593057)
     var mapView: MapView! {
         guard isViewLoaded else { return nil }
         return (view as! MapView)
@@ -26,7 +25,6 @@ class MapViewController: UIViewController {
         checkLocationServices()
         loadVendingMachines()
         addVendingMachinesToMap()
-        mapView.map.addAnnotation(myPoint)
     }
 
     private func loadVendingMachines() {

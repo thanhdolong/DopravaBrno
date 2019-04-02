@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import RealmSwift
 
 class MapViewController: UIViewController {
     var locationManager = CLLocationManager()
@@ -24,20 +25,35 @@ class MapViewController: UIViewController {
         print("hi")
         checkLocationServices()
         loadVendingMachines()
+//        addVendingMachinesAnnotations()
         mapView.map.addAnnotation(myPoint)
     }
 
     private func loadVendingMachines() {
         VendingMachinesAPI().getVendingMachines { (result) in
             do {
-                let vendingMachines = try result.unwrap()
-                for machine in vendingMachines {
-                    self.mapView.map.addAnnotation(machine.location)
-                }
+                let vendingMachinesObjects = try result.unwrap()
+                // save vending mahines
+                self.saveVendingMachines(vendingMachinesObjects)
+                self.addVendingMachinesAnnotations()
             } catch {
                 self.showAlert(withTitle: nil, message: "An error occurred when loading vending machines")
             }
         }
+    }
+    
+    private func saveVendingMachines(_ vendingMachines: [Object]) {
+        do {
+            try Database().delete(type: VendingMachineObject.self)
+            try Database().insertObjects(vendingMachines, update: false)
+        } catch (let error) {
+            print(error)
+        }
+    }
+    
+    private func addVendingMachinesAnnotations() {
+        let vendingMachines = Database().fetch(with: VendingMachine.all)
+        mapView.map.addAnnotations(vendingMachines)
     }
 }
 
@@ -59,6 +75,8 @@ extension MapViewController {
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.delegate = self
             locationManager.startUpdatingLocation()
+        @unknown default:
+            fatalError()
         }
     }
 }

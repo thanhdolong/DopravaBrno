@@ -30,7 +30,6 @@ class MapViewController: UIViewController {
         VendingMachinesAPI().getVendingMachines { (result) in
             do {
                 let vendingMachinesObjects = try result.unwrap()
-                // save vending mahines
                 self.saveVendingMachines(vendingMachinesObjects)
                 self.addVendingMachinesToMap()
             } catch {
@@ -74,8 +73,6 @@ extension MapViewController {
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.delegate = self
             locationManager.startUpdatingLocation()
-        @unknown default:
-            fatalError()
         }
     }
 }

@@ -17,6 +17,12 @@ class MapViewController: UIViewController {
         guard isViewLoaded else { return nil }
         return (view as! MapView)
     }
+    
+    static func storyboardInit() -> MapViewController {
+        let storyboard = UIStoryboard(name: "Map", bundle: nil)
+        let viewController = storyboard.instantiateInitialViewController()! as! MapViewController
+        return viewController
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

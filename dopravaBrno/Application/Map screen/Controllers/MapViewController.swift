@@ -26,6 +26,7 @@ class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.map.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         checkLocationServices()
         loadVendingMachines()
@@ -55,7 +56,6 @@ class MapViewController: UIViewController {
     
     private func addVendingMachinesToMap() {
         mapView.map.removeAnnotations(mapView.map.annotations.filter({$0.title == "Vending Machine"}))
-        
         let vendingMachines = Database().fetch(with: VendingMachine.all)
         mapView.map.addAnnotations(vendingMachines)
     }

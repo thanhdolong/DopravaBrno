@@ -6,6 +6,8 @@
 //  Copyright © 2019 Thành Đỗ Long. All rights reserved.
 //
 
+
+
 import Foundation
 import MapKit
 
@@ -13,7 +15,7 @@ final class Location: NSObject {
     let name: String
     let latitude: Double
     let longitude: Double
-
+    
     var location: CLLocation { return CLLocation(latitude: latitude, longitude: longitude) }
 
     init(
@@ -26,7 +28,13 @@ final class Location: NSObject {
     }
 }
 
-extension Location: MKAnnotation {
+extension Location: Annotation {
+    var annotationType: AnnotationType {
+        get {
+            return AnnotationType.Default
+        }
+    }
+    
     var coordinate: CLLocationCoordinate2D {
         get {
             return location.coordinate

@@ -29,7 +29,13 @@ final class VendingMachine: NSObject {
     }
 }
 
-extension VendingMachine: MKAnnotation {
+extension VendingMachine: Annotation {
+    var annotationType: AnnotationType {
+        get {
+            return AnnotationType.VendingMachine
+        }
+    }
+    
     var coordinate: CLLocationCoordinate2D {
         get {
             return location.coordinate

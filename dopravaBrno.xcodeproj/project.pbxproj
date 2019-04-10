@@ -30,10 +30,16 @@
 		762048F4224285A40011B88C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048F3224285A40011B88C /* MapView.swift */; };
 		762048F62244C5D10011B88C /* SotorisEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048F52244C5D10011B88C /* SotorisEndPoint.swift */; };
 		762048F82244C8F50011B88C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048F72244C8F50011B88C /* Location.swift */; };
+		76267A36225919740020BB8D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76267A35225919740020BB8D /* TabBarViewController.swift */; };
+		76A2C0F52259361800B8BFB2 /* ThemeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A2C0F42259361800B8BFB2 /* ThemeProtocols.swift */; };
+		76A2C0F9225A803900B8BFB2 /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A2C0F8225A803900B8BFB2 /* DefaultTheme.swift */; };
+		76A2C0FF225A84EF00B8BFB2 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76A2C0FB225A84EF00B8BFB2 /* Montserrat-Light.otf */; };
+		76A2C100225A84EF00B8BFB2 /* Montserrat-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76A2C0FC225A84EF00B8BFB2 /* Montserrat-Thin.otf */; };
+		76A2C101225A84EF00B8BFB2 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76A2C0FD225A84EF00B8BFB2 /* Montserrat-Regular.otf */; };
+		76A2C102225A84EF00B8BFB2 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76A2C0FE225A84EF00B8BFB2 /* Montserrat-SemiBold.otf */; };
 		76FED5E6225264B30098796A /* VendingMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FED5E5225264B30098796A /* VendingMachine.swift */; };
 		9BD630E82247A99A003F9413 /* VendingMachinesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD630E72247A99A003F9413 /* VendingMachinesEndpoint.swift */; };
 		9BD630EA2247AA10003F9413 /* VendingMachinesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD630E92247AA10003F9413 /* VendingMachinesAPI.swift */; };
-		9BD630EC2247AAE0003F9413 /* VendingMachineObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD630EB2247AAE0003F9413 /* VendingMachineObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,10 +84,16 @@
 		762048F3224285A40011B88C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		762048F52244C5D10011B88C /* SotorisEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SotorisEndPoint.swift; sourceTree = "<group>"; };
 		762048F72244C8F50011B88C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		76267A35225919740020BB8D /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		76A2C0F42259361800B8BFB2 /* ThemeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProtocols.swift; sourceTree = "<group>"; };
+		76A2C0F8225A803900B8BFB2 /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
+		76A2C0FB225A84EF00B8BFB2 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
+		76A2C0FC225A84EF00B8BFB2 /* Montserrat-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.otf"; sourceTree = "<group>"; };
+		76A2C0FD225A84EF00B8BFB2 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
+		76A2C0FE225A84EF00B8BFB2 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
 		76FED5E5225264B30098796A /* VendingMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendingMachine.swift; sourceTree = "<group>"; };
 		9BD630E72247A99A003F9413 /* VendingMachinesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendingMachinesEndpoint.swift; sourceTree = "<group>"; };
 		9BD630E92247AA10003F9413 /* VendingMachinesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendingMachinesAPI.swift; sourceTree = "<group>"; };
-		9BD630EB2247AAE0003F9413 /* VendingMachineObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VendingMachineObject.swift; path = dopravaBrno/Shared/Networking/Controllers/VendingMachineObject.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,9 +136,9 @@
 		7620489C22426DC80011B88C /* dopravaBrno */ = {
 			isa = PBXGroup;
 			children = (
-				762048A422426DC90011B88C /* Assets.xcassets */,
 				762048A922426DC90011B88C /* Info.plist */,
-				762048C32242700D0011B88C /* Map screen */,
+				762048C6224270530011B88C /* Models */,
+				76267A32225911D40020BB8D /* Application */,
 				762048BE22426EED0011B88C /* Shared */,
 			);
 			path = dopravaBrno;
@@ -144,51 +156,17 @@
 		762048BE22426EED0011B88C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				762048EC2242800E0011B88C /* Extensions */,
-				762048D622427DFB0011B88C /* Networking */,
+				76267A342259165C0020BB8D /* Assets */,
 				762048D122427CE00011B88C /* Database */,
-				762048C222426F830011B88C /* Views */,
-				762048C122426F4E0011B88C /* Supporting Files */,
-				762048C022426F250011B88C /* Controllers */,
-				762048BF22426F0F0011B88C /* App delegate */,
+				762048D622427DFB0011B88C /* Networking */,
+				76A2C0ED2259337A00B8BFB2 /* Theme */,
 			);
 			path = Shared;
-			sourceTree = "<group>";
-		};
-		762048BF22426F0F0011B88C /* App delegate */ = {
-			isa = PBXGroup;
-			children = (
-				7620489D22426DC80011B88C /* AppDelegate.swift */,
-			);
-			path = "App delegate";
-			sourceTree = "<group>";
-		};
-		762048C022426F250011B88C /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		762048C122426F4E0011B88C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		762048C222426F830011B88C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				762048A622426DC90011B88C /* LaunchScreen.storyboard */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		762048C32242700D0011B88C /* Map screen */ = {
 			isa = PBXGroup;
 			children = (
-				762048C6224270530011B88C /* Models */,
 				762048C5224270350011B88C /* Views */,
 				762048C4224270290011B88C /* Controllers */,
 			);
@@ -218,7 +196,6 @@
 			children = (
 				762048F72244C8F50011B88C /* Location.swift */,
 				76FED5E5225264B30098796A /* VendingMachine.swift */,
-				9BD630EB2247AAE0003F9413 /* VendingMachineObject.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -293,6 +270,55 @@
 				762048ED2242802B0011B88C /* ReusableView.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		76267A32225911D40020BB8D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				76267A33225913960020BB8D /* Main */,
+				762048C32242700D0011B88C /* Map screen */,
+				762048EC2242800E0011B88C /* Extensions */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		76267A33225913960020BB8D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7620489D22426DC80011B88C /* AppDelegate.swift */,
+				762048A622426DC90011B88C /* LaunchScreen.storyboard */,
+				76267A35225919740020BB8D /* TabBarViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		76267A342259165C0020BB8D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				76A2C0FA225A84EF00B8BFB2 /* Fonts */,
+				762048A422426DC90011B88C /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		76A2C0ED2259337A00B8BFB2 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				76A2C0F8225A803900B8BFB2 /* DefaultTheme.swift */,
+				76A2C0F42259361800B8BFB2 /* ThemeProtocols.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		76A2C0FA225A84EF00B8BFB2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				76A2C0FB225A84EF00B8BFB2 /* Montserrat-Light.otf */,
+				76A2C0FC225A84EF00B8BFB2 /* Montserrat-Thin.otf */,
+				76A2C0FD225A84EF00B8BFB2 /* Montserrat-Regular.otf */,
+				76A2C0FE225A84EF00B8BFB2 /* Montserrat-SemiBold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,9 +404,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76A2C100225A84EF00B8BFB2 /* Montserrat-Thin.otf in Resources */,
+				76A2C102225A84EF00B8BFB2 /* Montserrat-SemiBold.otf in Resources */,
 				762048A822426DC90011B88C /* LaunchScreen.storyboard in Resources */,
 				762048A522426DC90011B88C /* Assets.xcassets in Resources */,
 				762048A322426DC80011B88C /* Map.storyboard in Resources */,
+				76A2C0FF225A84EF00B8BFB2 /* Montserrat-Light.otf in Resources */,
+				76A2C101225A84EF00B8BFB2 /* Montserrat-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,7 +460,6 @@
 				762048D522427D330011B88C /* FetchRequest.swift in Sources */,
 				762048DF22427E410011B88C /* NetworkClient.swift in Sources */,
 				9BD630E82247A99A003F9413 /* VendingMachinesEndpoint.swift in Sources */,
-				9BD630EC2247AAE0003F9413 /* VendingMachineObject.swift in Sources */,
 				762048EE2242802B0011B88C /* ReusableView.swift in Sources */,
 				762048E322427E410011B88C /* ApiResult.swift in Sources */,
 				762048E522427E410011B88C /* EndPoint.swift in Sources */,
@@ -438,10 +467,13 @@
 				762048F62244C5D10011B88C /* SotorisEndPoint.swift in Sources */,
 				762048A022426DC80011B88C /* MapViewController.swift in Sources */,
 				7620489E22426DC80011B88C /* AppDelegate.swift in Sources */,
+				76267A36225919740020BB8D /* TabBarViewController.swift in Sources */,
+				76A2C0F52259361800B8BFB2 /* ThemeProtocols.swift in Sources */,
 				762048E122427E410011B88C /* Manager.swift in Sources */,
 				762048F82244C8F50011B88C /* Location.swift in Sources */,
 				76FED5E6225264B30098796A /* VendingMachine.swift in Sources */,
 				762048E022427E410011B88C /* NetworkEnvironment.swift in Sources */,
+				76A2C0F9225A803900B8BFB2 /* DefaultTheme.swift in Sources */,
 				762048F2224284200011B88C /* Map+CLLocationManagerDelegate.swift in Sources */,
 				762048D322427CFB0011B88C /* DatabaseManager.swift in Sources */,
 				762048E422427E410011B88C /* NetworkError.swift in Sources */,

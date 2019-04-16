@@ -9,9 +9,9 @@
 import Foundation
 import MapKit
 
-public enum AnnotationType{
-    case Default
-    case VendingMachine
+public enum AnnotationType : String {
+    case Default = "Default"
+    case VendingMachine = "VendingMachine"
 }
 
 public protocol Annotation : MKAnnotation {

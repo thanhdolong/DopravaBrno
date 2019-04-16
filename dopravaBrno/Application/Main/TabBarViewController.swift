@@ -13,9 +13,8 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // MARK: 1st VC
-        let firstViewController = UIViewController()
-        firstViewController.tabBarItem = UITabBarItem(title: "Red", image: nil, selectedImage: nil)
-        firstViewController.view.backgroundColor = .red
+        let firstViewController = ListViewController.storyboardInit()
+        firstViewController.tabBarItem = UITabBarItem(title: "List", image: nil, selectedImage: nil)
 
         // Mark: 2nd VC
         let secondViewController = MapViewController.storyboardInit()

@@ -13,13 +13,8 @@ public class MapAnnotationView: MKMarkerAnnotationView {
     override public var annotation: MKAnnotation?{
         willSet {
             guard let annotation = newValue as? Annotation else { return }
-            switch annotation.annotationType {
-            case .Default:
-                markerTintColor = UIColor.red
-            case .VendingMachine:
-                markerTintColor = UIColor.blue
-                glyphImage = UIImage(named: "VendingMachine")
-            }
+            markerTintColor = annotation.color
+            glyphImage = annotation.image
         }
     }
 }

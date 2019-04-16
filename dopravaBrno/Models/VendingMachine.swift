@@ -44,7 +44,7 @@ extension VendingMachine: Annotation {
     
     var title: String? {
         get {
-            return "Vending Machine"
+            return "Ticket Machine"
         }
     }
     

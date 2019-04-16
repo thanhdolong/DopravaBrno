@@ -26,11 +26,15 @@ class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView.map.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
-        checkLocationServices()
+        self.mapView?.map.delegate = self
         loadVendingMachines()
         addVendingMachinesToMap()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        locationManager.delegate = self
+        checkLocationServices()
     }
 
     private func loadVendingMachines() {

@@ -17,6 +17,8 @@ extension Annotation {
             return nil
         case .VendingMachine:
             return UIImage(named: "VendingMachine")
+        case .Vehicle:
+            return nil
         }
     }
     

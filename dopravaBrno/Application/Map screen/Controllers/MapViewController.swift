@@ -13,6 +13,7 @@ import RealmSwift
 
 class MapViewController: UIViewController {
     var locationManager = CLLocationManager()
+    var timer = Timer()
     var mapView: MapView! {
         guard isViewLoaded else { return nil }
         return (view as! MapView)
@@ -29,12 +30,39 @@ class MapViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.mapView?.map.delegate = self
         loadVendingMachines()
-        addVendingMachinesToMap()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         locationManager.delegate = self
         checkLocationServices()
+        startReceivingVehicleUpdates()
+    }
+
+    private func startReceivingVehicleUpdates() {
+        timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
+            self.reloadVehicles()
+        }
+    }
+
+    private func reloadVehicles() {
+        SotorisAPI().getVehicles { (result) in
+            do {
+                var vehicles = try result.unwrap()
+                self.saveVehicles(vehicles)
+                self.addVehiclesToMap()
+            } catch {
+                self.showAlert(withTitle: nil, message: "An error occurred when loading vehicles")
+            }
+        }
+    }
+
+    private func saveVehicles(_ vehicles: [VehicleObject]) {
+        do {
+            try Database().delete(type: VehicleObject.self)
+            try Database().insertObjects(vehicles, update: false)
+        } catch (let error) {
+            print(error)
+        }
     }
 
     private func loadVendingMachines() {
@@ -57,7 +85,18 @@ class MapViewController: UIViewController {
             print(error)
         }
     }
-    
+
+    private func addVehiclesToMap() {
+        mapView.map.removeAnnotations(mapView.map.annotations.filter { annotation in
+            guard let annotation = annotation as? Annotation else {
+                return true
+            }
+            return annotation.annotationType == AnnotationType.Vehicle
+        });
+        let vehicles = Database().fetch(with: Vehicle.all)
+        mapView.map.addAnnotations(vehicles)
+    }
+
     private func addVendingMachinesToMap() {
         mapView.map.removeAnnotations(mapView.map.annotations.filter({$0.title == "Vending Machine"}))
         let vendingMachines = Database().fetch(with: VendingMachine.all)

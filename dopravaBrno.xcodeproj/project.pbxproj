@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6357D8E7BC6736D0A158DEDB /* SotorisAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357D98B2658B3503561D692 /* SotorisAPI.swift */; };
+		6357DB1EB8AA73290A8D8815 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357D5A307F15F9B8072B200 /* Vehicle.swift */; };
 		7620489E22426DC80011B88C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7620489D22426DC80011B88C /* AppDelegate.swift */; };
 		762048A022426DC80011B88C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7620489F22426DC80011B88C /* MapViewController.swift */; };
 		762048A322426DC80011B88C /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 762048A122426DC80011B88C /* Map.storyboard */; };
@@ -43,8 +45,10 @@
 		9B8ACE54225E1A7000651DF0 /* Map+MKMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8ACE53225E1A7000651DF0 /* Map+MKMapViewDelegate.swift */; };
 		9B8ACE57225E1E0200651DF0 /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8ACE56225E1E0200651DF0 /* List.storyboard */; };
 		9B8ACE5B225E1F1800651DF0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8ACE5A225E1F1800651DF0 /* ListViewController.swift */; };
-		9B8ACE5E225E23C900651DF0 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8ACE5C225E23C900651DF0 /* ListTableViewCell.swift */; };
-		9B8ACE5F225E23C900651DF0 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B8ACE5D225E23C900651DF0 /* ListTableViewCell.xib */; };
+		9B9822E922665EAB00BFFEE6 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9822E722665EAB00BFFEE6 /* PlaceTableViewCell.swift */; };
+		9B9822EA22665EAB00BFFEE6 /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9822E822665EAB00BFFEE6 /* PlaceTableViewCell.xib */; };
+		9B9822EC226662B000BFFEE6 /* AnnotationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9822EB226662B000BFFEE6 /* AnnotationExtensions.swift */; };
+		9B9822F12266673500BFFEE6 /* List+CLLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9822F02266673500BFFEE6 /* List+CLLocationManagerDelegate.swift */; };
 		9BD630E82247A99A003F9413 /* VendingMachinesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD630E72247A99A003F9413 /* VendingMachinesEndpoint.swift */; };
 		9BD630EA2247AA10003F9413 /* VendingMachinesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD630E92247AA10003F9413 /* VendingMachinesAPI.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6357D5A307F15F9B8072B200 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		6357D98B2658B3503561D692 /* SotorisAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SotorisAPI.swift; sourceTree = "<group>"; };
 		7620489A22426DC80011B88C /* dopravaBrno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dopravaBrno.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7620489D22426DC80011B88C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7620489F22426DC80011B88C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -104,8 +110,10 @@
 		9B8ACE53225E1A7000651DF0 /* Map+MKMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Map+MKMapViewDelegate.swift"; sourceTree = "<group>"; };
 		9B8ACE56225E1E0200651DF0 /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
 		9B8ACE5A225E1F1800651DF0 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		9B8ACE5C225E23C900651DF0 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
-		9B8ACE5D225E23C900651DF0 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		9B9822E722665EAB00BFFEE6 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
+		9B9822E822665EAB00BFFEE6 /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
+		9B9822EB226662B000BFFEE6 /* AnnotationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationExtensions.swift; sourceTree = "<group>"; };
+		9B9822F02266673500BFFEE6 /* List+CLLocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "List+CLLocationManagerDelegate.swift"; sourceTree = "<group>"; };
 		9BD630E72247A99A003F9413 /* VendingMachinesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendingMachinesEndpoint.swift; sourceTree = "<group>"; };
 		9BD630E92247AA10003F9413 /* VendingMachinesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendingMachinesAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,6 +221,7 @@
 				762048F72244C8F50011B88C /* Location.swift */,
 				76FED5E5225264B30098796A /* VendingMachine.swift */,
 				9B8ACE4F225E153A00651DF0 /* Annotation.swift */,
+				6357D5A307F15F9B8072B200 /* Vehicle.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -276,6 +285,7 @@
 			children = (
 				762048EA22427FAD0011B88C /* SandboxAPI.swift */,
 				9BD630E92247AA10003F9413 /* VendingMachinesAPI.swift */,
+				6357D98B2658B3503561D692 /* SotorisAPI.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -285,6 +295,7 @@
 			children = (
 				762048EF224280970011B88C /* Utilities.swift */,
 				762048ED2242802B0011B88C /* ReusableView.swift */,
+				9B9822EB226662B000BFFEE6 /* AnnotationExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -352,8 +363,8 @@
 			isa = PBXGroup;
 			children = (
 				9B8ACE56225E1E0200651DF0 /* List.storyboard */,
-				9B8ACE5C225E23C900651DF0 /* ListTableViewCell.swift */,
-				9B8ACE5D225E23C900651DF0 /* ListTableViewCell.xib */,
+				9B9822E722665EAB00BFFEE6 /* PlaceTableViewCell.swift */,
+				9B9822E822665EAB00BFFEE6 /* PlaceTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -362,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				9B8ACE5A225E1F1800651DF0 /* ListViewController.swift */,
+				9B9822F02266673500BFFEE6 /* List+CLLocationManagerDelegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -451,9 +463,9 @@
 			files = (
 				76A2C100225A84EF00B8BFB2 /* Montserrat-Thin.otf in Resources */,
 				9B8ACE57225E1E0200651DF0 /* List.storyboard in Resources */,
+				9B9822EA22665EAB00BFFEE6 /* PlaceTableViewCell.xib in Resources */,
 				76A2C102225A84EF00B8BFB2 /* Montserrat-SemiBold.otf in Resources */,
 				762048A822426DC90011B88C /* LaunchScreen.storyboard in Resources */,
-				9B8ACE5F225E23C900651DF0 /* ListTableViewCell.xib in Resources */,
 				762048A522426DC90011B88C /* Assets.xcassets in Resources */,
 				762048A322426DC80011B88C /* Map.storyboard in Resources */,
 				76A2C0FF225A84EF00B8BFB2 /* Montserrat-Light.otf in Resources */,
@@ -503,6 +515,8 @@
 				762048E922427F9A0011B88C /* SandboxEndPoint.swift in Sources */,
 				762048E222427E410011B88C /* Int+HTTPStatusCode.swift in Sources */,
 				762048EB22427FAD0011B88C /* SandboxAPI.swift in Sources */,
+				9B9822F12266673500BFFEE6 /* List+CLLocationManagerDelegate.swift in Sources */,
+				9B9822EC226662B000BFFEE6 /* AnnotationExtensions.swift in Sources */,
 				762048F0224280970011B88C /* Utilities.swift in Sources */,
 				9B8ACE50225E153A00651DF0 /* Annotation.swift in Sources */,
 				9BD630EA2247AA10003F9413 /* VendingMachinesAPI.swift in Sources */,
@@ -528,7 +542,9 @@
 				762048D322427CFB0011B88C /* DatabaseManager.swift in Sources */,
 				762048E422427E410011B88C /* NetworkError.swift in Sources */,
 				9B8ACE54225E1A7000651DF0 /* Map+MKMapViewDelegate.swift in Sources */,
-				9B8ACE5E225E23C900651DF0 /* ListTableViewCell.swift in Sources */,
+				9B9822E922665EAB00BFFEE6 /* PlaceTableViewCell.swift in Sources */,
+				6357DB1EB8AA73290A8D8815 /* Vehicle.swift in Sources */,
+				6357D8E7BC6736D0A158DEDB /* SotorisAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

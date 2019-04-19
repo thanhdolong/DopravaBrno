@@ -14,6 +14,7 @@ import UIKit
 class ListItemModel {
     var originalAnnotation: Annotation
     var distance : Int
+
     required init(originalAnnotation: Annotation, distance: Int) {
         self.originalAnnotation = originalAnnotation
         self.distance = distance
@@ -33,8 +34,8 @@ class ListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         registerCellForReuse()
-       
     }
     
     override func viewDidAppear(_ animated: Bool) {

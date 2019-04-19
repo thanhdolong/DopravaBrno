@@ -68,6 +68,10 @@ final class Database {
             throw DatabaseError.saveDataError
         }
     }
+
+    func contains<RealmObject: Object>(type: RealmObject.Type) -> Bool {
+        return !realm.objects(type).isEmpty
+    }
     
     //    Fetch method
     

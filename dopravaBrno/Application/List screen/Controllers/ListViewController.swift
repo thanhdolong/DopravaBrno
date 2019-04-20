@@ -45,8 +45,9 @@ class ListViewController: UITableViewController {
     }
     
     func getAllAnnotations() -> [Annotation] {
-        let vendingMachines = Database().fetch(with: VendingMachine.all)
-        return vendingMachines;
+        let vendingMachines: [Annotation] = Database().fetch(with: VendingMachine.all)
+        let vehicles: [Annotation] = Database().fetch(with: Vehicle.all)
+        return vendingMachines + vehicles;
     }
     
     func showRecalculatedDistance(location: CLLocation) {

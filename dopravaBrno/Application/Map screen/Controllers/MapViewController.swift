@@ -47,7 +47,7 @@ class MapViewController: UIViewController {
     private func reloadVehicles() {
         SotorisAPI().getVehicles { (result) in
             do {
-                var vehicles = try result.unwrap()
+                let vehicles = try result.unwrap()
                 self.saveVehicles(vehicles)
                 self.addVehiclesToMap()
             } catch {

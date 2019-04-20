@@ -5,7 +5,12 @@
 
 import Foundation
 
-class StopsModule {
+
+class StopsModule: BaseDataModule<StopObject, Stop> {
+
+    required init() {
+        super.init(fetchRequest: Stop.all)
+    }
 
     public func requestStops(completion: @escaping (_: [Stop]) -> ()) {
         if (hasObjectsInCache()) {
@@ -13,10 +18,6 @@ class StopsModule {
         } else {
             loadObjectsFromAPI(completion: completion)
         }
-    }
-
-    private func hasObjectsInCache() -> Bool {
-        return loadFromCache().count > 0
     }
 
     private func loadObjectsFromAPI(completion: @escaping ([Stop]) -> ()) {
@@ -27,19 +28,6 @@ class StopsModule {
                 completion(self.loadFromCache())
             } catch {
             }
-        }
-    }
-
-    private func loadFromCache() -> [Stop] {
-        return Database().fetch(with: Stop.all)
-    }
-
-    private func saveToCache(_ stops: [StopObject]) {
-        do {
-            try Database().delete(type: StopObject.self)
-            try Database().insertObjects(stops, update: false)
-        } catch (let error) {
-            print(error)
         }
     }
 }

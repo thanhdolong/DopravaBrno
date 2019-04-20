@@ -6,7 +6,11 @@
 import Foundation
 
 
-class VendingMachineModule {
+class VendingMachineModule: BaseDataModule<VendingMachineObject, VendingMachine> {
+
+    required init() {
+        super.init(fetchRequest: VendingMachine.all)
+    }
 
     public func requestVendingMachines(completion: @escaping (_: [VendingMachine]) -> ()) {
         if (hasObjectsInCache()) {
@@ -14,10 +18,6 @@ class VendingMachineModule {
         } else {
             loadObjectsFromAPI(completion: completion)
         }
-    }
-
-    private func hasObjectsInCache() -> Bool {
-        return loadFromCache().count > 0
     }
 
     private func loadObjectsFromAPI(completion: @escaping ([VendingMachine]) -> ()) {
@@ -30,18 +30,4 @@ class VendingMachineModule {
             }
         }
     }
-
-    private func loadFromCache() -> [VendingMachine] {
-        return Database().fetch(with: VendingMachine.all)
-    }
-
-    private func saveToCache(_ vendingMachines: [VendingMachineObject]) {
-        do {
-            try Database().delete(type: VendingMachineObject.self)
-            try Database().insertObjects(vendingMachines, update: false)
-        } catch (let error) {
-            print(error)
-        }
-    }
-
 }

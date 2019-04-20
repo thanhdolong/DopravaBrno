@@ -5,12 +5,15 @@
 
 import Foundation
 
-class VehiclesModule {
+class VehiclesModule: BaseDataModule<VehicleObject, Vehicle> {
+
+    required init() {
+        super.init(fetchRequest: Vehicle.all)
+    }
 
     public func requestVehicles(completion: @escaping (_: [Vehicle]) -> ()) {
         loadObjectsFromAPI(completion: completion)
     }
-
 
     private func loadObjectsFromAPI(completion: @escaping ([Vehicle]) -> ()) {
         SotorisAPI().getVehicles { (result) in
@@ -20,19 +23,6 @@ class VehiclesModule {
                 completion(self.loadFromCache())
             } catch {
             }
-        }
-    }
-
-    private func loadFromCache() -> [Vehicle] {
-        return Database().fetch(with: Vehicle.all)
-    }
-
-    private func saveToCache(_ vehicles: [VehicleObject]) {
-        do {
-            try Database().delete(type: VehicleObject.self)
-            try Database().insertObjects(vehicles, update: false)
-        } catch (let error) {
-            print(error)
         }
     }
 }

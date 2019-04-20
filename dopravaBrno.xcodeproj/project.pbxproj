@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6357D05DC6E990DA47DAABF9 /* IdsJmkEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357DCF5DC417E6A17190027 /* IdsJmkEndpoint.swift */; };
 		6357D1A8997B74BD3329F847 /* Stops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357DB46F6A36AB0AA6BA83E /* Stops.swift */; };
+		6357D59A167A4091D5FF715B /* BaseModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357D45F6B3CA3709CF85C7A /* BaseModule.swift */; };
 		6357D70F68816B85FD2F5FB9 /* VendingMachineModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357DF46E22E43DEEA9176F8 /* VendingMachineModule.swift */; };
 		6357D7712D480DD881CA8A06 /* VehiclesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357DC9CC368B966DBBBFFC0 /* VehiclesModule.swift */; };
 		6357D8E7BC6736D0A158DEDB /* SotorisAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357D98B2658B3503561D692 /* SotorisAPI.swift */; };
@@ -71,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		6357D0A411740DEB4D459B32 /* StopsModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopsModule.swift; sourceTree = "<group>"; };
+		6357D45F6B3CA3709CF85C7A /* BaseModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModule.swift; sourceTree = "<group>"; };
 		6357D5A307F15F9B8072B200 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		6357D98B2658B3503561D692 /* SotorisAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SotorisAPI.swift; sourceTree = "<group>"; };
 		6357D9C66BE2A0408748F11D /* IdsJmkAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdsJmkAPI.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				6357DF46E22E43DEEA9176F8 /* VendingMachineModule.swift */,
 				6357D0A411740DEB4D459B32 /* StopsModule.swift */,
 				6357DC9CC368B966DBBBFFC0 /* VehiclesModule.swift */,
+				6357D45F6B3CA3709CF85C7A /* BaseModule.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				6357D70F68816B85FD2F5FB9 /* VendingMachineModule.swift in Sources */,
 				6357DA6D1040C7FF093B4D86 /* StopsModule.swift in Sources */,
 				6357D7712D480DD881CA8A06 /* VehiclesModule.swift in Sources */,
+				6357D59A167A4091D5FF715B /* BaseModule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

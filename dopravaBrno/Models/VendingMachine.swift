@@ -7,25 +7,15 @@
 //
 
 import Foundation
-import MapKit
 import Unbox
 import RealmSwift
+import MapKit
 
 // MARK: Vending machine
-final class VendingMachine: NSObject {
-    let latitude: Double
-    let longitude: Double
-    var location: CLLocation { return CLLocation(latitude: latitude, longitude: longitude) }
-    
-    init(latitude: Double,
-         longitude: Double) {
-        self.latitude = latitude
-        self.longitude = longitude
-    }
-    
+final class VendingMachine: Location {
+
     init(object: VendingMachineObject) {
-        self.latitude = object.latitude
-        self.longitude = object.longitude
+        super.init(latitude: object.latitude, longitude: object.longitude)
     }
 }
 

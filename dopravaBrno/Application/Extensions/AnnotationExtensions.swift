@@ -19,6 +19,8 @@ extension Annotation {
             return UIImage(named: "VendingMachine")
         case .Vehicle:
             return nil
+        case .Stop:
+            return nil
         }
     }
     

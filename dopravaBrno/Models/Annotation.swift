@@ -13,6 +13,7 @@ public enum AnnotationType : String {
     case Default = "Default"
     case VendingMachine = "VendingMachine"
     case Vehicle = "Vehicle"
+    case Stop = "Stop"
 }
 
 public protocol Annotation : MKAnnotation {

@@ -30,12 +30,24 @@ class MapViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.mapView?.map.delegate = self
         loadVendingMachines()
+        loadStops()
     }
-    
+
+
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         locationManager.delegate = self
         checkLocationServices()
         startReceivingVehicleUpdates()
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        stopReceivingVehicleUpdates()
+    }
+
+    private func stopReceivingVehicleUpdates() {
+        timer.invalidate()
     }
 
     private func startReceivingVehicleUpdates() {
@@ -60,6 +72,42 @@ class MapViewController: UIViewController {
         do {
             try Database().delete(type: VehicleObject.self)
             try Database().insertObjects(vehicles, update: false)
+        } catch (let error) {
+            print(error)
+        }
+    }
+
+    private func loadStops() {
+        IdsJmkAPI().getStops { result in
+            do {
+                var stops = try result.unwrap()
+                stops = stops.filter {
+                    stop in
+                    return stop.latitude != 0 && stop.longitude != 0
+                }
+                self.saveStops(stops)
+                self.addStopsToMap()
+            } catch {
+                self.showAlert(withTitle: nil, message: "An error occurred when loading stops")
+            }
+        }
+    }
+
+    private func addStopsToMap() {
+        mapView.map.removeAnnotations(mapView.map.annotations.filter { annotation in
+            guard let annotation = annotation as? Annotation else {
+                return true
+            }
+            return annotation.annotationType == AnnotationType.Stop
+        });
+        let vehicles = Database().fetch(with: Stop.all)
+        mapView.map.addAnnotations(vehicles)
+    }
+
+    private func saveStops(_ stops: [StopObject]) {
+        do {
+            try Database().delete(type: StopObject.self)
+            try Database().insertObjects(stops, update: false)
         } catch (let error) {
             print(error)
         }

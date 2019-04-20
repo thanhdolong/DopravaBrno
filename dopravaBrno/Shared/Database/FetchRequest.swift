@@ -24,3 +24,7 @@ extension VendingMachine {
 extension Vehicle {
     static let all = FetchRequest<[Vehicle], VehicleObject>(predicate: nil, sortDescriptors: [], transformer: { $0.map(Vehicle.init) })
 }
+
+extension Stop {
+    static let all = FetchRequest<[Stop], StopObject>(predicate: nil, sortDescriptors: [], transformer: { $0.map(Stop.init) })
+}

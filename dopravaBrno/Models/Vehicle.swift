@@ -4,31 +4,25 @@
 //
 
 import Foundation
-import MapKit
 import Unbox
 import RealmSwift
+import MapKit
 
-class Vehicle: NSObject {
-    let latitude: Double
-    let longitude: Double
+
+class Vehicle: Location {
     let route: String
     let headSign: String
-    var location: CLLocation {
-        return CLLocation(latitude: latitude, longitude: longitude)
-    }
 
     init(latitude: Double, longitude: Double, route: String, headSign: String) {
-        self.latitude = latitude
-        self.longitude = longitude
         self.route = route
         self.headSign = headSign
+        super.init(latitude: latitude, longitude: longitude)
     }
 
     init(object: VehicleObject) {
-        self.latitude = object.latitude
-        self.longitude = object.longitude
         self.headSign = object.headSign
         self.route = object.route
+        super.init(latitude: object.latitude, longitude: object.longitude)
     }
 }
 

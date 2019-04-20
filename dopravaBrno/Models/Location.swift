@@ -11,40 +11,16 @@
 import Foundation
 import MapKit
 
-final class Location: NSObject {
-    let name: String
+class Location: NSObject {
     let latitude: Double
     let longitude: Double
     
     var location: CLLocation { return CLLocation(latitude: latitude, longitude: longitude) }
 
-    init(
-         name: String,
-         latitude: Double,
+    init(latitude: Double,
          longitude: Double) {
-        self.name = name
         self.latitude = latitude
         self.longitude = longitude
-    }
-}
-
-extension Location: Annotation {
-    var annotationType: AnnotationType {
-        get {
-            return AnnotationType.Default
-        }
-    }
-    
-    var coordinate: CLLocationCoordinate2D {
-        get {
-            return location.coordinate
-        }
-    }
-    
-    var title: String? {
-        get {
-            return self.name
-        }
     }
 }
 

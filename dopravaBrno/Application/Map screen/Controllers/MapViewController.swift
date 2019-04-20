@@ -57,98 +57,39 @@ class MapViewController: UIViewController {
     }
 
     private func reloadVehicles() {
-        SotorisAPI().getVehicles { (result) in
-            do {
-                let vehicles = try result.unwrap()
-                self.saveVehicles(vehicles)
-                self.addVehiclesToMap()
-            } catch {
-                self.showAlert(withTitle: nil, message: "An error occurred when loading vehicles")
-            }
-        }
-    }
-
-    private func saveVehicles(_ vehicles: [VehicleObject]) {
-        do {
-            try Database().delete(type: VehicleObject.self)
-            try Database().insertObjects(vehicles, update: false)
-        } catch (let error) {
-            print(error)
-        }
+        VehiclesModule().requestVehicles(completion: addVehiclesToMap)
     }
 
     private func loadStops() {
-        IdsJmkAPI().getStops { result in
-            do {
-                var stops = try result.unwrap()
-                stops = stops.filter {
-                    stop in
-                    return stop.latitude != 0 && stop.longitude != 0
-                }
-                self.saveStops(stops)
-                self.addStopsToMap()
-            } catch {
-                self.showAlert(withTitle: nil, message: "An error occurred when loading stops")
-            }
-        }
-    }
-
-    private func addStopsToMap() {
-        mapView.map.removeAnnotations(mapView.map.annotations.filter { annotation in
-            guard let annotation = annotation as? Annotation else {
-                return true
-            }
-            return annotation.annotationType == AnnotationType.Stop
-        });
-        let vehicles = Database().fetch(with: Stop.all)
-        mapView.map.addAnnotations(vehicles)
-    }
-
-    private func saveStops(_ stops: [StopObject]) {
-        do {
-            try Database().delete(type: StopObject.self)
-            try Database().insertObjects(stops, update: false)
-        } catch (let error) {
-            print(error)
-        }
+        StopsModule().requestStops(completion: addStopsToMap)
     }
 
     private func loadVendingMachines() {
-        VendingMachinesAPI().getVendingMachines { (result) in
-            do {
-                let vendingMachinesObjects = try result.unwrap()
-                self.saveVendingMachines(vendingMachinesObjects)
-                self.addVendingMachinesToMap()
-            } catch {
-                self.showAlert(withTitle: nil, message: "An error occurred when loading vending machines")
-            }
-        }
-    }
-    
-    private func saveVendingMachines(_ vendingMachines: [Object]) {
-        do {
-            try Database().delete(type: VendingMachineObject.self)
-            try Database().insertObjects(vendingMachines, update: false)
-        } catch (let error) {
-            print(error)
-        }
+        VendingMachineModule().requestVendingMachines(completion: addVendingMachinesToMap)
     }
 
-    private func addVehiclesToMap() {
+    private func addStopsToMap(stops: [Stop]) {
+        removeAnnotationOfType(type: AnnotationType.Stop)
+        mapView.map.addAnnotations(stops)
+    }
+
+    private func addVehiclesToMap(vehicles: [Vehicle]) {
+        removeAnnotationOfType(type: AnnotationType.Vehicle)
+        mapView.map.addAnnotations(vehicles)
+    }
+
+    private func addVendingMachinesToMap(vendingMachines: [VendingMachine]) {
+        removeAnnotationOfType(type: AnnotationType.VendingMachine)
+        mapView.map.addAnnotations(vendingMachines)
+    }
+
+    private func removeAnnotationOfType(type: AnnotationType) {
         mapView.map.removeAnnotations(mapView.map.annotations.filter { annotation in
             guard let annotation = annotation as? Annotation else {
                 return true
             }
-            return annotation.annotationType == AnnotationType.Vehicle
+            return annotation.annotationType == type
         });
-        let vehicles = Database().fetch(with: Vehicle.all)
-        mapView.map.addAnnotations(vehicles)
-    }
-
-    private func addVendingMachinesToMap() {
-        mapView.map.removeAnnotations(mapView.map.annotations.filter({$0.title == "Vending Machine"}))
-        let vendingMachines = Database().fetch(with: VendingMachine.all)
-        mapView.map.addAnnotations(vendingMachines)
     }
 }
 

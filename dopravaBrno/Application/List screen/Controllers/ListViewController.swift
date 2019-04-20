@@ -25,6 +25,7 @@ class ListViewController: UITableViewController {
     static let ListCellIdentififer = "ListCell";
     var locationManager = CLLocationManager()
     var listItems: [ListItemModel] = []
+    var annotations: [Annotation] = []
     
     public static func storyboardInit() -> ListViewController {
         let storyboard = UIStoryboard(name: "List", bundle: nil)
@@ -40,18 +41,39 @@ class ListViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.annotations = []
         self.locationManager.delegate = self
-        self.locationManager.requestLocation()
+        self.getAllAnnotations()
     }
-    
-    func getAllAnnotations() -> [Annotation] {
-        let vendingMachines: [Annotation] = Database().fetch(with: VendingMachine.all)
-        let vehicles: [Annotation] = Database().fetch(with: Vehicle.all)
-        return vendingMachines + vehicles;
+
+    func getAllAnnotations() {
+        self.getVendingMachines();
+        self.getVehicles();
+        self.getStops();
     }
-    
+
+    private func getVehicles() {
+        VehiclesModule().requestVehicles { result in
+            self.annotations = self.annotations + (result as [Annotation])
+            self.locationManager.requestLocation()
+        }
+    }
+
+    private func getStops() {
+        StopsModule().requestStops { result in
+            self.annotations = self.annotations + result
+            self.locationManager.requestLocation()
+        }
+    }
+
+    private func getVendingMachines() {
+        VendingMachineModule().requestVendingMachines { result in
+            self.annotations = self.annotations + (result as [Annotation])
+            self.locationManager.requestLocation()
+        }
+    }
+
     func showRecalculatedDistance(location: CLLocation) {
-        let annotations = self.getAllAnnotations()
         self.listItems = annotations.map ({
             (annotation) -> ListItemModel in
             let annotationLocation = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)

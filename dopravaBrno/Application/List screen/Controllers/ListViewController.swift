@@ -22,7 +22,6 @@ class ListItemModel {
 }
 
 class ListViewController: UITableViewController {
-    static let ListCellIdentififer = "ListCell";
     var locationManager = CLLocationManager()
     var listItems: [ListItemModel] = []
     var annotations: [Annotation] = []
@@ -84,12 +83,11 @@ class ListViewController: UITableViewController {
     }
     
     func registerCellForReuse() {
-        let cell = UINib(nibName: "PlaceTableViewCell", bundle: nil)
-        self.tableView.register(cell, forCellReuseIdentifier: ListViewController.ListCellIdentififer)
+        self.tableView.register(PlaceTableViewCell.nib, forCellReuseIdentifier: PlaceTableViewCell.reuseIdentifier)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ListViewController.ListCellIdentififer, for: indexPath) as? PlaceTableViewCell else { return super.tableView(tableView, cellForRowAt: indexPath); }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PlaceTableViewCell.reuseIdentifier, for: indexPath) as? PlaceTableViewCell else { return super.tableView(tableView, cellForRowAt: indexPath); }
         let model = self.listItems[indexPath.row]
         cell.name.text = model.originalAnnotation.title ?? ""
         cell.picture.image = model.originalAnnotation.image

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlaceTableViewCell: UITableViewCell {
+class PlaceTableViewCell: UITableViewCell, ReusableView {
 
     override func awakeFromNib() {
         super.awakeFromNib()

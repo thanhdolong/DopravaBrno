@@ -29,6 +29,8 @@ extension Annotation {
         {
         case .VendingMachine:
             return UIColor.blue
+        case .Stop:
+            return UIColor.brown
         default:
             return UIColor.red
         }

@@ -24,7 +24,10 @@ class MapViewController: UIViewController {
         let viewController = storyboard.instantiateInitialViewController()! as! MapViewController
         return viewController
     }
-
+    @IBAction func zoomToCurrentLocation(_ sender: UIButton) {
+        mapView.map.zoomToUserLocation()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

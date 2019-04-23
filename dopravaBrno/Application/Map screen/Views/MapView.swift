@@ -19,5 +19,12 @@ public final class MapView: UIView {
         }
     }
     
+    @IBOutlet weak var settingsButton: UIButton!
     
+    @IBOutlet weak var zoomUserLocationButton: UIButton!
+    @IBOutlet weak var container: UIView! {
+        didSet {
+            container.layer.cornerRadius = 10.0
+        }
+    }
 }

@@ -5,22 +5,21 @@
 
 import Foundation
 
-
 class VendingMachineModule: BaseDataModule<VendingMachineObject, VendingMachine> {
 
     required init() {
         super.init(fetchRequest: VendingMachine.all)
     }
 
-    public func requestVendingMachines(completion: @escaping (_: [VendingMachine]) -> ()) {
-        if (hasObjectsInCache()) {
+    public func requestVendingMachines(completion: @escaping (_: [VendingMachine]) -> Void) {
+        if hasObjectsInCache() {
             completion(self.loadFromCache())
         } else {
             loadObjectsFromAPI(completion: completion)
         }
     }
 
-    private func loadObjectsFromAPI(completion: @escaping ([VendingMachine]) -> ()) {
+    private func loadObjectsFromAPI(completion: @escaping ([VendingMachine]) -> Void) {
         VendingMachinesAPI().getVendingMachines { (result) in
             do {
                 let vendingMachinesObjects = try result.unwrap()

@@ -75,8 +75,7 @@ public enum NetworkError: Error {
 
 // MARK: - Equatable
 extension NetworkError: Equatable {
-    public static func ==(lhs: NetworkError, rhs: NetworkError) -> Bool {
+    public static func == (lhs: NetworkError, rhs: NetworkError) -> Bool {
         return lhs.statusCode == rhs.statusCode
     }
 }
-

@@ -30,9 +30,8 @@ public final class NetworkClient {
         return Alamofire.SessionManager(configuration: configuration)
     }()
     
-    
     func requestDataFor(resourceUrl: URL, method: Alamofire.HTTPMethod, parametersBody: [String: Any]?, parametersHead: [String: String]?, encoding: URLEncoding, completion: @escaping(DataResponse<Data>, Result<Data>) -> Void) {
-        var headers = [String : String]()
+        var headers = [String: String]()
         if let parametersHead = parametersHead {
             headers = parametersHead
         }
@@ -43,7 +42,7 @@ public final class NetworkClient {
     }
 
     func requestJsonFor(resourceUrl: URL, method: Alamofire.HTTPMethod, parametersBody: [String: Any]?, parametersHead: [String: String]?, encoding: URLEncoding, completion: @escaping(DataResponse<Any>, Result<Any>) -> Void) {
-        var headers = [String : String]()
+        var headers = [String: String]()
         if let parametersHead = parametersHead {
             headers = parametersHead
         }

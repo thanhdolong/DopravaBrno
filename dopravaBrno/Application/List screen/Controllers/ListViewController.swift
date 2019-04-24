@@ -13,7 +13,7 @@ import UIKit
 
 class ListItemModel {
     var originalAnnotation: Annotation
-    var distance : Int
+    var distance: Int
 
     required init(originalAnnotation: Annotation, distance: Int) {
         self.originalAnnotation = originalAnnotation
@@ -46,36 +46,36 @@ class ListViewController: UITableViewController {
     }
 
     func getAllAnnotations() {
-        self.getVendingMachines();
-        self.getVehicles();
-        self.getStops();
+        self.getVendingMachines()
+        self.getVehicles()
+        self.getStops()
     }
 
     private func getVehicles() {
         VehiclesModule().requestVehicles { result in
-            self.annotations = self.annotations + (result as [Annotation])
+            self.annotations += (result as [Annotation])
             self.locationManager.requestLocation()
         }
     }
 
     private func getStops() {
         StopsModule().requestStops { result in
-            self.annotations = self.annotations + result
+            self.annotations += result
             self.locationManager.requestLocation()
         }
     }
 
     private func getVendingMachines() {
         VendingMachineModule().requestVendingMachines { result in
-            self.annotations = self.annotations + (result as [Annotation])
+            self.annotations += (result as [Annotation])
             self.locationManager.requestLocation()
         }
     }
 
     func showRecalculatedDistance(location: CLLocation) {
-        self.listItems = annotations.map ({
-            (annotation) -> ListItemModel in
+        self.listItems = annotations.map ({ (annotation) -> ListItemModel in
             let annotationLocation = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
+            
             let distance = annotationLocation.distance(from: location)
             return ListItemModel(originalAnnotation: annotation, distance: Int(distance))
         }).sorted(by: { $0.distance < $1.distance })

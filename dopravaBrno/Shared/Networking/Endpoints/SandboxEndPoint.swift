@@ -30,7 +30,7 @@ public enum SandboxEndPoint {
 
 extension SandboxEndPoint: EndPointType {
 
-    fileprivate var environmentBaseURL : String {
+    fileprivate var environmentBaseURL: String {
         switch NetworkClient.environment {
         case .production: return "https://jsonplaceholder.typicode.com/"
         case .develop: return "https://jsonplaceholder.typicode.com/"
@@ -41,7 +41,6 @@ extension SandboxEndPoint: EndPointType {
         guard let url = URL(string: environmentBaseURL) else { fatalError("baseURL could not be configured.")}
         return url
     }
-    
     
     var path: String {
         switch self {

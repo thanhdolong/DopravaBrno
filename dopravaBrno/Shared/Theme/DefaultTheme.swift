@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct DefaultTheme: Theme {
+struct DefaultTheme: ThemeStrategy {
     var fonts: FontScheme
     var colours: ColourScheme
     

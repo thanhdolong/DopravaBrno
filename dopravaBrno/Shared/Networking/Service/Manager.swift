@@ -10,8 +10,7 @@ import Foundation
 import Alamofire
 import Unbox
 
-
-enum postType {
+enum PostType {
     case formUrlencoded
     case formData
 }
@@ -20,10 +19,11 @@ class Manager<EndPoint: EndPointType> {
     
     private let networkCLient = NetworkClient()
     
-    func getJson(resourceUrl: EndPoint,
-             params: [String : Any]?,
-             paramsHead: [String : String]?,
-             completion: @escaping (Any? , HTTPURLResponse?, NetworkError?) -> Void) {
+    func getJson(
+        resourceUrl: EndPoint,
+        params: [String: Any]?,
+        paramsHead: [String: String]?,
+        completion: @escaping (Any? , HTTPURLResponse?, NetworkError?) -> Void) {
         
         let resourceUrl = resourceUrl.baseURL.appendingPathComponent(resourceUrl.path)
         
@@ -36,17 +36,17 @@ class Manager<EndPoint: EndPointType> {
                                  encoding: encoding) { (response, status) in
                                     
             switch status {
-                case .success:
-                    self.responseParser(response: response, completion: completion)
-                case .failure:
-                    completion(nil, nil, NetworkError(response: response.response))
-                }
+            case .success:
+                self.responseParser(response: response, completion: completion)
+            case .failure:
+                completion(nil, nil, NetworkError(response: response.response))
+            }
         }
     }
     
     func getData(resourceUrl: EndPoint,
-                 params: [String : Any]?,
-                 paramsHead: [String : String]?,
+                 params: [String: Any]?,
+                 paramsHead: [String: String]?,
                  completion: @escaping (Data? , HTTPURLResponse?, NetworkError?) -> Void) {
         
         let resourceUrl = resourceUrl.baseURL.appendingPathComponent(resourceUrl.path)
@@ -69,8 +69,8 @@ class Manager<EndPoint: EndPointType> {
     }
     
     func post(resourceUrl: EndPoint,
-              paramsHead: [String : String]?,
-              paramsBody: [String : Any]?,
+              paramsHead: [String: String]?,
+              paramsBody: [String: Any]?,
               completion: @escaping (Any? , HTTPURLResponse?, NetworkError?) -> Void) {
         
         let resourceUrl = resourceUrl.baseURL.appendingPathComponent(resourceUrl.path)
@@ -96,7 +96,6 @@ class Manager<EndPoint: EndPointType> {
         }
     }
     
-    
     private func responseParser(
         response: DataResponse<Any>,
         completion: @escaping(Any?, HTTPURLResponse?, NetworkError?) -> Void) {
@@ -105,9 +104,6 @@ class Manager<EndPoint: EndPointType> {
             return
         }
         
-        
         return completion(body, header, nil)
     }
 }
-
-

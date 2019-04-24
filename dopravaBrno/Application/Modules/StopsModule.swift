@@ -5,22 +5,21 @@
 
 import Foundation
 
-
 class StopsModule: BaseDataModule<StopObject, Stop> {
 
     required init() {
         super.init(fetchRequest: Stop.all)
     }
 
-    public func requestStops(completion: @escaping (_: [Stop]) -> ()) {
-        if (hasObjectsInCache()) {
+    public func requestStops(completion: @escaping (_: [Stop]) -> Void) {
+        if hasObjectsInCache() {
             completion(self.loadFromCache())
         } else {
             loadObjectsFromAPI(completion: completion)
         }
     }
 
-    private func loadObjectsFromAPI(completion: @escaping ([Stop]) -> ()) {
+    private func loadObjectsFromAPI(completion: @escaping ([Stop]) -> Void) {
         IdsJmkAPI().getStops { (result) in
             do {
                 let stopsObject = try result.unwrap()

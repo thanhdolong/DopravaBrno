@@ -6,8 +6,6 @@
 //  Copyright © 2019 Thành Đỗ Long. All rights reserved.
 //
 
-
-
 import Foundation
 import MapKit
 
@@ -23,4 +21,3 @@ class Location: NSObject {
         self.longitude = longitude
     }
 }
-

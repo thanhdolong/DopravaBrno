@@ -8,7 +8,7 @@ import Foundation
 class IdsJmkAPI {
     private let router = Manager<IdsJmkEndpoint>()
 
-    func getStops(completion: @escaping (_: ApiResult<StopObject>) -> ()) {
+    func getStops(completion: @escaping (_: ApiResult<StopObject>) -> Void) {
         router.getJson(resourceUrl: .stops, params: nil, paramsHead: nil) { (data, response, error) in
             completion(ApiResult(data, response, error))
         }

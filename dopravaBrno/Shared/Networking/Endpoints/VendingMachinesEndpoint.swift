@@ -12,7 +12,7 @@ public enum VendingMachinesEndpoint {
     case vendingMachines
 }
 
-extension VendingMachinesEndpoint : EndPointType {
+extension VendingMachinesEndpoint: EndPointType {
     var path: String {
         switch self {
         case .vendingMachines:
@@ -20,7 +20,7 @@ extension VendingMachinesEndpoint : EndPointType {
         }
     }
     
-    fileprivate var environmentBaseURL : String {
+    fileprivate var environmentBaseURL: String {
         switch NetworkClient.environment {
         case .production: return "https://hejbejbrnem.cz/exports/"
         case .develop: return "https://hejbejbrnem.cz/exports/"

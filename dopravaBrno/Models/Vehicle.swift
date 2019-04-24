@@ -8,8 +8,7 @@ import Unbox
 import RealmSwift
 import MapKit
 
-
-class Vehicle: Location {
+final class Vehicle: Location {
     let route: String
     let headSign: String
 
@@ -28,23 +27,16 @@ class Vehicle: Location {
 
 extension Vehicle: Annotation {
     var annotationType: AnnotationType {
-        get {
             return AnnotationType.Vehicle
-        }
     }
 
     var coordinate: CLLocationCoordinate2D {
-        get {
             return location.coordinate
-        }
     }
 
     var title: String? {
-        get {
             return self.route + " - " + self.headSign
-        }
     }
-
 }
 
 class VehicleObject: Object, Unboxable {
@@ -64,7 +56,6 @@ class VehicleObject: Object, Unboxable {
 }
 
 extension VehicleObject {
-
 
     convenience init(latitude: Double, longitude: Double, route: String, headSign: String) {
         self.init()

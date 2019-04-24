@@ -11,7 +11,6 @@ enum IdsJmkEndpoint {
 
 extension IdsJmkEndpoint: EndPointType {
 
-
     var baseURL: URL {
         guard let url = URL(string: "https://mapa.idsjmk.cz/api/") else {
             fatalError("Invalid url set for the endpoint")
@@ -25,6 +24,5 @@ extension IdsJmkEndpoint: EndPointType {
             return "stops.json"
         }
     }
-
 
 }

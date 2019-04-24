@@ -36,7 +36,6 @@ class MapViewController: UIViewController {
         loadStops()
     }
 
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         locationManager.delegate = self
@@ -54,7 +53,7 @@ class MapViewController: UIViewController {
     }
 
     private func startReceivingVehicleUpdates() {
-        timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
+        timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { _ in
             self.reloadVehicles()
         }
     }
@@ -92,7 +91,7 @@ class MapViewController: UIViewController {
                 return true
             }
             return annotation.annotationType == type
-        });
+        })
     }
 }
 
@@ -117,4 +116,3 @@ extension MapViewController {
         }
     }
 }
-

@@ -8,7 +8,6 @@
 
 import Foundation
 import Unbox
-import Foundation
 
 enum ApiResultEror: Error {
     case runtimeError(String)
@@ -17,7 +16,7 @@ enum ApiResultEror: Error {
 class ApiResult<UnboxableObject: Unboxable> {
     private let data: Any?
     private let error: NetworkError?
-    private let header: [AnyHashable : Any]?
+    private let header: [AnyHashable: Any]?
     private let statusCode: Int?
     
     init(_ data: Any?,_ header: HTTPURLResponse? ,_ error: NetworkError?) {
@@ -43,7 +42,7 @@ class ApiResult<UnboxableObject: Unboxable> {
         return data
     }
     
-    func getHeader() throws -> [AnyHashable : Any] {
+    func getHeader() throws -> [AnyHashable: Any] {
         guard let header = header else {
             if let error = error { throw error }
             throw NetworkError.unsuccessError("[HeaderError] An error occured while trying unwrap header responze")
@@ -61,7 +60,7 @@ class ApiResult<UnboxableObject: Unboxable> {
             }
             
             return result
-        } catch (let error){
+        } catch let error {
             throw error
         }
     }
@@ -72,7 +71,7 @@ class ApiResult<UnboxableObject: Unboxable> {
                 print("1) unbox [String: AnyObject]")
                 let unboxedJSON: UnboxableObject = try unbox(dictionary: data)
                 return [unboxedJSON]
-            }else if let data = data as? [[String: AnyObject]] {
+            } else if let data = data as? [[String: AnyObject]] {
                 print("2) unbox [[String: AnyObject]]")
                 let unboxedJSON: [UnboxableObject] = try unbox(dictionaries: data)
                 return unboxedJSON
@@ -84,7 +83,7 @@ class ApiResult<UnboxableObject: Unboxable> {
                 if let error = error { throw error }
                 throw ApiResultEror.runtimeError("[DataError] An error occured while trying unwrap responze")
             }
-        } catch (let error){
+        } catch let error {
             throw error
         }
     }

@@ -8,7 +8,7 @@ import Unbox
 import MapKit
 import RealmSwift
 
-class Stop: Location {
+final class Stop: Location {
     let name: String
     let transportZone: Int
 
@@ -53,7 +53,6 @@ class StopObject: Object, Unboxable {
         self.name = try unboxer.unbox(key: "Name")
         self.transportZone = try unboxer.unbox(key: "Zone")
     }
-
 
 }
 

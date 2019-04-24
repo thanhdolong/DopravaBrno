@@ -8,7 +8,7 @@ import Foundation
 class SotorisAPI {
     private let router = Manager<SotorisEndPoint>()
 
-    func getVehicles(completion: @escaping (_: ApiResult<VehicleObject>) -> ()) {
+    func getVehicles(completion: @escaping (_: ApiResult<VehicleObject>) -> Void) {
         router.getJson(resourceUrl: .vehicles, params: nil, paramsHead: nil) { (data, response, error) in
             completion(ApiResult(data, response, error))
         }

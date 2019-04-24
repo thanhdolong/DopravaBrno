@@ -11,11 +11,11 @@ class VehiclesModule: BaseDataModule<VehicleObject, Vehicle> {
         super.init(fetchRequest: Vehicle.all)
     }
 
-    public func requestVehicles(completion: @escaping (_: [Vehicle]) -> ()) {
+    public func requestVehicles(completion: @escaping (_: [Vehicle]) -> Void) {
         loadObjectsFromAPI(completion: completion)
     }
 
-    private func loadObjectsFromAPI(completion: @escaping ([Vehicle]) -> ()) {
+    private func loadObjectsFromAPI(completion: @escaping ([Vehicle]) -> Void) {
         SotorisAPI().getVehicles { (result) in
             do {
                 let vehicleObjects = try result.unwrap()

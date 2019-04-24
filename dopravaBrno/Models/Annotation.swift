@@ -9,13 +9,13 @@
 import Foundation
 import MapKit
 
-public enum AnnotationType : String {
-    case Default = "Default"
-    case VendingMachine = "VendingMachine"
-    case Vehicle = "Vehicle"
-    case Stop = "Stop"
+public enum AnnotationType: String {
+    case Default
+    case VendingMachine
+    case Vehicle
+    case Stop
 }
 
-public protocol Annotation : MKAnnotation {
+public protocol Annotation: MKAnnotation {
     var annotationType: AnnotationType { get }
 }

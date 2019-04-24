@@ -12,7 +12,7 @@ import Unbox
 class VendingMachinesAPI {
     private let router = Manager<VendingMachinesEndpoint>()
     
-    func getVendingMachines(completion: @escaping (_ :ApiResult<VendingMachineObject>) -> () ) {
+    func getVendingMachines(completion: @escaping (_ :ApiResult<VendingMachineObject>) -> Void ) {
         router.getJson(resourceUrl: .vendingMachines, params: nil, paramsHead: nil) { (data, response, error) in
             completion(ApiResult(data, response, error))
         }

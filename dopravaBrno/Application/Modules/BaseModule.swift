@@ -25,7 +25,7 @@ class BaseDataModule<TObject: Object, TModel> {
         do {
             try Database().delete(type: TObject.self)
             try Database().insertObjects(objects, update: false)
-        } catch (let error) {
+        } catch let error {
             print(error)
         }
     }

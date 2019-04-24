@@ -24,7 +24,7 @@ final class Database {
     
     //    Update method
     
-    func update<RealmObject: Object>(type: RealmObject.Type, where predicate: NSPredicate?, setValues values: [String:Any?]) throws -> Void {
+    func update<RealmObject: Object>(type: RealmObject.Type, where predicate: NSPredicate?, setValues values: [String: Any?]) throws {
         do {
             try realm.write {
                 var results = realm.objects(type)
@@ -37,7 +37,7 @@ final class Database {
                     results.setValue(value, forKey: forKey)
                 }
             }
-        } catch (let error) {
+        } catch let error {
             print(error)
             throw DatabaseError.updaDataError
         }
@@ -51,7 +51,7 @@ final class Database {
             try realm.write {
                 realm.add(objects, update: update)
             }
-        } catch (let error) {
+        } catch let error {
             print(error)
             throw DatabaseError.saveDataError
         }
@@ -63,7 +63,7 @@ final class Database {
             try realm.write {
                 realm.add(object, update: true)
             }
-        } catch (let error) {
+        } catch let error {
             print(error)
             throw DatabaseError.saveDataError
         }
@@ -90,8 +90,11 @@ final class Database {
         
     }
     
-    
-    func fetch<Model, RealmObject: Object>(where predicate: NSPredicate?, sortDescriptors: [SortDescriptor]?, transformer: (Results<RealmObject>) -> Model) -> Model {
+    func fetch<Model, RealmObject: Object>(
+        where predicate: NSPredicate?,
+        sortDescriptors: [SortDescriptor]?,
+        transformer: (Results<RealmObject>) -> Model
+        ) -> Model {
         var results = realm.objects(RealmObject.self)
         
         if let predicate = predicate {
@@ -105,7 +108,6 @@ final class Database {
         return transformer(results)
     }
     
-    
     //    Delete method
     func delete<RealmObject: Object>(type: RealmObject.Type, with primaryKey: String) throws {
         do {
@@ -115,7 +117,7 @@ final class Database {
                     realm.delete(object)
                 }
             }
-        } catch (let error) {
+        } catch let error {
             print(error)
             throw DatabaseError.deleteDataError
         }
@@ -132,7 +134,7 @@ final class Database {
                 
                 realm.delete(results)
             }
-        } catch (let error) {
+        } catch let error {
             print(error)
             throw DatabaseError.deleteDataError
         }
@@ -144,19 +146,18 @@ final class Database {
                 let results = realm.objects(type)
                 realm.delete(results)
             }
-        } catch (let error) {
+        } catch let error {
             print(error)
             throw DatabaseError.deleteDataError
         }
     }
-    
     
     func deleteAllFromDatabase() throws {
         do {
             try realm.write {
                 realm.deleteAll()
             }
-        } catch (let error) {
+        } catch let error {
             print(error)
             throw DatabaseError.deleteDataError
         }

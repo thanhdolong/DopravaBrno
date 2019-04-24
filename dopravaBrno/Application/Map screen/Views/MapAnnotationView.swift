@@ -10,7 +10,7 @@ import Foundation
 import MapKit
 
 public class MapAnnotationView: MKMarkerAnnotationView {
-    override public var annotation: MKAnnotation?{
+    override public var annotation: MKAnnotation? {
         willSet {
             guard let annotation = newValue as? Annotation else { return }
             markerTintColor = annotation.color

@@ -13,7 +13,7 @@ import MapKit
 
 // MARK: Vending machine
 final class VendingMachine: Location {
-
+    
     init(object: VendingMachineObject) {
         super.init(latitude: object.latitude, longitude: object.longitude)
     }
@@ -21,21 +21,15 @@ final class VendingMachine: Location {
 
 extension VendingMachine: Annotation {
     var annotationType: AnnotationType {
-        get {
             return AnnotationType.VendingMachine
-        }
     }
     
     var coordinate: CLLocationCoordinate2D {
-        get {
             return location.coordinate
-        }
     }
     
     var title: String? {
-        get {
             return "Ticket Machine"
-        }
     }
     
 }

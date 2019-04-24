@@ -11,8 +11,7 @@ import UIKit
 
 extension Annotation {
     var image: UIImage? {
-        switch self.annotationType
-        {
+        switch self.annotationType {
         case .Default:
             return nil
         case .VendingMachine:
@@ -25,8 +24,7 @@ extension Annotation {
     }
     
     var color: UIColor {
-        switch self.annotationType
-        {
+        switch self.annotationType {
         case .VendingMachine:
             return UIColor.blue
         case .Stop:

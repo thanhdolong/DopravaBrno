@@ -7,8 +7,6 @@
 //
 
 import Foundation
-
-import Foundation
 import RealmSwift
 
 struct FetchRequest<Model, RealmObject: Object> {
@@ -18,13 +16,25 @@ struct FetchRequest<Model, RealmObject: Object> {
 }
 
 extension VendingMachine {
-    static let all = FetchRequest<[VendingMachine],VendingMachineObject>(predicate: nil, sortDescriptors: [], transformer: {$0.map(VendingMachine.init)})
+    static let all = FetchRequest<[VendingMachine],VendingMachineObject>(
+        predicate: nil,
+        sortDescriptors: [],
+        transformer: { $0.map(VendingMachine.init) }
+    )
 }
 
 extension Vehicle {
-    static let all = FetchRequest<[Vehicle], VehicleObject>(predicate: nil, sortDescriptors: [], transformer: { $0.map(Vehicle.init) })
+    static let all = FetchRequest<[Vehicle], VehicleObject>(
+        predicate: nil,
+        sortDescriptors: [],
+        transformer: { $0.map(Vehicle.init) }
+    )
 }
 
 extension Stop {
-    static let all = FetchRequest<[Stop], StopObject>(predicate: nil, sortDescriptors: [], transformer: { $0.map(Stop.init) })
+    static let all = FetchRequest<[Stop], StopObject>(
+        predicate: nil,
+        sortDescriptors: [],
+        transformer: { $0.map(Stop.init) }
+    )
 }

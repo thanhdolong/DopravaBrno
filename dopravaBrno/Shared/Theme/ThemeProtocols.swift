@@ -9,7 +9,7 @@
 
 import UIKit
 
-protocol Theme {
+protocol ThemeStrategy {
     var fonts: FontScheme {get}
     var colours: ColourScheme {get}
     
@@ -33,7 +33,7 @@ protocol ColourScheme {
     var secondaryTextColor: UIColor { get }
 }
 
-protocol FontScheme{
+protocol FontScheme {
     var titleFont: UIFont {get}
     var subtitleFont: UIFont {get}
     var bodyFont: UIFont {get}

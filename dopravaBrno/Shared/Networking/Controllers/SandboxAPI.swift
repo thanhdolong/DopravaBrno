@@ -12,7 +12,7 @@ import Alamofire
 class SandboxAPI {
     private let routerSandbox = Manager<SandboxEndPoint>()
     
-    func getPosts( completion: @escaping (_ data: Any?, _ error: NetworkError?)->() ){
+    func getPosts( completion: @escaping (_ data: Any?, _ error: NetworkError?) -> Void ) {
         routerSandbox.getJson(resourceUrl: .posts, params: nil, paramsHead: nil) { (data, header, error) in
             // Todo: Change into model
             
@@ -21,4 +21,3 @@ class SandboxAPI {
         }
     }
 }
-

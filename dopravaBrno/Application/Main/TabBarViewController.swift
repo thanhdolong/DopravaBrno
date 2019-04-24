@@ -16,11 +16,11 @@ class TabBarViewController: UITabBarController {
         let firstViewController = ListViewController.storyboardInit()
         firstViewController.tabBarItem = UITabBarItem(title: "List", image: nil, selectedImage: nil)
 
-        // Mark: 2nd VC
+        // MARK: 2nd VC
         let secondViewController = MapViewController.storyboardInit()
         secondViewController.tabBarItem = UITabBarItem(title: "Map", image: nil, selectedImage: nil)
         
-        // Mark: 3rd VC
+        // MARK: 3rd VC
         let thirdViewController = UIViewController()
         thirdViewController.view.backgroundColor = .blue
         thirdViewController.navigationItem.title = "Settings"

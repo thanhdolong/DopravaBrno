@@ -17,7 +17,6 @@ public enum SotorisEndPoint {
     case vehicle(route:String)
 }
 
-
 extension SotorisEndPoint: EndPointType {
     var path: String {
         switch self {
@@ -41,5 +40,4 @@ extension SotorisEndPoint: EndPointType {
         }
         return url
     }
-
 }

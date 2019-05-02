@@ -26,6 +26,7 @@ class VendingMachineModule: BaseDataModule<VendingMachineObject, VendingMachine>
                 self.saveToCache(vendingMachinesObjects)
                 completion(self.loadFromCache())
             } catch {
+                print("Unexpected error: \(error).")
             }
         }
     }

@@ -26,6 +26,7 @@ class StopsModule: BaseDataModule<StopObject, Stop> {
                 self.saveToCache(stopsObject)
                 completion(self.loadFromCache())
             } catch {
+                print("Unexpected error: \(error).")
             }
         }
     }

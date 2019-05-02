@@ -22,6 +22,7 @@ class VehiclesModule: BaseDataModule<VehicleObject, Vehicle> {
                 self.saveToCache(vehicleObjects)
                 completion(self.loadFromCache())
             } catch {
+                print("Unexpected error: \(error).")
             }
         }
     }

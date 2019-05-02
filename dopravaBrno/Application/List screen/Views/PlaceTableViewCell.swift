@@ -21,6 +21,20 @@ class PlaceTableViewCell: UITableViewCell, ReusableView {
         // Configure the view for the selected state
     }
     
+    var item: ListItemModel? {
+        didSet {
+            guard let item = item else { return }
+            name.text = item.originalAnnotation.title ?? ""
+            picture.image = item.originalAnnotation.image
+            picture.backgroundColor = item.originalAnnotation.color
+            if let distance = item.distance {
+                distanceLabel.text = "\(distance) m"
+            } else {
+                distanceLabel.text = ""
+            }
+        }
+    }
+    
     @IBOutlet var distanceLabel: UILabel!
     @IBOutlet var picture: UIImageView!
     @IBOutlet weak var name: UILabel!

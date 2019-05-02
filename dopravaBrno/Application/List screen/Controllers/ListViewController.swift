@@ -13,23 +13,19 @@ import UIKit
 
 class ListItemModel {
     var originalAnnotation: Annotation
-    var distance: Int
+    var distance: Int?
 
-    required init(originalAnnotation: Annotation, distance: Int) {
+    required init(originalAnnotation: Annotation, distance: Int?) {
         self.originalAnnotation = originalAnnotation
         self.distance = distance
     }
 }
 
-class ListViewController: UITableViewController {
-    var locationManager = CLLocationManager()
-    var listItems: [ListItemModel] = []
-    var annotations: [Annotation] = []
-    
-    public static func storyboardInit() -> ListViewController {
-        let storyboard = UIStoryboard(name: "List", bundle: nil)
-        let viewController = storyboard.instantiateInitialViewController()! as! ListViewController
-        return viewController
+class ListViewController: UITableViewController, StoryboardInstantiable {
+    var listItems: [ListItemModel] = [] {
+        didSet {
+            tableView.reloadData()
+        }
     }
     
     override func viewDidLoad() {
@@ -40,46 +36,28 @@ class ListViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.annotations = []
-        self.locationManager.delegate = self
-        self.getAllAnnotations()
-    }
-
-    func getAllAnnotations() {
-        self.getVendingMachines()
-        self.getVehicles()
-        self.getStops()
-    }
-
-    private func getVehicles() {
-        VehiclesModule().requestVehicles { result in
-            self.annotations += (result as [Annotation])
-            self.locationManager.requestLocation()
-        }
-    }
-
-    private func getStops() {
-        StopsModule().requestStops { result in
-            self.annotations += result
-            self.locationManager.requestLocation()
-        }
-    }
-
-    private func getVendingMachines() {
-        VendingMachineModule().requestVendingMachines { result in
-            self.annotations += (result as [Annotation])
-            self.locationManager.requestLocation()
-        }
     }
 
     func showRecalculatedDistance(location: CLLocation) {
-        self.listItems = annotations.map ({ (annotation) -> ListItemModel in
-            let annotationLocation = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
+        listItems = listItems.map { (listItem) -> ListItemModel in
+            let itemLocation = CLLocation(latitude: listItem.originalAnnotation.coordinate.latitude, longitude: listItem.originalAnnotation.coordinate.longitude)
+            let distance = itemLocation.distance(from: location)
             
-            let distance = annotationLocation.distance(from: location)
-            return ListItemModel(originalAnnotation: annotation, distance: Int(distance))
-        }).sorted(by: { $0.distance < $1.distance })
-        self.tableView.reloadData()
+            listItem.distance = Int(distance)
+            return listItem
+        }.sorted(by: {$0.distance! < $1.distance!})
+    }
+    
+    func appendListItems(sequnce items: [Annotation]) {
+        listItems += items.map({ (item) -> ListItemModel in
+            return ListItemModel(originalAnnotation: item, distance: nil)
+        })
+    }
+    
+    func removeFromListItems(type: AnnotationType) {
+        listItems.removeAll { (listItem) -> Bool in
+            return listItem.originalAnnotation.annotationType == type
+        }
     }
     
     func registerCellForReuse() {
@@ -88,19 +66,38 @@ class ListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PlaceTableViewCell.reuseIdentifier, for: indexPath) as? PlaceTableViewCell else { return super.tableView(tableView, cellForRowAt: indexPath); }
-        let model = self.listItems[indexPath.row]
-        cell.name.text = model.originalAnnotation.title ?? ""
-        cell.picture.image = model.originalAnnotation.image
-        cell.picture.backgroundColor = model.originalAnnotation.color
-        cell.distanceLabel.text = String(model.distance) + " m"
+        cell.selectionStyle = .none
+        cell.item = listItems[indexPath.row]
         return cell
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.listItems.count
+        return listItems.count
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+}
+
+extension ListViewController: TransportDelegate {
+    func didChange(stops: [Stop]) {
+        removeFromListItems(type: AnnotationType.Stop)
+        appendListItems(sequnce: stops)
+    }
+    
+    func didChange(location: CLLocation?) {
+        guard let location = location else { return }
+        self.showRecalculatedDistance(location: location)
+    }
+    
+    func didChange(vehicles: [Vehicle]) {
+        removeFromListItems(type: AnnotationType.Vehicle)
+        appendListItems(sequnce: vehicles)
+    }
+    
+    func didChange(vendingMachines: [VendingMachine]) {
+        removeFromListItems(type: AnnotationType.VendingMachine)
+        appendListItems(sequnce: vendingMachines)
     }
 }

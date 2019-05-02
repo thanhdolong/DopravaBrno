@@ -16,7 +16,7 @@ struct FetchRequest<Model, RealmObject: Object> {
 }
 
 extension VendingMachine {
-    static let all = FetchRequest<[VendingMachine],VendingMachineObject>(
+    static let all = FetchRequest<[VendingMachine], VendingMachineObject> (
         predicate: nil,
         sortDescriptors: [],
         transformer: { $0.map(VendingMachine.init) }
@@ -24,7 +24,7 @@ extension VendingMachine {
 }
 
 extension Vehicle {
-    static let all = FetchRequest<[Vehicle], VehicleObject>(
+    static let all = FetchRequest<[Vehicle], VehicleObject> (
         predicate: nil,
         sortDescriptors: [],
         transformer: { $0.map(Vehicle.init) }
@@ -32,7 +32,7 @@ extension Vehicle {
 }
 
 extension Stop {
-    static let all = FetchRequest<[Stop], StopObject>(
+    static let all = FetchRequest<[Stop], StopObject> (
         predicate: nil,
         sortDescriptors: [],
         transformer: { $0.map(Stop.init) }

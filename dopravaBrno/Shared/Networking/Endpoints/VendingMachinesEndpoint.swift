@@ -22,13 +22,15 @@ extension VendingMachinesEndpoint: EndPointType {
     
     fileprivate var environmentBaseURL: String {
         switch NetworkClient.environment {
-        case .production: return "https://hejbejbrnem.cz/exports/"
-        case .develop: return "https://hejbejbrnem.cz/exports/"
+        case .production:
+            return "https://hejbejbrnem.cz/exports/"
+        case .develop:
+            return "https://hejbejbrnem.cz/exports/"
         }
     }
     
     var baseURL: URL {
-        guard let url = URL(string: environmentBaseURL) else { fatalError("baseURL could not be configured.")}
+        guard let url = URL(string: environmentBaseURL) else { fatalError("baseURL could not be configured.") }
         return url
     }
     

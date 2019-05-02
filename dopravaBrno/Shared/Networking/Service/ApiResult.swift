@@ -68,15 +68,12 @@ class ApiResult<UnboxableObject: Unboxable> {
     func unwrap() throws -> [UnboxableObject] {
         do {
             if let data = data as? [String: AnyObject] {
-                print("1) unbox [String: AnyObject]")
                 let unboxedJSON: UnboxableObject = try unbox(dictionary: data)
                 return [unboxedJSON]
             } else if let data = data as? [[String: AnyObject]] {
-                print("2) unbox [[String: AnyObject]]")
                 let unboxedJSON: [UnboxableObject] = try unbox(dictionaries: data)
                 return unboxedJSON
             } else if let data = data as? Data {
-                print("3) unbox Data")
                 let unboxedJSON: [UnboxableObject] = try unbox(data: data)
                 return unboxedJSON
             } else {

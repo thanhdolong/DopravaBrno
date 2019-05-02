@@ -16,6 +16,15 @@
 		6357DA6D1040C7FF093B4D86 /* StopsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357D0A411740DEB4D459B32 /* StopsModule.swift */; };
 		6357DB1EB8AA73290A8D8815 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357D5A307F15F9B8072B200 /* Vehicle.swift */; };
 		6357DDE91485096A37382288 /* IdsJmkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357D9C66BE2A0408748F11D /* IdsJmkAPI.swift */; };
+		6F55075E227A2AA600FC44FA /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F55075D227A2AA600FC44FA /* StoryboardInstantiable.swift */; };
+		6F550761227A2B6000FC44FA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F550760227A2B6000FC44FA /* Router.swift */; };
+		6F550763227A2B7300FC44FA /* AppDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F550762227A2B7300FC44FA /* AppDelegateRouter.swift */; };
+		6F550767227A346100FC44FA /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F550766227A346100FC44FA /* TabCoordinator.swift */; };
+		6F550769227A347A00FC44FA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F550768227A347A00FC44FA /* Coordinator.swift */; };
+		6F55076B227A385800FC44FA /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F55076A227A385800FC44FA /* MapCoordinator.swift */; };
+		6F55076D227A3A9A00FC44FA /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F55076C227A3A9A00FC44FA /* ListCoordinator.swift */; };
+		6FF9422222724F2600D3E9AC /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF9422122724F2600D3E9AC /* MulticastDelegate.swift */; };
+		6FF9422422724F7400D3E9AC /* TransportModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF9422322724F7400D3E9AC /* TransportModule.swift */; };
 		7620489E22426DC80011B88C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7620489D22426DC80011B88C /* AppDelegate.swift */; };
 		762048A022426DC80011B88C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7620489F22426DC80011B88C /* MapViewController.swift */; };
 		762048A322426DC80011B88C /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 762048A122426DC80011B88C /* Map.storyboard */; };
@@ -39,7 +48,6 @@
 		762048F4224285A40011B88C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048F3224285A40011B88C /* MapView.swift */; };
 		762048F62244C5D10011B88C /* SotorisEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048F52244C5D10011B88C /* SotorisEndPoint.swift */; };
 		762048F82244C8F50011B88C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762048F72244C8F50011B88C /* Location.swift */; };
-		76267A36225919740020BB8D /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76267A35225919740020BB8D /* TabBarViewController.swift */; };
 		76A2C0F52259361800B8BFB2 /* ThemeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A2C0F42259361800B8BFB2 /* ThemeProtocols.swift */; };
 		76A2C0F9225A803900B8BFB2 /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A2C0F8225A803900B8BFB2 /* DefaultTheme.swift */; };
 		76A2C0FF225A84EF00B8BFB2 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 76A2C0FB225A84EF00B8BFB2 /* Montserrat-Light.otf */; };
@@ -55,7 +63,6 @@
 		9B9822E922665EAB00BFFEE6 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9822E722665EAB00BFFEE6 /* PlaceTableViewCell.swift */; };
 		9B9822EA22665EAB00BFFEE6 /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9822E822665EAB00BFFEE6 /* PlaceTableViewCell.xib */; };
 		9B9822EC226662B000BFFEE6 /* AnnotationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9822EB226662B000BFFEE6 /* AnnotationExtensions.swift */; };
-		9B9822F12266673500BFFEE6 /* List+CLLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9822F02266673500BFFEE6 /* List+CLLocationManagerDelegate.swift */; };
 		9BD630E82247A99A003F9413 /* VendingMachinesEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD630E72247A99A003F9413 /* VendingMachinesEndpoint.swift */; };
 		9BD630EA2247AA10003F9413 /* VendingMachinesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD630E92247AA10003F9413 /* VendingMachinesAPI.swift */; };
 /* End PBXBuildFile section */
@@ -80,6 +87,15 @@
 		6357DC9CC368B966DBBBFFC0 /* VehiclesModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehiclesModule.swift; sourceTree = "<group>"; };
 		6357DCF5DC417E6A17190027 /* IdsJmkEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdsJmkEndpoint.swift; sourceTree = "<group>"; };
 		6357DF46E22E43DEEA9176F8 /* VendingMachineModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VendingMachineModule.swift; sourceTree = "<group>"; };
+		6F55075D227A2AA600FC44FA /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
+		6F550760227A2B6000FC44FA /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		6F550762227A2B7300FC44FA /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
+		6F550766227A346100FC44FA /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
+		6F550768227A347A00FC44FA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		6F55076A227A385800FC44FA /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
+		6F55076C227A3A9A00FC44FA /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
+		6FF9422122724F2600D3E9AC /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
+		6FF9422322724F7400D3E9AC /* TransportModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportModule.swift; sourceTree = "<group>"; };
 		7620489A22426DC80011B88C /* dopravaBrno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dopravaBrno.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7620489D22426DC80011B88C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7620489F22426DC80011B88C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +127,6 @@
 		762048F3224285A40011B88C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		762048F52244C5D10011B88C /* SotorisEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SotorisEndPoint.swift; sourceTree = "<group>"; };
 		762048F72244C8F50011B88C /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		76267A35225919740020BB8D /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		76A2C0F42259361800B8BFB2 /* ThemeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProtocols.swift; sourceTree = "<group>"; };
 		76A2C0F8225A803900B8BFB2 /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
 		76A2C0FB225A84EF00B8BFB2 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
@@ -127,7 +142,6 @@
 		9B9822E722665EAB00BFFEE6 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
 		9B9822E822665EAB00BFFEE6 /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
 		9B9822EB226662B000BFFEE6 /* AnnotationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationExtensions.swift; sourceTree = "<group>"; };
-		9B9822F02266673500BFFEE6 /* List+CLLocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "List+CLLocationManagerDelegate.swift"; sourceTree = "<group>"; };
 		9BD630E72247A99A003F9413 /* VendingMachinesEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendingMachinesEndpoint.swift; sourceTree = "<group>"; };
 		9BD630E92247AA10003F9413 /* VendingMachinesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendingMachinesAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,12 +167,41 @@
 		6357DD66D002D991D2194F42 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6FF9422322724F7400D3E9AC /* TransportModule.swift */,
 				6357DF46E22E43DEEA9176F8 /* VendingMachineModule.swift */,
 				6357D0A411740DEB4D459B32 /* StopsModule.swift */,
 				6357DC9CC368B966DBBBFFC0 /* VehiclesModule.swift */,
 				6357D45F6B3CA3709CF85C7A /* BaseModule.swift */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		6F55075F227A2B4200FC44FA /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				6F550760227A2B6000FC44FA /* Router.swift */,
+				6F550762227A2B7300FC44FA /* AppDelegateRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		6F550764227A2F0800FC44FA /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				7620489D22426DC80011B88C /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		6F550765227A342F00FC44FA /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				6F550768227A347A00FC44FA /* Coordinator.swift */,
+				6F55076A227A385800FC44FA /* MapCoordinator.swift */,
+				6F550766227A346100FC44FA /* TabCoordinator.swift */,
+				6F55076C227A3A9A00FC44FA /* ListCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		7620489122426DC80011B88C = {
@@ -184,6 +227,9 @@
 			isa = PBXGroup;
 			children = (
 				762048A922426DC90011B88C /* Info.plist */,
+				6F550764227A2F0800FC44FA /* AppDelegate */,
+				6F550765227A342F00FC44FA /* Coordinator */,
+				6F55075F227A2B4200FC44FA /* Routers */,
 				762048C6224270530011B88C /* Models */,
 				76267A32225911D40020BB8D /* Application */,
 				762048BE22426EED0011B88C /* Shared */,
@@ -214,8 +260,8 @@
 		762048C32242700D0011B88C /* Map screen */ = {
 			isa = PBXGroup;
 			children = (
-				762048C5224270350011B88C /* Views */,
 				762048C4224270290011B88C /* Controllers */,
+				762048C5224270350011B88C /* Views */,
 			);
 			path = "Map screen";
 			sourceTree = "<group>";
@@ -324,6 +370,8 @@
 				762048EF224280970011B88C /* Utilities.swift */,
 				762048ED2242802B0011B88C /* ReusableView.swift */,
 				9B9822EB226662B000BFFEE6 /* AnnotationExtensions.swift */,
+				6FF9422122724F2600D3E9AC /* MulticastDelegate.swift */,
+				6F55075D227A2AA600FC44FA /* StoryboardInstantiable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -343,9 +391,7 @@
 		76267A33225913960020BB8D /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				7620489D22426DC80011B88C /* AppDelegate.swift */,
 				762048A622426DC90011B88C /* LaunchScreen.storyboard */,
-				76267A35225919740020BB8D /* TabBarViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -402,7 +448,6 @@
 			isa = PBXGroup;
 			children = (
 				9B8ACE5A225E1F1800651DF0 /* ListViewController.swift */,
-				9B9822F02266673500BFFEE6 /* List+CLLocationManagerDelegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -563,30 +608,37 @@
 				762048E922427F9A0011B88C /* SandboxEndPoint.swift in Sources */,
 				762048E222427E410011B88C /* Int+HTTPStatusCode.swift in Sources */,
 				762048EB22427FAD0011B88C /* SandboxAPI.swift in Sources */,
-				9B9822F12266673500BFFEE6 /* List+CLLocationManagerDelegate.swift in Sources */,
+				6FF9422422724F7400D3E9AC /* TransportModule.swift in Sources */,
+				6F550769227A347A00FC44FA /* Coordinator.swift in Sources */,
 				9B9822EC226662B000BFFEE6 /* AnnotationExtensions.swift in Sources */,
 				762048F0224280970011B88C /* Utilities.swift in Sources */,
 				9B8ACE50225E153A00651DF0 /* Annotation.swift in Sources */,
 				9BD630EA2247AA10003F9413 /* VendingMachinesAPI.swift in Sources */,
 				762048D522427D330011B88C /* FetchRequest.swift in Sources */,
+				6F55076B227A385800FC44FA /* MapCoordinator.swift in Sources */,
 				762048DF22427E410011B88C /* NetworkClient.swift in Sources */,
 				9BD630E82247A99A003F9413 /* VendingMachinesEndpoint.swift in Sources */,
 				762048EE2242802B0011B88C /* ReusableView.swift in Sources */,
 				762048E322427E410011B88C /* ApiResult.swift in Sources */,
 				762048E522427E410011B88C /* EndPoint.swift in Sources */,
+				6F55076D227A3A9A00FC44FA /* ListCoordinator.swift in Sources */,
 				762048F4224285A40011B88C /* MapView.swift in Sources */,
 				762048F62244C5D10011B88C /* SotorisEndPoint.swift in Sources */,
 				762048A022426DC80011B88C /* MapViewController.swift in Sources */,
 				7620489E22426DC80011B88C /* AppDelegate.swift in Sources */,
-				76267A36225919740020BB8D /* TabBarViewController.swift in Sources */,
+				6F550763227A2B7300FC44FA /* AppDelegateRouter.swift in Sources */,
 				76A2C0F52259361800B8BFB2 /* ThemeProtocols.swift in Sources */,
+				6F550761227A2B6000FC44FA /* Router.swift in Sources */,
 				762048E122427E410011B88C /* Manager.swift in Sources */,
 				762048F82244C8F50011B88C /* Location.swift in Sources */,
+				6FF9422222724F2600D3E9AC /* MulticastDelegate.swift in Sources */,
 				76FED5E6225264B30098796A /* VendingMachine.swift in Sources */,
 				762048E022427E410011B88C /* NetworkEnvironment.swift in Sources */,
 				76A2C0F9225A803900B8BFB2 /* DefaultTheme.swift in Sources */,
 				762048F2224284200011B88C /* Map+CLLocationManagerDelegate.swift in Sources */,
 				9B8ACE52225E174300651DF0 /* MapAnnotationView.swift in Sources */,
+				6F55075E227A2AA600FC44FA /* StoryboardInstantiable.swift in Sources */,
+				6F550767227A346100FC44FA /* TabCoordinator.swift in Sources */,
 				762048D322427CFB0011B88C /* DatabaseManager.swift in Sources */,
 				762048E422427E410011B88C /* NetworkError.swift in Sources */,
 				9B8ACE54225E1A7000651DF0 /* Map+MKMapViewDelegate.swift in Sources */,

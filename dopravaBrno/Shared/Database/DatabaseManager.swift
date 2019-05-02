@@ -76,13 +76,13 @@ final class Database {
     //    Fetch method
     
     func fetch<Model, RealmObject: Object>(with request: FetchRequest<Model, RealmObject>) -> Model {
-        var results =  realm.objects(RealmObject.self)
+        var results = realm.objects(RealmObject.self)
         
         if let predicate = request.predicate {
             results = results.filter(predicate)
         }
         
-        if request.sortDescriptors.count > 0 {
+        if !request.sortDescriptors.isEmpty {
             results = results.sorted(by: request.sortDescriptors)
         }
         
@@ -101,7 +101,7 @@ final class Database {
             results = results.filter(predicate)
         }
         
-        if let sortDescriptors = sortDescriptors, sortDescriptors.count > 0 {
+        if let sortDescriptors = sortDescriptors, !sortDescriptors.isEmpty {
             results = results.sorted(by: sortDescriptors)
         }
         

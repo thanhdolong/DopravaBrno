@@ -14,7 +14,7 @@ class BaseDataModule<TObject: Object, TModel> {
     }
 
     func hasObjectsInCache() -> Bool {
-        return loadFromCache().count > 0
+        return !loadFromCache().isEmpty
     }
 
     func loadFromCache() -> [TModel] {

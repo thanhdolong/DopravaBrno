@@ -72,15 +72,7 @@ extension TransportModule {
     }
     
     func enableLocationServices() {
-        switch CLLocationManager.authorizationStatus() {
-        case .notDetermined, .restricted, .denied:
-            print("Not determined status. Show request for using location.")
-            locationManager.requestWhenInUseAuthorization()
-        case .authorizedAlways, .authorizedWhenInUse:
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.delegate = self
-            locationManager.startUpdatingLocation()
-        }
+        locationManager.delegate = self
     }
     
     func stopReceivingVehicleUpdates() {
@@ -116,5 +108,16 @@ extension TransportModule {
 extension TransportModule: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.latestLocation = locations.last
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            locationManager.startUpdatingLocation()
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        case .restricted, .denied, .notDetermined:
+            locationManager.stopUpdatingLocation()
+        }
     }
 }

@@ -13,7 +13,7 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .notDetermined, .authorizedAlways, .authorizedWhenInUse:
-            break
+            enableLocationServices()
         case .restricted, .denied:
             showAlert(withTitle: "Warning", message: "Your geotification is saved but will only be activated once you grant DopravaBrno to access the device location.")
             locationManager.requestWhenInUseAuthorization()

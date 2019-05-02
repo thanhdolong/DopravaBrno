@@ -10,14 +10,15 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
+    public lazy var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
+    public lazy var router = AppDelegateRouter(window: window!)
+    public lazy var transportModule = TransportModule()
+    public lazy var tabCoordinator = TabCoordinator(router: router, transportModule: transportModule)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = TabBarViewController()
-        window?.makeKeyAndVisible()
+        tabCoordinator.present(animated: true, onDismissed: nil)
+        transportModule.start()
         return true
     }
 

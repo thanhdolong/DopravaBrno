@@ -22,6 +22,9 @@ extension MapViewController: MKMapViewDelegate {
             view = dequeuedView
         } else {
             view = MapAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view.canShowCallout = true
+            view.calloutOffset = CGPoint(x: -5, y: 5)
+            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         }
         return view
     }

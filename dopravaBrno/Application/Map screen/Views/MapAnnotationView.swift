@@ -13,6 +13,8 @@ public class MapAnnotationView: MKMarkerAnnotationView {
     override public var annotation: MKAnnotation? {
         willSet {
             guard let annotation = newValue as? Annotation else { return }
+            canShowCallout = true
+            calloutOffset = CGPoint(x: -5, y: 5)
             markerTintColor = annotation.color
             glyphImage = annotation.image
         }

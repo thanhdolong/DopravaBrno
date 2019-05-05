@@ -29,9 +29,12 @@ extension VendingMachine: Annotation {
     }
     
     var title: String? {
-            return "Ticket Machine"
+            return ""
     }
     
+    var heading: Double? {
+        return nil
+    }
 }
 
 // MARK: Vending Machine Object

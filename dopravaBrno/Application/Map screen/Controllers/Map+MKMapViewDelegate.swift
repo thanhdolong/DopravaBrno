@@ -14,18 +14,9 @@ extension MapViewController: MKMapViewDelegate {
         guard let annotation = annotation as? Annotation else { return nil }
         
         let identifier = "marker"
-        var view: MapAnnotationView
+        var view:AnnotationView
         
-        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-            as? MapAnnotationView {
-            dequeuedView.annotation = annotation
-            view = dequeuedView
-        } else {
-            view = MapAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            view.canShowCallout = true
-            view.calloutOffset = CGPoint(x: -5, y: 5)
-            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-        }
+        view = AnnotationView(annotation: annotation, reuseIdentifier: identifier)
         return view
     }
 }

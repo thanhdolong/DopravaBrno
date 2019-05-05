@@ -18,4 +18,5 @@ public enum AnnotationType: String {
 
 public protocol Annotation: MKAnnotation {
     var annotationType: AnnotationType { get }
+    var heading: Double? { get }
 }

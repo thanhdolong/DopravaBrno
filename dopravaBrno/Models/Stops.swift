@@ -35,7 +35,11 @@ extension Stop: Annotation {
     }
 
     var title: String? {
-        return self.name
+        return ""
+    }
+    
+    var heading: Double? {
+        return nil
     }
 }
 

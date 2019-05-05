@@ -16,11 +16,13 @@ public class AnnotationView : MKAnnotationView {
             self.view?.image.image = annoation.image;
             self.view?.label.text = annoation.title ?? ""
             self.view?.backrgoundView.borderColor = annoation.color
-            //self.view?.arrowImage.isHidden = true
+            self.view?.arrowImage.isHidden = true
+            self.clusteringIdentifier = annoation.annotationType.rawValue
             guard let heading = annoation.heading else { return }
-           // self.view?.arrowImage.isHidden = false
+            self.view?.arrowImage.isHidden = false
             let rotation = CGFloat(heading/180 * Double.pi)
-            //self.view?.arrowImage.transform = CGAffineTransform(rotationAngle: rotation)
+            self.view?.arrowImage.transform = CGAffineTransform(rotationAngle: rotation)
+            
         }
     }
     

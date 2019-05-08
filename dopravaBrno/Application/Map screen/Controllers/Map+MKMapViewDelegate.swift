@@ -11,12 +11,20 @@ import MapKit
 
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard let annotation = annotation as? Annotation else { return nil }
-        
-        let identifier = "marker"
-        var view:AnnotationView
-        
-        view = AnnotationView(annotation: annotation, reuseIdentifier: identifier)
-        return view
+        if let annotation = annotation as? Annotation {
+            let identifier = "marker"
+            var view:AnnotationView
+            view = AnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            return view
+        } else if let cluster = annotation as? MKClusterAnnotation {
+            guard let annotation = cluster.memberAnnotations.first as? Annotation else { return nil }
+            let identifier = "marker"
+            var view:AnnotationView
+            view = AnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            return view
+        }
+        return nil
     }
+    
+    
 }

@@ -59,7 +59,7 @@ class VehicleObject: Object, Unboxable {
         self.init()
         self.latitude = try unboxer.unbox(key: "latitude")
         self.longitude = try unboxer.unbox(key: "longitude")
-        self.headSign = try unboxer.unbox(key: "headsign")
+        self.headSign = (try? unboxer.unbox(key: "headsign")) ?? ""
         self.route = try unboxer.unbox(key: "route")
         self.direction = (try? unboxer.unbox(key: "bearing")) ?? 0
     }

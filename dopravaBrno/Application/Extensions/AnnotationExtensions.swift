@@ -13,13 +13,13 @@ extension Annotation {
     var image: UIImage? {
         switch self.annotationType {
         case .Default:
-            return nil
+            return UIImage(named: "Vehicle")
         case .VendingMachine:
             return UIImage(named: "VendingMachine")
         case .Vehicle:
-            return nil
+            return UIImage(named: "Vehicle")
         case .Stop:
-            return nil
+            return UIImage(named: "Stop")
         }
     }
     

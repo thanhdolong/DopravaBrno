@@ -35,8 +35,8 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         guard let annotation = view.annotation as? Annotation else { return }
         self.mapView.detailView.isHidden = false
-        self.mapView.detailTitle.text = annotation.annotationType.rawValue
-        self.mapView.detailDescription.text = annotation.title ?? "Test"
+        self.mapView.detailTitle.text = annotation.title ?? ""
+        self.mapView.detailDescription.text = annotation.annotationDescription
         self.mapView.detailImage.image = annotation.image
         self.mapView.detailHeightConstraint.constant = 130
         UIView.animate(withDuration: 0.5) {

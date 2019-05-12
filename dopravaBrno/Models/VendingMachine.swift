@@ -32,6 +32,10 @@ extension VendingMachine: Annotation {
             return "Ticket machine"
     }
     
+    var annotationDescription: String {
+        return "Latitude: \(coordinate.latitude) \nLongitude: \(coordinate.longitude)"
+    }
+    
     var heading: Double? {
         return nil
     }

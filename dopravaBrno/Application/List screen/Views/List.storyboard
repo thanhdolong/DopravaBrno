@@ -36,7 +36,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="n5O-Ll-CTk">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5O-Ll-CTk">
                                         <rect key="frame" x="8" y="61" width="359" height="65"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -63,6 +63,9 @@
                         <viewLayoutGuide key="safeArea" id="SRz-jp-vfI"/>
                     </view>
                     <connections>
+                        <outlet property="detailImage" destination="esm-ma-Jcs" id="98D-EQ-66d"/>
+                        <outlet property="detailLabel" destination="ye6-Fb-fj1" id="u3h-JI-Mkf"/>
+                        <outlet property="detailText" destination="n5O-Ll-CTk" id="xC8-OO-FwT"/>
                         <outlet property="detailViewHeight" destination="x86-cO-b3M" id="QXU-fS-akR"/>
                         <outlet property="tableView" destination="TAc-cN-ZFf" id="vDh-7q-yBQ"/>
                     </connections>

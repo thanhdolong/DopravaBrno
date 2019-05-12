@@ -40,12 +40,14 @@ extension Vehicle: Annotation {
     var coordinate: CLLocationCoordinate2D {
             return location.coordinate
     }
+    
+    var annotationDescription : String {
+        return "Direction: \(self.headSign)\nLatitude: \(coordinate.latitude)\nLongitude: \(coordinate.longitude)"
+    }
 
     var title: String? {
             return self.route
     }
-    
-    
 }
 
 class VehicleObject: Object, Unboxable {

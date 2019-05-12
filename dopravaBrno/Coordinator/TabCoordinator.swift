@@ -30,6 +30,8 @@ final class TabCoordinator: NSObject, UITabBarControllerDelegate, Coordinator {
         tabController.setViewControllers([listCoordinator.viewController!, mapCoordinator.viewController!], animated: true)
         tabController.selectedViewController = mapCoordinator.viewController
         tabController.delegate = self
+        tabController.tabBar.items?[0].image = UIImage(named: "list")
+        tabController.tabBar.items?[1].image = UIImage(named: "map")
         
         router.present(tabController, animated: false)
     }

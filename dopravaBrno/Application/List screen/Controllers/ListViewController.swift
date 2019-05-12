@@ -21,18 +21,21 @@ class ListItemModel {
     }
 }
 
-class ListViewController: UITableViewController, StoryboardInstantiable {
+class ListViewController: UIViewController, StoryboardInstantiable, UITableViewDataSource, UITableViewDelegate {
     var listItems: [ListItemModel] = [] {
         didSet {
             tableView.reloadData()
         }
     }
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var detailViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         registerCellForReuse()
     }
     
@@ -55,31 +58,29 @@ class ListViewController: UITableViewController, StoryboardInstantiable {
         listItems += items.map({ (item) -> ListItemModel in
             return ListItemModel(originalAnnotation: item, distance: nil)
         })
+        self.tableView.reloadData()
     }
     
     func removeFromListItems(type: AnnotationType) {
         listItems.removeAll { (listItem) -> Bool in
             return listItem.originalAnnotation.annotationType == type
         }
+        self.tableView.reloadData()
     }
     
     func registerCellForReuse() {
         self.tableView.register(PlaceTableViewCell.nib, forCellReuseIdentifier: PlaceTableViewCell.reuseIdentifier)
     }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PlaceTableViewCell.reuseIdentifier, for: indexPath) as? PlaceTableViewCell else { return super.tableView(tableView, cellForRowAt: indexPath); }
+   
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: PlaceTableViewCell.reuseIdentifier, for: indexPath) as? PlaceTableViewCell else { return self.tableView(tableView, cellForRowAt: indexPath); }
         cell.selectionStyle = .none
         cell.item = listItems[indexPath.row]
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listItems.count
-    }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
     }
 }
 

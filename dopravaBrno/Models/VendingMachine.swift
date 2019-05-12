@@ -29,7 +29,7 @@ extension VendingMachine: Annotation {
     }
     
     var title: String? {
-            return ""
+            return "Ticket machine"
     }
     
     var heading: Double? {

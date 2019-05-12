@@ -26,6 +26,7 @@ class MapViewController: UIViewController, StoryboardInstantiable {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.mapView?.map.delegate = self
+        self.mapView.map.register(MapAnnotationView.self, forAnnotationViewWithReuseIdentifier: "annotationView")
     }
 
     override func viewDidAppear(_ animated: Bool) {

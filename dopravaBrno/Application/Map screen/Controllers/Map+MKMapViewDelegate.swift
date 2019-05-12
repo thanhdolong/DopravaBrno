@@ -12,19 +12,42 @@ import MapKit
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if let annotation = annotation as? Annotation {
-            let identifier = "marker"
-            var view:AnnotationView
-            view = AnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            var view = mapView.dequeueReusableAnnotationView(withIdentifier: "annotationView")
+            if view == nil {
+                view = MapAnnotationView(annotation: annotation, reuseIdentifier: "annotationView")
+            } else {
+                view?.annotation = annotation
+            }
             return view
         } else if let cluster = annotation as? MKClusterAnnotation {
             guard let annotation = cluster.memberAnnotations.first as? Annotation else { return nil }
-            let identifier = "marker"
-            var view:AnnotationView
-            view = AnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            var view = mapView.dequeueReusableAnnotationView(withIdentifier: "annotationView")
+            if view == nil {
+                view = MapAnnotationView(annotation: annotation, reuseIdentifier: "annotationView")
+            } else {
+                view?.annotation = annotation
+            }
             return view
         }
         return nil
     }
     
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let annotation = view.annotation as? Annotation else { return }
+        self.mapView.detailView.isHidden = false
+        self.mapView.detailTitle.text = annotation.annotationType.rawValue
+        self.mapView.detailDescription.text = annotation.title ?? "Test"
+        self.mapView.detailImage.image = annotation.image
+        self.mapView.detailHeightConstraint.constant = 130
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
+    }
     
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        self.mapView.detailHeightConstraint.constant = 0
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
+    }
 }

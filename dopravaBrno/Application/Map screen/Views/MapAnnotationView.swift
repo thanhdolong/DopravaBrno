@@ -14,11 +14,12 @@ public class AnnotationView : MKAnnotationView {
         willSet {
             guard let annotation = newValue as? Annotation else { return }
             self.view?.image.image = annotation.image;
-            self.view?.label.text = annotation.title ?? ""
             self.view?.backrgoundView.borderColor = annotation.color
             self.view?.arrowImage.isHidden = true
+            self.view?.label.text = ""
             self.clusteringIdentifier = annotation.annotationType.rawValue
             guard let heading = annotation.heading else { return }
+            self.view?.label.text = annotation.title ?? ""
             self.view?.arrowImage.isHidden = false
             let rotation = CGFloat(heading/180 * Double.pi)
             self.view?.arrowImage.transform = CGAffineTransform(rotationAngle: rotation)
@@ -40,8 +41,16 @@ public class AnnotationView : MKAnnotationView {
     
     private func preperaView() {
         self.view = CircleAnnotationView(frame: self.frame)
+        self.isUserInteractionEnabled = true
+        self.view?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.onViewTapped(_:))))
         self.addSubview(view!)
+        canShowCallout = true
     }
+    
+    @objc private func onViewTapped(_ sender: UITapGestureRecognizer) {
+        self.setSelected(true, animated: false)
+    }
+    
 }
 
 public class MapAnnotationView: MKMarkerAnnotationView {

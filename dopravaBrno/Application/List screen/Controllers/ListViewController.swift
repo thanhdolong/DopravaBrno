@@ -28,6 +28,8 @@ class ListViewController: UITableViewController, StoryboardInstantiable {
         }
     }
     
+    @IBOutlet weak var detailViewHeight: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
@@ -47,6 +49,7 @@ class ListViewController: UITableViewController, StoryboardInstantiable {
             return listItem
         }.sorted(by: {$0.distance! < $1.distance!})
     }
+    
     
     func appendListItems(sequnce items: [Annotation]) {
         listItems += items.map({ (item) -> ListItemModel in

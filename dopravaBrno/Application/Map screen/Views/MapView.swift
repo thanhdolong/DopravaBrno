@@ -19,6 +19,12 @@ public final class MapView: UIView {
         }
     }
     
+    @IBOutlet weak var detailTitle: UILabel!
+    @IBOutlet weak var detailView: UIView!
+    @IBOutlet weak var detailImage: UIImageView!
+    @IBOutlet weak var detailDescription: UITextView!
+    @IBOutlet weak var detailHeightConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var settingsButton: UIButton!
     
     @IBOutlet weak var zoomUserLocationButton: UIButton!

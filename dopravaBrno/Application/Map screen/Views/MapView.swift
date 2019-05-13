@@ -23,7 +23,11 @@ public final class MapView: UIView {
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var detailImage: UIImageView!
     @IBOutlet weak var detailDescription: UITextView!
-    @IBOutlet weak var detailHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var detailHeightConstraint: NSLayoutConstraint! {
+        didSet {
+            detailHeightConstraint.constant = 0
+        }
+    }
     
     @IBOutlet weak var settingsButton: UIButton!
     

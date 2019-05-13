@@ -55,8 +55,7 @@ class ListViewController: UIViewController, StoryboardInstantiable, UITableViewD
             return listItem
         }.sorted(by: {$0.distance! < $1.distance!})
     }
-    
-    
+        
     func appendListItems(sequnce items: [Annotation]) {
         listItems += items.map({ (item) -> ListItemModel in
             return ListItemModel(originalAnnotation: item, distance: nil)

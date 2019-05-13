@@ -13,11 +13,12 @@ public class AnnotationView : MKAnnotationView {
     override public var annotation: MKAnnotation? {
         willSet {
             guard let annotation = newValue as? Annotation else { return }
-            self.view?.image.image = annotation.image;
+            self.view?.image.image = annotation.image
             self.view?.backrgoundView.borderColor = annotation.color
             self.view?.arrowImage.isHidden = true
             self.view?.label.text = ""
             self.clusteringIdentifier = annotation.annotationType.rawValue
+            
             guard let heading = annotation.heading else { return }
             self.view?.label.text = annotation.title ?? ""
             self.view?.arrowImage.isHidden = false
@@ -27,7 +28,7 @@ public class AnnotationView : MKAnnotationView {
         }
     }
     
-    private var view: CircleAnnotationView?;
+    private var view: CircleAnnotationView?
     
     public override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)

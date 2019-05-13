@@ -22,7 +22,7 @@ public class CircleAnnotationView: UIView {
     }
     
     public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder);
+        super.init(coder: aDecoder)
         commonInit()
     }
     
@@ -33,9 +33,9 @@ public class CircleAnnotationView: UIView {
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         let center = backrgoundView.center
         let newFrame = CGRect(x: backrgoundView.frame.origin.x, y: backrgoundView.frame.origin.y, width: 50, height: 50)
-        backrgoundView.frame = newFrame;
-        backrgoundView.layer.cornerRadius = 50 / 2.0;
-        backrgoundView.center = center;
+        backrgoundView.frame = newFrame
+        backrgoundView.layer.cornerRadius = 50 / 2.0
+        backrgoundView.center = center
         backrgoundView.borderWidth = 2
     }
 }

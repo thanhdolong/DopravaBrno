@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dopravaBrno/Application/List screen/Controllers/ListViewController.swift"
-            timestampString = "579426245.905394"
+            timestampString = "579643159.665289"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "showRecalculatedDistance(location:)"
             landmarkType = "7">
             <Locations>
@@ -137,22 +137,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "dopravaBrno/Application/List screen/Controllers/ListViewController.swift"
-            timestampString = "579426245.905591"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "dopravaBrno/Shared/Networking/Service/ApiResult.swift"
             timestampString = "579426245.905666"
             startingColumnNumber = "9223372036854775807"
@@ -170,7 +154,7 @@
                   moduleName = "dopravaBrno"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/thanhdolong/Swift/pv239-project/dopravaBrno/Shared/Networking/Service/ApiResult.swift"
-                  timestampString = "579426246.277212"
+                  timestampString = "579641827.419855"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "84"
@@ -185,7 +169,7 @@
                   moduleName = "dopravaBrno"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/thanhdolong/Swift/pv239-project/dopravaBrno/Shared/Networking/Service/ApiResult.swift"
-                  timestampString = "579426246.279384"
+                  timestampString = "579641827.422008"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "84"
@@ -202,7 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dopravaBrno/Application/Map screen/Views/MapAnnotationView.swift"
-            timestampString = "579426722.316293"
+            timestampString = "579643159.666932"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
@@ -218,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dopravaBrno/Application/Map screen/Views/MapAnnotationView.swift"
-            timestampString = "579426722.316375"
+            timestampString = "579643159.666994"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -234,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dopravaBrno/Application/Map screen/Views/CircleAnnotationView.swift"
-            timestampString = "579426245.905831"
+            timestampString = "579643159.667044"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -250,12 +234,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dopravaBrno/Application/Map screen/Controllers/Map+MKMapViewDelegate.swift"
-            timestampString = "579426722.316447"
+            timestampString = "579643159.667088"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
             endingLineNumber = "18"
             landmarkName = "mapView(_:viewFor:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dopravaBrno/Application/List screen/Controllers/ListViewController.swift"
+            timestampString = "579643159.667148"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "didChange(vehicles:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dopravaBrno/Application/List screen/Controllers/ListViewController.swift"
+            timestampString = "579643159.6683871"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "appendListItems(sequnce:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

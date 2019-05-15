@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-protocol TransportDelegate {
+protocol TransportDelegate: class {
     func didChange(vendingMachines: [VendingMachine])
     func didChange(vehicles: [Vehicle])
     func didChange(stops: [Stop])

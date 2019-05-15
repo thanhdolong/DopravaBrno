@@ -25,7 +25,8 @@ class PlaceTableViewCell: UITableViewCell, ReusableView {
         didSet {
             guard let item = item else { return }
             name.text = item.originalAnnotation.title ?? ""
-            picture.image = item.originalAnnotation.image
+            picture.image = item.originalAnnotation.image?.withRenderingMode(.alwaysTemplate)
+            picture.tintColor = item.originalAnnotation.color
             if let distance = item.distance {
                 distanceLabel.text = "\(distance) m"
             } else {

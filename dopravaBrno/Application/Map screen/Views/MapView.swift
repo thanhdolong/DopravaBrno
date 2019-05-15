@@ -19,10 +19,14 @@ public final class MapView: UIView {
         }
     }
     
+    @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var detailTitle: UILabel!
-    @IBOutlet weak var detailView: UIView!
+    @IBOutlet weak var detailView: UIView! {
+        didSet {
+            detailView.round(corners: [.topLeft, .topRight], radius: 10)
+        }
+    }
     @IBOutlet weak var detailImage: UIImageView!
-    @IBOutlet weak var detailDescription: UITextView!
     @IBOutlet weak var detailHeightConstraint: NSLayoutConstraint! {
         didSet {
             detailHeightConstraint.constant = 0
@@ -34,7 +38,7 @@ public final class MapView: UIView {
     @IBOutlet weak var zoomUserLocationButton: UIButton!
     @IBOutlet weak var container: UIView! {
         didSet {
-            container.layer.cornerRadius = 10.0
+            container.cornerRadius = 10.0
         }
     }
 }

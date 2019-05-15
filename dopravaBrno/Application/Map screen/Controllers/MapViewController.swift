@@ -13,6 +13,7 @@ import RealmSwift
 
 class MapViewController: UIViewController, StoryboardInstantiable {
     var locationManager = CLLocationManager()
+    var lastLocation: CLLocation?
     var mapView: MapView! {
         guard isViewLoaded else { return nil }
         return (view as! MapView)
@@ -73,7 +74,7 @@ extension MapViewController: TransportDelegate {
     }
     
     func didChange(location: CLLocation?) {
-        // do anything
+        self.lastLocation = location
     }
     
     func didChange(vehicles: [Vehicle]) {

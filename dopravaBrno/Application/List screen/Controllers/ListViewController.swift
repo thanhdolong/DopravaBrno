@@ -29,10 +29,6 @@ class ListViewController: UIViewController, StoryboardInstantiable, UITableViewD
     }
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var detailViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var detailImage: UIImageView!
-    @IBOutlet weak var detailLabel: UILabel!
-    @IBOutlet weak var detailText: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,11 +50,17 @@ class ListViewController: UIViewController, StoryboardInstantiable, UITableViewD
             listItem.distance = Int(distance)
             return listItem
         }.sorted(by: {$0.distance! < $1.distance!})
+        self.tableView.reloadData()
     }
         
     func appendListItems(sequnce items: [Annotation]) {
         listItems += items.map({ (item) -> ListItemModel in
-            return ListItemModel(originalAnnotation: item, distance: nil)
+            if let vehicle = item as? Vehicle {
+                vehicle.route = "\(vehicle.route) \(vehicle.headSign)"
+                return ListItemModel(originalAnnotation: vehicle, distance: nil)
+            } else {
+                return ListItemModel(originalAnnotation: item, distance: nil)
+            }
         })
         self.tableView.reloadData()
     }
@@ -67,7 +69,6 @@ class ListViewController: UIViewController, StoryboardInstantiable, UITableViewD
         listItems.removeAll { (listItem) -> Bool in
             return listItem.originalAnnotation.annotationType == type
         }
-        self.tableView.reloadData()
     }
     
     func registerCellForReuse() {
@@ -83,23 +84,6 @@ class ListViewController: UIViewController, StoryboardInstantiable, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listItems.count
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        detailImage.image = listItems[indexPath.row].originalAnnotation.image
-        detailLabel.text = listItems[indexPath.row].originalAnnotation.title ?? ""
-        detailText.text = listItems[indexPath.row].originalAnnotation.annotationDescription
-        detailViewHeight.constant = 130;
-        UIView.animate(withDuration: 0.5)  {
-            self.view.layoutIfNeeded()
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        detailViewHeight.constant = 0;
-        UIView.animate(withDuration: 0.5)  {
-            self.view.layoutIfNeeded()
-        }
     }
 }
 

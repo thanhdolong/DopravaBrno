@@ -34,11 +34,24 @@ extension MapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         guard let annotation = view.annotation as? Annotation else { return }
-        self.mapView.detailView.isHidden = false
-        self.mapView.detailTitle.text = annotation.title ?? ""
-        self.mapView.detailDescription.text = annotation.annotationDescription
-        self.mapView.detailImage.image = annotation.image
-        self.mapView.detailHeightConstraint.constant = 130
+        
+        if let vehicle = view.annotation as? Vehicle {
+            self.mapView.detailTitle.text = "\(vehicle.route) • \(vehicle.headSign)"
+        } else {
+            self.mapView.detailTitle.text = annotation.title ?? ""
+        }
+        
+        if let location = lastLocation {
+            let distance = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
+            self.mapView.distanceLabel.text = "\(Int(distance.distance(from: location))) m"
+        } else {
+            self.mapView.distanceLabel.text = ""
+        }
+        
+        self.mapView.detailImage.image = annotation.image?.withRenderingMode(.alwaysTemplate)
+        self.mapView.detailImage.tintColor = annotation.color
+        
+        self.mapView.detailHeightConstraint.constant = 120
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
         }

@@ -20,12 +20,12 @@ public class MulticastDelegate<ProtocolType> {
     private var delegateWrapper: [DelegateWrapper]
     
     public var delegates: [ProtocolType] {
-        delegateWrapper = delegateWrapper.filter{ $0.delegate != nil }
-        return delegateWrapper.map{$0.delegate!} as! [ProtocolType]
+        delegateWrapper = delegateWrapper.filter({ $0.delegate != nil })
+        return delegateWrapper.map({ $0.delegate! }) as! [ProtocolType]
     }
     
     public init(delegates: [ProtocolType] = []) {
-        delegateWrapper = delegates.map{
+        delegateWrapper = delegates.map {
             DelegateWrapper($0 as AnyObject)
         }
     }
@@ -44,6 +44,6 @@ public class MulticastDelegate<ProtocolType> {
     }
     
     public func invokeDelegates(_ closure: (ProtocolType) -> Void) {
-        delegates.forEach{ closure($0) }
+        delegates.forEach({ closure($0) })
     }
 }

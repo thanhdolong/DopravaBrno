@@ -22,51 +22,17 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f8i-wm-s2W">
-                                <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="esm-ma-Jcs">
-                                        <rect key="frame" x="8" y="8" width="45" height="45"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ye6-Fb-fj1">
-                                        <rect key="frame" x="61" y="20" width="306" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5O-Ll-CTk">
-                                        <rect key="frame" x="8" y="61" width="359" height="65"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" identifier="heightConstraint" id="x86-cO-b3M"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="f8i-wm-s2W" secondAttribute="trailing" id="0cY-QN-qX3"/>
-                            <constraint firstItem="f8i-wm-s2W" firstAttribute="leading" secondItem="g2w-cr-2WG" secondAttribute="leading" id="2Pb-Ta-CZO"/>
-                            <constraint firstItem="TAc-cN-ZFf" firstAttribute="trailing" secondItem="SRz-jp-vfI" secondAttribute="trailing" id="P7c-JN-KbQ"/>
-                            <constraint firstItem="TAc-cN-ZFf" firstAttribute="top" secondItem="SRz-jp-vfI" secondAttribute="top" id="eTD-eJ-h9E"/>
-                            <constraint firstItem="TAc-cN-ZFf" firstAttribute="leading" secondItem="SRz-jp-vfI" secondAttribute="leading" id="fgT-xF-Ddw"/>
-                            <constraint firstItem="f8i-wm-s2W" firstAttribute="bottom" secondItem="SRz-jp-vfI" secondAttribute="bottom" id="klb-ap-Wg7"/>
-                            <constraint firstItem="f8i-wm-s2W" firstAttribute="top" secondItem="TAc-cN-ZFf" secondAttribute="bottom" id="tgW-if-yBr"/>
+                            <constraint firstItem="TAc-cN-ZFf" firstAttribute="leading" secondItem="SRz-jp-vfI" secondAttribute="leading" id="81e-Uu-AT3"/>
+                            <constraint firstItem="TAc-cN-ZFf" firstAttribute="trailing" secondItem="SRz-jp-vfI" secondAttribute="trailing" id="BCE-hh-e8W"/>
+                            <constraint firstItem="TAc-cN-ZFf" firstAttribute="bottom" secondItem="SRz-jp-vfI" secondAttribute="bottom" id="ENm-Jb-fgn"/>
+                            <constraint firstItem="TAc-cN-ZFf" firstAttribute="top" secondItem="SRz-jp-vfI" secondAttribute="top" id="zjY-Fw-ulX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SRz-jp-vfI"/>
                     </view>
                     <connections>
-                        <outlet property="detailImage" destination="esm-ma-Jcs" id="98D-EQ-66d"/>
-                        <outlet property="detailLabel" destination="ye6-Fb-fj1" id="u3h-JI-Mkf"/>
-                        <outlet property="detailText" destination="n5O-Ll-CTk" id="xC8-OO-FwT"/>
-                        <outlet property="detailViewHeight" destination="x86-cO-b3M" id="QXU-fS-akR"/>
                         <outlet property="tableView" destination="TAc-cN-ZFf" id="vDh-7q-yBQ"/>
                     </connections>
                 </viewController>

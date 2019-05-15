@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-public class AnnotationView : MKAnnotationView {
+public class AnnotationView: MKAnnotationView {
     override public var annotation: MKAnnotation? {
         willSet {
             guard let annotation = newValue as? Annotation else { return }

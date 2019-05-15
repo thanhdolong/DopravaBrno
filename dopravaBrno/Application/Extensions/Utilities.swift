@@ -154,6 +154,15 @@ extension UIView {
             layer.borderColor = newValue?.cgColor
         }
     }
+    
+    func round(corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: bounds,
+                                byRoundingCorners: corners,
+                                cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
+    }
 }
 
 // Helper function inserted by Swift 4.2 migrator.

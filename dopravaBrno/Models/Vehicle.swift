@@ -9,7 +9,7 @@ import RealmSwift
 import MapKit
 
 final class Vehicle: Location {
-    let route: String
+    var route: String
     let headSign: String
     let direction: Double
     
@@ -41,12 +41,12 @@ extension Vehicle: Annotation {
             return location.coordinate
     }
     
-    var annotationDescription : String {
+    var annotationDescription: String {
         return "Direction: \(self.headSign)\nLatitude: \(coordinate.latitude)\nLongitude: \(coordinate.longitude)"
     }
 
     var title: String? {
-            return self.route
+            return route
     }
 }
 

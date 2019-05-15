@@ -13,24 +13,26 @@ extension Annotation {
     var image: UIImage? {
         switch self.annotationType {
         case .Default:
-            return UIImage(named: "Vehicle")
+            return nil
         case .VendingMachine:
-            return UIImage(named: "VendingMachine")
+            return UIImage(named: "vendingMachine")
         case .Vehicle:
-            return UIImage(named: "Vehicle")
+            return UIImage(named: "vehicle")
         case .Stop:
-            return UIImage(named: "Stop")
+            return UIImage(named: "stop")
         }
     }
     
     var color: UIColor {
         switch self.annotationType {
         case .VendingMachine:
-            return UIColor.blue
+            return UIColor(hexString: "#0A59F8")
         case .Stop:
-            return UIColor.brown
+            return UIColor(hexString: "#FFBD2A")
+        case .Vehicle:
+            return UIColor(hexString: "#FF0033")
         default:
-            return UIColor.red
+            return UIColor.gray
         }
     }
 }

@@ -29,7 +29,7 @@ struct DefaultTheme: ThemeStrategy {
 }
 
 struct DefaultColours: ColourScheme {
-    let mainColor: UIColor = .red
+    let mainColor: UIColor = UIColor(hexString: "#FF0033")
     let secondaryColor: UIColor = .orange
     
     let backgroundColor: UIColor = .white
@@ -41,9 +41,9 @@ struct DefaultColours: ColourScheme {
 
 struct DefaultFonts: FontScheme {
     let titleFont: UIFont = UIFont(name: "Montserrat-SemiBold", size: 17)!
-    let subtitleFont: UIFont = UIFont(name: "Montserrat-SemiBold", size: 15)!
-    let bodyFont: UIFont = UIFont(name: "Montserrat-Regular", size: 14)!
+    let subtitleFont: UIFont = UIFont(name: "Montserrat-Light", size: 15)!
+    let bodyFont: UIFont = UIFont(name: "Montserrat-Regular", size: 15)!
     
-    let tapBarFont: UIFont = UIFont(name: "Montserrat-SemiBold", size: 17)!
-    let navigationBarFont: UIFont = UIFont(name: "Montserrat-SemiBold", size: 10)!
+    let tapBarFont: UIFont = UIFont(name: "Montserrat-Regular", size: 10)!
+    let navigationBarFont: UIFont = UIFont(name: "Montserrat-Regular", size: 29)!
 }

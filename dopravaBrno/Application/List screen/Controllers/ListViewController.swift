@@ -56,7 +56,6 @@ class ListViewController: UIViewController, StoryboardInstantiable, UITableViewD
     func appendListItems(sequnce items: [Annotation]) {
         listItems += items.map({ (item) -> ListItemModel in
             if let vehicle = item as? Vehicle {
-                vehicle.route = "\(vehicle.route) \(vehicle.headSign)"
                 return ListItemModel(originalAnnotation: vehicle, distance: nil)
             } else {
                 return ListItemModel(originalAnnotation: item, distance: nil)

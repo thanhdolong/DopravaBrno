@@ -21,7 +21,7 @@ class ListCoordinator: Coordinator {
     
     func present(animated: Bool, onDismissed: (() -> Void)?) {
         viewController = ListViewController.instanceFromStoryboard()
-        viewController?.tabBarItem = UITabBarItem(title: "List", image: nil, selectedImage: nil)
+        viewController?.tabBarItem = UITabBarItem(title: "List", image: UIImage(named: "list"), selectedImage: UIImage(named: "selectedList"))
         transportModule.multicastDelegate.addDelegate(viewController!)
     }
 }

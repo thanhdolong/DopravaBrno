@@ -33,9 +33,18 @@ public final class MapView: UIView {
         }
     }
     
-    @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var settingsButton: UIButton! {
+        didSet {
+           settingsButton.tintColor = DefaultTheme().colours.mainColor
+        }
+    }
     
-    @IBOutlet weak var zoomUserLocationButton: UIButton!
+    @IBOutlet weak var zoomUserLocationButton: UIButton! {
+        didSet {
+            zoomUserLocationButton.tintColor = DefaultTheme().colours.mainColor
+        }
+    }
+    
     @IBOutlet weak var container: UIView! {
         didSet {
             container.cornerRadius = 10.0

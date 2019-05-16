@@ -21,7 +21,7 @@ class MapCoordinator: Coordinator {
     
     func present(animated: Bool, onDismissed: (() -> Void)?) {
         viewController = MapViewController.instanceFromStoryboard()
-        viewController?.tabBarItem = UITabBarItem(title: "Map", image: nil, selectedImage: nil)
+        viewController?.tabBarItem = UITabBarItem(title: "Map", image: UIImage(named: "map"), selectedImage: UIImage(named: "selectedMap"))
         transportModule.multicastDelegate.addDelegate(viewController!)
     }
 }

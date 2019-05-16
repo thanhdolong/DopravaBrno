@@ -46,7 +46,7 @@ extension Vehicle: Annotation {
     }
 
     var title: String? {
-            return route
+            return "\(route) \(headSign)"
     }
 }
 

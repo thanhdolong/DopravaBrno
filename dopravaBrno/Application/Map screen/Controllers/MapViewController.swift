@@ -23,6 +23,13 @@ class MapViewController: UIViewController, StoryboardInstantiable {
         mapView.map.zoomToUserLocation()
     }
     
+    @IBAction func closeDetail(_ sender: UIButton) {
+        mapView.detailHeightConstraint.constant = 0
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

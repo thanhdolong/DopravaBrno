@@ -7,6 +7,7 @@ import Foundation
 
 enum IdsJmkEndpoint {
     case stops
+    case vehicles
 }
 
 extension IdsJmkEndpoint: EndPointType {
@@ -22,7 +23,8 @@ extension IdsJmkEndpoint: EndPointType {
         switch self {
         case .stops:
             return "stops.json"
+        case .vehicles:
+            return "vehicles.json"
         }
     }
-
 }

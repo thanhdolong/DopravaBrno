@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import Unbox
 
 class VehiclesModule: BaseDataModule<VehicleObject, Vehicle> {
 
@@ -16,9 +17,9 @@ class VehiclesModule: BaseDataModule<VehicleObject, Vehicle> {
     }
 
     private func loadObjectsFromAPI(completion: @escaping ([Vehicle]) -> Void) {
-        SotorisAPI().getVehicles { (result) in
+        IdsJmkAPI().getVehicles { (result) in
             do {
-                let vehicleObjects = try result.unwrap()
+                let vehicleObjects = try result.unwrap(atKey: "Vehicles")
                 self.saveToCache(vehicleObjects)
                 completion(self.loadFromCache())
             } catch {

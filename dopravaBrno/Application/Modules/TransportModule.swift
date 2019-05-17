@@ -8,6 +8,7 @@
 
 import Foundation
 import MapKit
+import RealmSwift
 
 protocol TransportDelegate: class {
     func didChange(vendingMachines: [VendingMachine])
@@ -108,6 +109,16 @@ extension TransportModule {
         switch UserDefaults.standard.bool(forKey: String(SettingsEnum.vehicle.rawValue)) {
         case true:
             VehiclesModule().requestVehicles { (vehicles) in
+                let vehicles = vehicles.map({ (vehicle: Vehicle) -> Vehicle in
+                    let predicate = NSPredicate(format: "stopID == %i", vehicle.finalStop.id)
+                    let stop = Database().fetch(where: predicate, sortDescriptors: nil, transformer: { (result: Results<StopObject>) -> Stop? in
+                        guard let stopObject = result.first else { return nil }
+                        return Stop(object: stopObject)
+                    })
+                    
+                    vehicle.finalStop.name = stop?.name
+                    return vehicle
+                })
                 self.vehicles = vehicles
             }
         case false:

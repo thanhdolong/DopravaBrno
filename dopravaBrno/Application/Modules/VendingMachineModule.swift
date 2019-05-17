@@ -12,6 +12,7 @@ class VendingMachineModule: BaseDataModule<VendingMachineObject, VendingMachine>
     }
 
     public func requestVendingMachines(completion: @escaping (_: [VendingMachine]) -> Void) {
+        loadObjectsFromAPI(completion: { _ in })
         if hasObjectsInCache() {
             completion(self.loadFromCache())
         } else {

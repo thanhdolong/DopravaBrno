@@ -35,18 +35,25 @@ extension MapViewController: MKMapViewDelegate {
     public func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         guard let annotation = view.annotation as? Annotation else { return }
         
-        if let vehicle = view.annotation as? Vehicle {
-            self.mapView.detailTitle.text = "\(vehicle.route) • \(vehicle.headSign)"
-        } else {
-            self.mapView.detailTitle.text = annotation.title ?? ""
-        }
-        
         if let location = lastLocation {
             let distance = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
             self.mapView.distanceLabel.text = "\(Int(distance.distance(from: location))) m"
         } else {
             self.mapView.distanceLabel.text = ""
         }
+        
+        if view.annotation is VendingMachine {
+            self.mapView.detailTitle.text = "Ticket Machine"
+        }
+        
+        if let vehicle = view.annotation as? Vehicle {
+            self.mapView.detailTitle.text = "\(vehicle.lineName)"
+            if let finalDestination = vehicle.finalStop.name {
+                self.mapView.detailTitle.text?.append(contentsOf: " • \(finalDestination)")
+            }
+            
+            self.mapView.distanceLabel.text?.append(contentsOf: " | Delay: \(vehicle.delay) min")
+        } 
         
         self.mapView.detailImage.image = annotation.image?.withRenderingMode(.alwaysTemplate)
         self.mapView.detailImage.tintColor = annotation.color

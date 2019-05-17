@@ -29,7 +29,7 @@ extension VendingMachine: Annotation {
     }
     
     var title: String? {
-            return "Ticket machine"
+            return nil
     }
     
     var annotationDescription: String {
@@ -51,7 +51,6 @@ class VendingMachineObject: Object, Unboxable {
         
         self.latitude = try unboxer.unbox(key: "lat")
         self.longitude = try unboxer.unbox(key: "lon")
-        //        self.location = Location(name: "Automat na jizdenky", latitude: latitude, longitude: longitude)
     }
 }
 

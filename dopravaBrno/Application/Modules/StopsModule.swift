@@ -12,6 +12,7 @@ class StopsModule: BaseDataModule<StopObject, Stop> {
     }
 
     public func requestStops(completion: @escaping (_: [Stop]) -> Void) {
+        loadObjectsFromAPI(completion: { _ in })
         if hasObjectsInCache() {
             completion(self.loadFromCache())
         } else {

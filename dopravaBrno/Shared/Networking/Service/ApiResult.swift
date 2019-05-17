@@ -84,4 +84,18 @@ class ApiResult<UnboxableObject: Unboxable> {
             throw error
         }
     }
+    
+    func unwrap(atKey key: String) throws -> [UnboxableObject] {
+        do {
+            if let data = data as? [String: AnyObject], let nestedDictionary = data[key] as? [[String: AnyObject]] {
+                let unboxedJSON: [UnboxableObject] = try unbox(dictionaries: nestedDictionary)
+                return unboxedJSON
+            } else {
+                if let error = error { throw error }
+                throw ApiResultEror.runtimeError("[DataError] An error occured while trying unwrap responze")
+            }
+        } catch let error {
+            throw error
+        }
+    }
 }

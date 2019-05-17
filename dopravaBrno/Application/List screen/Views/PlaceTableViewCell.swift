@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class PlaceTableViewCell: UITableViewCell, ReusableView {
 
@@ -28,9 +29,18 @@ class PlaceTableViewCell: UITableViewCell, ReusableView {
             picture.image = item.originalAnnotation.image?.withRenderingMode(.alwaysTemplate)
             picture.tintColor = item.originalAnnotation.color
             if let distance = item.distance {
-                distanceLabel.text = "\(distance) m"
+                distanceLabel.text = "\(distance) m "
             } else {
                 distanceLabel.text = ""
+            }
+            
+            if item.originalAnnotation is VendingMachine {
+                name.text = "Ticket Machine"
+            }
+            
+            if let vehicle = item.originalAnnotation as? Vehicle {
+                name.text?.append(contentsOf: " \(vehicle.finalStop.name ?? "")")
+                distanceLabel.text?.append(contentsOf: "| Delay: \(vehicle.delay) min")
             }
         }
     }

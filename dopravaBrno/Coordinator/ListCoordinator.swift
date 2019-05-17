@@ -10,7 +10,6 @@ import UIKit
 
 class ListCoordinator: Coordinator {
     var children: [Coordinator] = []
-    weak var viewController: ListViewController?
     let transportModule: TransportModule
     let router: Router
     
@@ -20,8 +19,9 @@ class ListCoordinator: Coordinator {
     }
     
     func present(animated: Bool, onDismissed: (() -> Void)?) {
-        viewController = ListViewController.instanceFromStoryboard()
-        viewController?.tabBarItem = UITabBarItem(title: "List", image: UIImage(named: "list"), selectedImage: UIImage(named: "selectedList"))
-        transportModule.multicastDelegate.addDelegate(viewController!)
+        let viewController = ListViewController.instanceFromStoryboard()
+        viewController.transportModule = transportModule
+        viewController.tabBarItem = UITabBarItem(title: "List", image: UIImage(named: "list"), selectedImage: UIImage(named: "selectedList"))
+        router.present(viewController, animated: true)
     }
 }

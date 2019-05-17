@@ -20,6 +20,11 @@ class TransportModule: NSObject {
     let multicastDelegate = MulticastDelegate<TransportDelegate>()
     var locationManager = CLLocationManager()
     
+    override init() {
+        super.init()
+        startReceivingVehicleUpdates()
+    }
+        
     var timer = Timer()
     var vendingMachines: [VendingMachine] = [] {
         didSet {
@@ -63,12 +68,19 @@ class TransportModule: NSObject {
 }
 
 extension TransportModule {
-    func start() {
+    func requestData() {
         enableLocationServices()
-        
-        startReceivingVehicleUpdates()
+        loadVehicles()
         loadStops()
         loadVendingMachines()
+    }
+    
+    func requestData(_ refreshControl: UIRefreshControl) {
+        enableLocationServices()
+        loadVehicles()
+        loadStops()
+        loadVendingMachines()
+        refreshControl.endRefreshing()
     }
     
     func enableLocationServices() {
@@ -80,27 +92,42 @@ extension TransportModule {
     }
     
     private func startReceivingVehicleUpdates() {
-        self.reloadVehicles()
+        self.loadVehicles()
         timer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { _ in
-            self.reloadVehicles()
+            self.loadVehicles()
         }
     }
     
-    private func reloadVehicles() {
-        VehiclesModule().requestVehicles { (vehicles) in
-            self.vehicles = vehicles
+    private func loadVehicles() {
+        switch UserDefaults.standard.bool(forKey: String(SettingsEnum.vehicle.rawValue)) {
+        case true:
+            VehiclesModule().requestVehicles { (vehicles) in
+                self.vehicles = vehicles
+            }
+        case false:
+            self.vehicles = []
         }
     }
     
     private func loadStops() {
-        StopsModule().requestStops { (stops) in
-            self.stops = stops
+        switch UserDefaults.standard.bool(forKey: String(SettingsEnum.stop.rawValue)) {
+        case true:
+            StopsModule().requestStops { (stops) in
+                self.stops = stops
+            }
+        case false:
+            self.stops = []
         }
     }
     
     private func loadVendingMachines() {
-        VendingMachineModule().requestVendingMachines { (vendingMachines) in
-            self.vendingMachines = vendingMachines
+        switch UserDefaults.standard.bool(forKey: String(SettingsEnum.vendingMachine.rawValue)) {
+        case true:
+            VendingMachineModule().requestVendingMachines { (vendingMachines) in
+                self.vendingMachines = vendingMachines
+            }
+        case false:
+            self.vendingMachines = []
         }
     }
 }
@@ -119,5 +146,16 @@ extension TransportModule: CLLocationManagerDelegate {
         case .restricted, .denied, .notDetermined:
             locationManager.stopUpdatingLocation()
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        if let error = error as? CLError, error.code == .denied {
+            // Location updates are not authorized.
+            manager.stopUpdatingLocation()
+            print("Access to the location service was denied by the user. Error: \(error)")
+            return
+        }
+        
+        print("Location Manager failed with the following error: \(error)")
     }
 }

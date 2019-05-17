@@ -11,14 +11,15 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     public lazy var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
-    public lazy var router = AppDelegateRouter(window: window!)
     public lazy var transportModule = TransportModule()
-    public lazy var tabCoordinator = TabCoordinator(router: router, transportModule: transportModule)
+    public lazy var router = AppDelegateRouter(window: window!)
+    public lazy var homeCoordinator = MapCoordinator(router: router, transportModule: transportModule)
+    public lazy var listCoordinator = ListCoordinator(router: router, transportModule: transportModule)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        tabCoordinator.present(animated: true, onDismissed: nil)
-        transportModule.start()
+
+        homeCoordinator.present(animated: true, onDismissed: nil)
+        listCoordinator.present(animated: true, onDismissed: nil)
         return true
     }
 

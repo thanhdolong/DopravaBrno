@@ -22,27 +22,48 @@ class ListItemModel {
 }
 
 class ListViewController: UIViewController, StoryboardInstantiable, UITableViewDataSource, UITableViewDelegate {
+    weak var transportModule: TransportModule?
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:
+            #selector(refresh(_:)),
+                                 for: UIControl.Event.valueChanged)
+
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Data.")
+        return refreshControl
+    }()
+    private var indicator: UIView?
+    var latestLocation: CLLocation?
     var listItems: [ListItemModel] = [] {
         didSet {
             tableView.reloadData()
         }
     }
     
+    @objc func refresh(_ sender: UIRefreshControl) {
+        // Code to refresh table view
+        self.transportModule?.requestData(refreshControl)
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.addSubview(self.refreshControl)
         registerCellForReuse()
+        transportModule?.multicastDelegate.addDelegate(self)
+        transportModule?.requestData(refreshControl)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
 
-    func showRecalculatedDistance(location: CLLocation) {
+    func showRecalculatedDistance(location: CLLocation?) {
+        guard let location = location else { return }
         listItems = listItems.map { (listItem) -> ListItemModel in
             let itemLocation = CLLocation(latitude: listItem.originalAnnotation.coordinate.latitude, longitude: listItem.originalAnnotation.coordinate.longitude)
             let distance = itemLocation.distance(from: location)
@@ -55,12 +76,9 @@ class ListViewController: UIViewController, StoryboardInstantiable, UITableViewD
         
     func appendListItems(sequnce items: [Annotation]) {
         listItems += items.map({ (item) -> ListItemModel in
-            if let vehicle = item as? Vehicle {
-                return ListItemModel(originalAnnotation: vehicle, distance: nil)
-            } else {
-                return ListItemModel(originalAnnotation: item, distance: nil)
-            }
+            return ListItemModel(originalAnnotation: item, distance: nil)
         })
+        showRecalculatedDistance(location: latestLocation)
         self.tableView.reloadData()
     }
     
@@ -93,7 +111,7 @@ extension ListViewController: TransportDelegate {
     }
     
     func didChange(location: CLLocation?) {
-        guard let location = location else { return }
+        latestLocation = location
         self.showRecalculatedDistance(location: location)
     }
     

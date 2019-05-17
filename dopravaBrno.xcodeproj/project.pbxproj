@@ -19,10 +19,17 @@
 		6F55075E227A2AA600FC44FA /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F55075D227A2AA600FC44FA /* StoryboardInstantiable.swift */; };
 		6F550761227A2B6000FC44FA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F550760227A2B6000FC44FA /* Router.swift */; };
 		6F550763227A2B7300FC44FA /* AppDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F550762227A2B7300FC44FA /* AppDelegateRouter.swift */; };
-		6F550767227A346100FC44FA /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F550766227A346100FC44FA /* TabCoordinator.swift */; };
 		6F550769227A347A00FC44FA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F550768227A347A00FC44FA /* Coordinator.swift */; };
 		6F55076B227A385800FC44FA /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F55076A227A385800FC44FA /* MapCoordinator.swift */; };
 		6F55076D227A3A9A00FC44FA /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F55076C227A3A9A00FC44FA /* ListCoordinator.swift */; };
+		6FB77541228D671900B141C6 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FB77540228D671900B141C6 /* Settings.storyboard */; };
+		6FB77543228D675B00B141C6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB77542228D675B00B141C6 /* SettingsViewController.swift */; };
+		6FB77545228D7AD000B141C6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB77544228D7AD000B141C6 /* SettingsView.swift */; };
+		6FB77547228D7EA500B141C6 /* ModalNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB77546228D7EA500B141C6 /* ModalNavigationRouter.swift */; };
+		6FB7754B228DA0DC00B141C6 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB7754A228DA0DC00B141C6 /* SettingsCoordinator.swift */; };
+		6FB7754D228DA62C00B141C6 /* ModalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB7754C228DA62C00B141C6 /* ModalRouter.swift */; };
+		6FB77553228DECD200B141C6 /* SwitchItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB77552228DECD200B141C6 /* SwitchItemView.swift */; };
+		6FB77555228DECE900B141C6 /* SwitchItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FB77554228DECE900B141C6 /* SwitchItemView.xib */; };
 		6FF9422222724F2600D3E9AC /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF9422122724F2600D3E9AC /* MulticastDelegate.swift */; };
 		6FF9422422724F7400D3E9AC /* TransportModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF9422322724F7400D3E9AC /* TransportModule.swift */; };
 		7620489E22426DC80011B88C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7620489D22426DC80011B88C /* AppDelegate.swift */; };
@@ -92,10 +99,17 @@
 		6F55075D227A2AA600FC44FA /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		6F550760227A2B6000FC44FA /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		6F550762227A2B7300FC44FA /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
-		6F550766227A346100FC44FA /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
 		6F550768227A347A00FC44FA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		6F55076A227A385800FC44FA /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
 		6F55076C227A3A9A00FC44FA /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
+		6FB77540228D671900B141C6 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		6FB77542228D675B00B141C6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		6FB77544228D7AD000B141C6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		6FB77546228D7EA500B141C6 /* ModalNavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigationRouter.swift; sourceTree = "<group>"; };
+		6FB7754A228DA0DC00B141C6 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
+		6FB7754C228DA62C00B141C6 /* ModalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalRouter.swift; sourceTree = "<group>"; };
+		6FB77552228DECD200B141C6 /* SwitchItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchItemView.swift; sourceTree = "<group>"; };
+		6FB77554228DECE900B141C6 /* SwitchItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchItemView.xib; sourceTree = "<group>"; };
 		6FF9422122724F2600D3E9AC /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
 		6FF9422322724F7400D3E9AC /* TransportModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportModule.swift; sourceTree = "<group>"; };
 		7620489A22426DC80011B88C /* dopravaBrno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dopravaBrno.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,7 +198,9 @@
 			isa = PBXGroup;
 			children = (
 				6F550760227A2B6000FC44FA /* Router.swift */,
+				6FB77546228D7EA500B141C6 /* ModalNavigationRouter.swift */,
 				6F550762227A2B7300FC44FA /* AppDelegateRouter.swift */,
+				6FB7754C228DA62C00B141C6 /* ModalRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -202,10 +218,38 @@
 			children = (
 				6F550768227A347A00FC44FA /* Coordinator.swift */,
 				6F55076A227A385800FC44FA /* MapCoordinator.swift */,
-				6F550766227A346100FC44FA /* TabCoordinator.swift */,
 				6F55076C227A3A9A00FC44FA /* ListCoordinator.swift */,
+				6FB7754A228DA0DC00B141C6 /* SettingsCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		6FB7753D228D662800B141C6 /* Settings screen */ = {
+			isa = PBXGroup;
+			children = (
+				6FB7753E228D664B00B141C6 /* Controllers */,
+				6FB7753F228D665300B141C6 /* Views */,
+			);
+			path = "Settings screen";
+			sourceTree = "<group>";
+		};
+		6FB7753E228D664B00B141C6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6FB77542228D675B00B141C6 /* SettingsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6FB7753F228D665300B141C6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6FB77540228D671900B141C6 /* Settings.storyboard */,
+				6FB77544228D7AD000B141C6 /* SettingsView.swift */,
+				6FB77552228DECD200B141C6 /* SwitchItemView.swift */,
+				6FB77554228DECE900B141C6 /* SwitchItemView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7620489122426DC80011B88C = {
@@ -385,11 +429,12 @@
 		76267A32225911D40020BB8D /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				9B8ACE55225E1DC800651DF0 /* List screen */,
 				76267A33225913960020BB8D /* Main */,
+				9B8ACE55225E1DC800651DF0 /* List screen */,
 				762048C32242700D0011B88C /* Map screen */,
-				762048EC2242800E0011B88C /* Extensions */,
+				6FB7753D228D662800B141C6 /* Settings screen */,
 				6357DD66D002D991D2194F42 /* Modules */,
+				762048EC2242800E0011B88C /* Extensions */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -552,6 +597,8 @@
 				762048A322426DC80011B88C /* Map.storyboard in Resources */,
 				76A2C0FF225A84EF00B8BFB2 /* Montserrat-Light.otf in Resources */,
 				76A2C101225A84EF00B8BFB2 /* Montserrat-Regular.otf in Resources */,
+				6FB77541228D671900B141C6 /* Settings.storyboard in Resources */,
+				6FB77555228DECE900B141C6 /* SwitchItemView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,7 +669,9 @@
 				9B8ACE50225E153A00651DF0 /* Annotation.swift in Sources */,
 				9B8D3F8E227EFF6400F2C0BF /* CircleAnnotationView.swift in Sources */,
 				9BD630EA2247AA10003F9413 /* VendingMachinesAPI.swift in Sources */,
+				6FB7754B228DA0DC00B141C6 /* SettingsCoordinator.swift in Sources */,
 				762048D522427D330011B88C /* FetchRequest.swift in Sources */,
+				6FB77547228D7EA500B141C6 /* ModalNavigationRouter.swift in Sources */,
 				6F55076B227A385800FC44FA /* MapCoordinator.swift in Sources */,
 				762048DF22427E410011B88C /* NetworkClient.swift in Sources */,
 				9BD630E82247A99A003F9413 /* VendingMachinesEndpoint.swift in Sources */,
@@ -644,17 +693,20 @@
 				762048E022427E410011B88C /* NetworkEnvironment.swift in Sources */,
 				76A2C0F9225A803900B8BFB2 /* DefaultTheme.swift in Sources */,
 				762048F2224284200011B88C /* Map+CLLocationManagerDelegate.swift in Sources */,
+				6FB77543228D675B00B141C6 /* SettingsViewController.swift in Sources */,
 				9B8ACE52225E174300651DF0 /* MapAnnotationView.swift in Sources */,
+				6FB77553228DECD200B141C6 /* SwitchItemView.swift in Sources */,
 				6F55075E227A2AA600FC44FA /* StoryboardInstantiable.swift in Sources */,
-				6F550767227A346100FC44FA /* TabCoordinator.swift in Sources */,
 				762048D322427CFB0011B88C /* DatabaseManager.swift in Sources */,
 				762048E422427E410011B88C /* NetworkError.swift in Sources */,
+				6FB77545228D7AD000B141C6 /* SettingsView.swift in Sources */,
 				9B8ACE54225E1A7000651DF0 /* Map+MKMapViewDelegate.swift in Sources */,
 				9B9822E922665EAB00BFFEE6 /* PlaceTableViewCell.swift in Sources */,
 				6357DB1EB8AA73290A8D8815 /* Vehicle.swift in Sources */,
 				6357D8E7BC6736D0A158DEDB /* SotorisAPI.swift in Sources */,
 				6357D1A8997B74BD3329F847 /* Stops.swift in Sources */,
 				6357DDE91485096A37382288 /* IdsJmkAPI.swift in Sources */,
+				6FB7754D228DA62C00B141C6 /* ModalRouter.swift in Sources */,
 				6357D05DC6E990DA47DAABF9 /* IdsJmkEndpoint.swift in Sources */,
 				6357D70F68816B85FD2F5FB9 /* VendingMachineModule.swift in Sources */,
 				6357DA6D1040C7FF093B4D86 /* StopsModule.swift in Sources */,

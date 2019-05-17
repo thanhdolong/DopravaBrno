@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ke3-U9-h0i">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="7S2-5U-cjO">
+            <objects>
+                <viewController id="ke3-U9-h0i" customClass="SettingsViewController" customModule="dopravaBrno" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uxt-nq-cpN" customClass="SettingsView" customModule="dopravaBrno" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1pQ-J9-Jiw">
+                                <rect key="frame" x="40" y="305" width="334" height="286"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="tC5-Nb-xTQ">
+                                        <rect key="frame" x="15" y="82" width="304" height="174"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWv-Cx-jIx" customClass="SwitchItemView" customModule="dopravaBrno" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="304" height="52"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="IsQ-Le-pqZ"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Kf-jA-8Z2" customClass="SwitchItemView" customModule="dopravaBrno" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="61" width="304" height="52"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="7uS-Fg-F3b"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ixp-Jl-c0r" customClass="SwitchItemView" customModule="dopravaBrno" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="122" width="304" height="52"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="6nd-aE-Da4"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d29-rz-4j0">
+                                        <rect key="frame" x="282" y="20" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="9nt-4y-s1A"/>
+                                            <constraint firstAttribute="height" constant="32" id="wqC-L6-8BZ"/>
+                                        </constraints>
+                                        <state key="normal" image="close">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressedCancel:" destination="ke3-U9-h0i" eventType="touchUpInside" id="Z8a-8W-E4u"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9o9-5S-lzP">
+                                        <rect key="frame" x="40" y="20" width="120.5" height="35.5"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="29"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="9o9-5S-lzP" firstAttribute="top" secondItem="1pQ-J9-Jiw" secondAttribute="top" constant="20" id="KY0-Rv-ctU"/>
+                                    <constraint firstItem="tC5-Nb-xTQ" firstAttribute="top" secondItem="d29-rz-4j0" secondAttribute="bottom" constant="30" id="UBK-t5-lLF"/>
+                                    <constraint firstAttribute="trailing" secondItem="d29-rz-4j0" secondAttribute="trailing" constant="20" id="aSs-wu-MDK"/>
+                                    <constraint firstAttribute="trailing" secondItem="tC5-Nb-xTQ" secondAttribute="trailing" constant="15" id="cml-V9-5wR"/>
+                                    <constraint firstItem="tC5-Nb-xTQ" firstAttribute="leading" secondItem="1pQ-J9-Jiw" secondAttribute="leading" constant="15" id="gr2-Zf-UcI"/>
+                                    <constraint firstAttribute="bottom" secondItem="tC5-Nb-xTQ" secondAttribute="bottom" constant="30" id="gsf-RQ-Hzp"/>
+                                    <constraint firstItem="9o9-5S-lzP" firstAttribute="leading" secondItem="1pQ-J9-Jiw" secondAttribute="leading" constant="40" id="h0F-WA-SMS"/>
+                                    <constraint firstItem="d29-rz-4j0" firstAttribute="top" secondItem="1pQ-J9-Jiw" secondAttribute="top" constant="20" id="oEX-ut-LWB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12549019607843137" green="0.21176470588235294" blue="0.23921568627450979" alpha="0.90215111301369866" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ewb-ex-e2A" firstAttribute="trailing" secondItem="1pQ-J9-Jiw" secondAttribute="trailing" constant="40" id="Cba-zs-6y9"/>
+                            <constraint firstItem="1pQ-J9-Jiw" firstAttribute="centerY" secondItem="uxt-nq-cpN" secondAttribute="centerY" id="THN-1Q-y8b"/>
+                            <constraint firstItem="1pQ-J9-Jiw" firstAttribute="leading" secondItem="Ewb-ex-e2A" secondAttribute="leading" constant="40" id="TLq-Md-koW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ewb-ex-e2A"/>
+                        <connections>
+                            <outlet property="container" destination="1pQ-J9-Jiw" id="9ba-j8-U6J"/>
+                            <outlet property="stopSwitchItemView" destination="2Kf-jA-8Z2" id="A44-2C-eje"/>
+                            <outlet property="vehicleSwitchItemView" destination="fWv-Cx-jIx" id="ZPo-y2-uPQ"/>
+                            <outlet property="vendingMachineSwitchItemView" destination="ixp-Jl-c0r" id="jHy-V6-yru"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Xz-qv-tpV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="256.52173913043481" y="103.79464285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close" width="44" height="44"/>
+    </resources>
+</document>

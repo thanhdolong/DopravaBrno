@@ -10,7 +10,6 @@ import UIKit
 
 class MapCoordinator: Coordinator {
     var children: [Coordinator] = []
-    weak var viewController: MapViewController?
     let transportModule: TransportModule
     let router: Router
     
@@ -20,8 +19,17 @@ class MapCoordinator: Coordinator {
     }
     
     func present(animated: Bool, onDismissed: (() -> Void)?) {
-        viewController = MapViewController.instanceFromStoryboard()
-        viewController?.tabBarItem = UITabBarItem(title: "Map", image: UIImage(named: "map"), selectedImage: UIImage(named: "selectedMap"))
-        transportModule.multicastDelegate.addDelegate(viewController!)
+        let viewController = MapViewController.instantiate(delegate: self)
+        viewController.transportModule = transportModule
+        viewController.tabBarItem = UITabBarItem(title: "Map", image: UIImage(named: "map"), selectedImage: UIImage(named: "selectedMap"))
+        router.present(viewController, animated: true)
+    }
+}
+
+extension MapCoordinator: MapViewControllerDelegate {
+    public func mapViewControllerDidPressSettings(_ viewController: MapViewController) {
+        let router = ModalRouter(parentViewController: viewController)
+        let coordinator = SettingsCoordinator(router: router, transportModule: transportModule)
+        presentChild(coordinator, animated: true)
     }
 }

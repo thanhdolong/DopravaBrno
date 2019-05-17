@@ -10,7 +10,7 @@ import Foundation
 import MapKit
 
 extension MapViewController: MKMapViewDelegate {
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if let annotation = annotation as? Annotation {
             var view = mapView.dequeueReusableAnnotationView(withIdentifier: "annotationView")
             if view == nil {
@@ -32,7 +32,7 @@ extension MapViewController: MKMapViewDelegate {
         return nil
     }
     
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+    public func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         guard let annotation = view.annotation as? Annotation else { return }
         
         if let vehicle = view.annotation as? Vehicle {
@@ -57,7 +57,7 @@ extension MapViewController: MKMapViewDelegate {
         }
     }
     
-    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+    public func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
         self.mapView.detailHeightConstraint.constant = 0
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()

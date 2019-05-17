@@ -10,7 +10,7 @@ import CoreLocation
 
 extension MapViewController: CLLocationManagerDelegate {
     
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+    public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .notDetermined, .authorizedAlways, .authorizedWhenInUse:
             enableLocationServices()
@@ -20,11 +20,11 @@ extension MapViewController: CLLocationManagerDelegate {
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // Update location
     }
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         if let error = error as? CLError, error.code == .denied {
             // Location updates are not authorized.
             manager.stopUpdatingLocation()

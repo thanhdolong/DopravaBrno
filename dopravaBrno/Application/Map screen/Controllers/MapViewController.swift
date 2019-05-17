@@ -11,7 +11,14 @@ import MapKit
 import CoreLocation
 import RealmSwift
 
-class MapViewController: UIViewController, StoryboardInstantiable {
+public protocol MapViewControllerDelegate: class {
+    func mapViewControllerDidPressSettings(_ viewController: MapViewController)
+}
+
+public class MapViewController: UIViewController {
+    public weak var delegate: MapViewControllerDelegate?
+    weak var transportModule: TransportModule?
+    
     var locationManager = CLLocationManager()
     var lastLocation: CLLocation?
     var mapView: MapView! {
@@ -30,19 +37,33 @@ class MapViewController: UIViewController, StoryboardInstantiable {
         }
     }
     
-    override func viewDidLoad() {
+    @IBAction internal func didPressedSettings(_ sender: AnyObject) {
+        delegate?.mapViewControllerDidPressSettings(self)
+    }
+    
+    public override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.mapView?.map.delegate = self
         self.mapView.map.register(MapAnnotationView.self, forAnnotationViewWithReuseIdentifier: "annotationView")
+        self.transportModule?.multicastDelegate.addDelegate(self)
+        self.transportModule?.requestData()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
+    public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         locationManager.delegate = self
         checkLocationServices()
     }
 
+}
+
+extension MapViewController: StoryboardInstantiable {
+    public class func instantiate(delegate: MapViewControllerDelegate) -> MapViewController {
+        let viewController = instanceFromStoryboard()
+        viewController.delegate = delegate
+        return viewController
+    }
 }
 
 extension MapViewController {

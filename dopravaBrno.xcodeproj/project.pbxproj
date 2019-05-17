@@ -30,6 +30,7 @@
 		6FB7754D228DA62C00B141C6 /* ModalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB7754C228DA62C00B141C6 /* ModalRouter.swift */; };
 		6FB77553228DECD200B141C6 /* SwitchItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB77552228DECD200B141C6 /* SwitchItemView.swift */; };
 		6FB77555228DECE900B141C6 /* SwitchItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FB77554228DECE900B141C6 /* SwitchItemView.xib */; };
+		6FBE9BF0228EA085006ACE24 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBE9BEF228EA085006ACE24 /* NavigationController.swift */; };
 		6FF9422222724F2600D3E9AC /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF9422122724F2600D3E9AC /* MulticastDelegate.swift */; };
 		6FF9422422724F7400D3E9AC /* TransportModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF9422322724F7400D3E9AC /* TransportModule.swift */; };
 		7620489E22426DC80011B88C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7620489D22426DC80011B88C /* AppDelegate.swift */; };
@@ -110,6 +111,7 @@
 		6FB7754C228DA62C00B141C6 /* ModalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalRouter.swift; sourceTree = "<group>"; };
 		6FB77552228DECD200B141C6 /* SwitchItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchItemView.swift; sourceTree = "<group>"; };
 		6FB77554228DECE900B141C6 /* SwitchItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchItemView.xib; sourceTree = "<group>"; };
+		6FBE9BEF228EA085006ACE24 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		6FF9422122724F2600D3E9AC /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastDelegate.swift; sourceTree = "<group>"; };
 		6FF9422322724F7400D3E9AC /* TransportModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportModule.swift; sourceTree = "<group>"; };
 		7620489A22426DC80011B88C /* dopravaBrno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dopravaBrno.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -422,6 +424,7 @@
 				9B9822EB226662B000BFFEE6 /* AnnotationExtensions.swift */,
 				6FF9422122724F2600D3E9AC /* MulticastDelegate.swift */,
 				6F55075D227A2AA600FC44FA /* StoryboardInstantiable.swift */,
+				6FBE9BEF228EA085006ACE24 /* NavigationController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -680,6 +683,7 @@
 				762048E522427E410011B88C /* EndPoint.swift in Sources */,
 				6F55076D227A3A9A00FC44FA /* ListCoordinator.swift in Sources */,
 				762048F4224285A40011B88C /* MapView.swift in Sources */,
+				6FBE9BF0228EA085006ACE24 /* NavigationController.swift in Sources */,
 				762048F62244C5D10011B88C /* SotorisEndPoint.swift in Sources */,
 				762048A022426DC80011B88C /* MapViewController.swift in Sources */,
 				7620489E22426DC80011B88C /* AppDelegate.swift in Sources */,
@@ -811,6 +815,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = "";
 			};
 			name = Debug;
 		};
@@ -865,6 +870,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

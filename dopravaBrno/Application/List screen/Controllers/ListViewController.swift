@@ -53,7 +53,9 @@ class ListViewController: UIViewController, StoryboardInstantiable, UITableViewD
         tableView.delegate = self
         tableView.dataSource = self
         tableView.addSubview(self.refreshControl)
+        
         registerCellForReuse()
+        
         transportModule?.multicastDelegate.addDelegate(self)
         transportModule?.requestData(refreshControl)
     }

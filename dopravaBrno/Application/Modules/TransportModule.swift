@@ -23,6 +23,12 @@ class TransportModule: NSObject {
     override init() {
         super.init()
         startReceivingVehicleUpdates()
+        if UserDefaults.standard.bool(forKey: "firstSetup") == false {
+            for item in SettingsEnum.allCases {
+                UserDefaults.standard.set(true, forKey: String(item.rawValue))
+            }
+            UserDefaults.standard.set(true, forKey: "firstSetup")
+        }
     }
         
     var timer = Timer()

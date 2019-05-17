@@ -22,6 +22,8 @@ class ListCoordinator: Coordinator {
         let viewController = ListViewController.instanceFromStoryboard()
         viewController.transportModule = transportModule
         viewController.tabBarItem = UITabBarItem(title: "List", image: UIImage(named: "list"), selectedImage: UIImage(named: "selectedList"))
+//        viewController.navigationItem.title = "List"
+//        let viewControllerEmbedIn = NavigationController(rootViewController: viewController)
         router.present(viewController, animated: true)
     }
 }

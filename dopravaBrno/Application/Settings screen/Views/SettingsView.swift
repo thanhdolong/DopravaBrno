@@ -13,6 +13,8 @@ enum SettingsEnum: Int {
     case vehicle
     case stop
     case vendingMachine
+    
+    static let allCases: [SettingsEnum] = [.stop, .vehicle, .vendingMachine]
 }
 
 public final class SettingsView: UIView {

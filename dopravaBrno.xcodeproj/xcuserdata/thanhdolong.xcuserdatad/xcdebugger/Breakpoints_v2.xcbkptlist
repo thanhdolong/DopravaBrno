@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dopravaBrno/Coordinator/MapCoordinator.swift"
-            timestampString = "579771707.090885"
+            timestampString = "579775615.899927"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dopravaBrno/Application/List screen/Controllers/ListViewController.swift"
-            timestampString = "579771707.0910079"
+            timestampString = "579775615.900034"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "showRecalculatedDistance(location:)"
             landmarkType = "7">
             <Locations>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dopravaBrno/Application/List screen/Controllers/ListViewController.swift"
-            timestampString = "579771707.091783"
+            timestampString = "579775615.900218"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "didChange(vehicles:)"
             landmarkType = "7">
          </BreakpointContent>

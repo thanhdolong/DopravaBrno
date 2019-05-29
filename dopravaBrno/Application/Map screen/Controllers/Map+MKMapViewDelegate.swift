@@ -38,22 +38,21 @@ extension MapViewController: MKMapViewDelegate {
         if let location = lastLocation {
             let distance = CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
             self.mapView.distanceLabel.text = "\(Int(distance.distance(from: location))) m"
-        } else {
-            self.mapView.distanceLabel.text = ""
         }
         
-        if view.annotation is VendingMachine {
+        switch view.annotation {
+        case is VendingMachine:
             self.mapView.detailTitle.text = "Ticket Machine"
-        }
-        
-        if let vehicle = view.annotation as? Vehicle {
+        case let vehicle as Vehicle:
             self.mapView.detailTitle.text = "\(vehicle.lineName)"
             if let finalDestination = vehicle.finalStop.name {
                 self.mapView.detailTitle.text?.append(contentsOf: " • \(finalDestination)")
             }
             
             self.mapView.distanceLabel.text?.append(contentsOf: " | Delay: \(vehicle.delay) min")
-        } 
+        default:
+            self.mapView.detailTitle.text = annotation.title ?? ""
+        }
         
         self.mapView.detailImage.image = annotation.image?.withRenderingMode(.alwaysTemplate)
         self.mapView.detailImage.tintColor = annotation.color

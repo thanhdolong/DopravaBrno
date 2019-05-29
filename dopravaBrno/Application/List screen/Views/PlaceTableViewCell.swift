@@ -25,23 +25,26 @@ class PlaceTableViewCell: UITableViewCell, ReusableView {
     var item: ListItemModel? {
         didSet {
             guard let item = item else { return }
-            name.text = item.originalAnnotation.title ?? ""
+            let distance = item.distance ?? 0
+            
+            switch item.originalAnnotation {
+            case is VendingMachine:
+                name.text = "Ticket Machine"
+                distanceLabel.text = "\(String(distance)) m "
+            case let vehicle as Vehicle:
+                name.text = "\(vehicle.lineName) \(vehicle.finalStop.name ?? "")"
+                if let distance = item.distance {
+                    distanceLabel.text = "\(distance) m | Delay: \(vehicle.delay) min"
+                } else {
+                    distanceLabel.text = "Delay: \(vehicle.delay) min"
+                }
+            default:
+                name.text = item.originalAnnotation.title!
+                distanceLabel.text = "\(String(distance)) m "
+            }
+            
             picture.image = item.originalAnnotation.image?.withRenderingMode(.alwaysTemplate)
             picture.tintColor = item.originalAnnotation.color
-            if let distance = item.distance {
-                distanceLabel.text = "\(distance) m "
-            } else {
-                distanceLabel.text = ""
-            }
-            
-            if item.originalAnnotation is VendingMachine {
-                name.text = "Ticket Machine"
-            }
-            
-            if let vehicle = item.originalAnnotation as? Vehicle {
-                name.text?.append(contentsOf: " \(vehicle.finalStop.name ?? "")")
-                distanceLabel.text?.append(contentsOf: "| Delay: \(vehicle.delay) min")
-            }
         }
     }
     

@@ -11,14 +11,14 @@ import MapKit
 final class Vehicle: Location {
     var lineName: String
     let lastStop: Int
-    var finalStop: (id: Int,name: String?)
+    var finalStop: (id: Int, name: String?)
     let direction: Double
     let delay: Int
     
     init(latitude: Double, longitude: Double, route: String, lastStop: Int, finalStop: Int, direction: Double, delay: Int) {
         self.lineName = route
         self.lastStop = lastStop
-        self.finalStop = (finalStop,nil)
+        self.finalStop = (finalStop, nil)
         self.direction = direction
         self.delay = delay
         super.init(latitude: latitude, longitude: longitude)
